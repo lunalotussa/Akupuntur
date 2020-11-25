@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway&family=Work+Sans&family=Philosopher&display=swap");
+
+.font-family {
+  &-dancing {
+    font-family: "Dancing Script", cursive !important;
+  }
+  &-raleway {
+    font-family: "Raleway", sans-serif !important;
+  }
+  &-roboto {
+    font-family: "Roboto", sans-serif !important;
+  }
+  &-philosopher {
+    font-family: "Philosopher", sans-serif !important;
+  }
+}
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
