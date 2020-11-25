@@ -118,6 +118,7 @@ background:#3594D2;
 </select>
   
 <input type="submit" class="btn" value="Sign Up" name="login"> <br>
+<a href="<?php echo site_url('main/index');?>"><font size="2" color="#000000">Already have an account? Click here to Sign In</font></a>
   
 </div> <!-- End Box -->
   
@@ -126,7 +127,7 @@ background:#3594D2;
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 </body>
 </html>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   function field_focus(field, email)
   {
     if(field.value == email)
@@ -152,4 +153,4 @@ $(document).ready(function(){
 $('a').click(function(event){
     event.preventDefault(); 
   });
-</script>
+</script> -->

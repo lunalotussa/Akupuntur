@@ -71,26 +71,6 @@ h1{
   background:#000000; 
 }
 
-#btn2{
-  float:left;
-  background:#3498db;
-  width:125px;  padding-top:5px;
-  padding-bottom:5px;
-  color:white;
-  border-radius:4px;
-  border: #2980b9 1px solid;
-  
-  margin-top:20px;
-  margin-bottom:20px;
-  margin-left:10px;
-  font-weight:800;
-  font-size:0.8em;
-  text-align:center;
-}
-
-#btn2:hover{ 
-background:#000000; 
-}
 </style>
 <!DOCTYPE html>
 <html>
@@ -99,8 +79,7 @@ background:#000000;
 </head>
 <body>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-
-
+<!--  -->
 <form form action="<?=base_url();?>" method="POST">
 <div class="box">
 <h1>SIGN IN</h1>
@@ -109,14 +88,15 @@ background:#000000;
   
 <input type="password" name="password" placeholder="Password" class="email" />
   
-<input type="submit" class="btn" value="Sign In" name="login">
+<input type="submit" class="btn" value="Sign In" name="login"><br>
+<a href="<?php echo site_url('main/register');?>"><font size="2" color="#000000">Don't have an account? Click here to Sign Up</font></a>
 </div> <!-- End Box -->
 </form>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
 </body>
 </html>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   function field_focus(field, email)
   {
     if(field.value == email)
@@ -142,4 +122,4 @@ $(document).ready(function(){
 $('a').click(function(event){
     event.preventDefault(); 
   });
-</script>
+</script> -->
