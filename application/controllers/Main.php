@@ -13,6 +13,7 @@ class Main extends CI_Controller {
             $email      = $this->input->post("email");
             $password   = $this->input->post("password");
             $query      = $this->db->query("SELECT * FROM `user` WHERE email = '$email' AND password='$password'");
+            //start session
             if($query->num_rows() > 0){
                 $tmp = $query->result_array();
                 $_SESSION['id_user']    = $tmp[0]['id_user'];
@@ -23,7 +24,7 @@ class Main extends CI_Controller {
             	//-> Informasi password & username tidak cocok
             	$this->session->set_flashdata('info', 'Email & Password tidak cocok!');
             }
-
+            //end session
         }
 
         //-> membuat perbedaan tingkat login
@@ -37,9 +38,15 @@ class Main extends CI_Controller {
         }
 
 	}
-    public function register()
+
+    public function registerTerapis()
     {
-        $this->load->view('login/register');
+        $this->load->view('login/register_terapis');
+    }
+
+    public function registerCust()
+    {
+        $this->load->view('login/register_cust');
     }
 
 }
