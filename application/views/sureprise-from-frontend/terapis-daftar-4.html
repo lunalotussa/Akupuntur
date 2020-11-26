@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+    ></script>
+  </head>
+  <body>
+    <section class="section g-fullheight g-bg-hijau p-0">
+      <div class="columns is-vcentered g-fullheight">
+        <div class="column g-bg-hero-login g-fullheight is-hidden-touch">
+          <p
+            class="has-text-right font-family-philosopher has-text-white is-size-5 mr-3 g-pos-bottom"
+          >
+            The Perfect Blend of Technique & Relaxation
+          </p>
+        </div>
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="container p-2">
+                <figure class="image is-3by4 has-text-centered mb-3">
+                  <img src="assets/img/illustrasi-daftar.svg" />
+                </figure>
+                <p
+                  class="has-text-dark mb-3 has-text-centered g-has-text-white-on-medium"
+                >
+                  <strong class="g-has-text-white-on-medium">Selamat</strong>,
+                  Akun anda akan segera aktif, silahkan cek email konfirmasi
+                  yang telah kami kirimkan
+                </p>
+                <div class="field">
+                  <div class="control">
+                    <button
+                      class="button is-success is-fullwidth has-text-white has-text-weight-medium"
+                    >
+                      Selesai
+                    </button>
+                  </div>
+                </div>
+                <!-- End Form -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const fileKTP = document.querySelector(
+        "#upload-foto-ktp input[type=file]"
+      );
+      fileKTP.onchange = () => {
+        if (fileKTP.files.length > 0) {
+          const fileName = document.querySelector(
+            "#upload-foto-ktp .file-name"
+          );
+          fileName.textContent = fileKTP.files[0].name;
+        }
+      };
+      const fileSelfie = document.querySelector(
+        "#upload-foto-selfie input[type=file]"
+      );
+      fileSelfie.onchange = () => {
+        if (fileSelfie.files.length > 0) {
+          const fileName = document.querySelector(
+            "#upload-foto-selfie .file-name"
+          );
+          fileName.textContent = fileSelfie.files[0].name;
+        }
+      };
+      const fileProfile = document.querySelector(
+        "#upload-foto-profile input[type=file]"
+      );
+      fileProfile.onchange = () => {
+        if (fileProfile.files.length > 0) {
+          const fileName = document.querySelector(
+            "#upload-foto-profile .file-name"
+          );
+          fileName.textContent = fileProfile.files[0].name;
+        }
+      };
+    </script>
+  </body>
+</html>
