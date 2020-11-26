@@ -1,0 +1,35 @@
+.g {
+  &-bg-hero-login {
+    background: url("../img/bg-hero-login.png") no-repeat top / cover;
+  }
+  &-fullheight {
+    height: 100vh !important;
+    padding: 0;
+    margin: 0;
+    &-extra {
+      height: 115vh !important;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  &-pos-bottom {
+    position: absolute;
+    bottom: 15px;
+    left: 270px;
+  }
+  &-bg-hijau {
+    background-color: $warna-background-login;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .g {
+    &-bg-hijau {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("../img/bg-hero-login.png") no-repeat top / cover;
+    }
+    &-has-text-white-on-medium {
+      color: $white !important;
+    }
+  }
+}

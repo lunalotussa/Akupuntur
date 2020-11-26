@@ -1,0 +1,17 @@
+{
+  "name": "akupuntur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "node-sass assets/main.sass assets/css/style.css",
+    "css-build-watch": "node-sass assets/main.sass assets/css/style.css -w",
+    "start": "live-server"
+  },
+  "author": "gellen",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^5.0.0"
+  }
+}
