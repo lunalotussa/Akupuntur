@@ -7,46 +7,54 @@
 			<?php echo form_open('admin/edit/'.$admin['id_admin']); ?>
 			<div class="box-body">
 				<div class="row clearfix">
+					<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $admin['id_user']); ?>" class="form-control" id="id_user" />
+
 					<div class="col-md-6">
-						<label for="id_user" class="control-label">Id User</label>
+						<label for="alamat" class="control-label">Nama</label>
 						<div class="form-group">
-							<input type="text" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $admin['id_user']); ?>" class="form-control" id="id_user" />
+							<input type="text" name="alamat" value="<?php echo $nama;?>" class="form-control" id="alamat" readonly="true" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
+						<label for="alamat" class="control-label">Email</label>
+						<div class="form-group">
+							<input type="text" name="alamat" value="<?php echo $email;?>" class="form-control" id="alamat" readonly="true" required/>
+						</div>
+					</div>	
+					<div class="col-md-6">
 						<label for="alamat" class="control-label">Alamat</label>
 						<div class="form-group">
-							<input type="text" name="alamat" value="<?php echo ($this->input->post('alamat') ? $this->input->post('alamat') : $admin['alamat']); ?>" class="form-control" id="alamat" />
+							<input type="text" name="alamat" value="<?php echo ($this->input->post('alamat') ? $this->input->post('alamat') : $admin['alamat']); ?>" class="form-control" id="alamat" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="telepon" class="control-label">Telepon</label>
 						<div class="form-group">
-							<input type="text" name="telepon" value="<?php echo ($this->input->post('telepon') ? $this->input->post('telepon') : $admin['telepon']); ?>" class="form-control" id="telepon" />
+							<input type="number" name="telepon" value="<?php echo ($this->input->post('telepon') ? $this->input->post('telepon') : $admin['telepon']); ?>" class="form-control" id="telepon" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="bank" class="control-label">Bank</label>
 						<div class="form-group">
-							<input type="text" name="bank" value="<?php echo ($this->input->post('bank') ? $this->input->post('bank') : $admin['bank']); ?>" class="form-control" id="bank" />
+							<input type="text" name="bank" value="<?php echo ($this->input->post('bank') ? $this->input->post('bank') : $admin['bank']); ?>" class="form-control" id="bank" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="unit_bank" class="control-label">Unit Bank</label>
 						<div class="form-group">
-							<input type="text" name="unit_bank" value="<?php echo ($this->input->post('unit_bank') ? $this->input->post('unit_bank') : $admin['unit_bank']); ?>" class="form-control" id="unit_bank" />
+							<input type="text" name="unit_bank" value="<?php echo ($this->input->post('unit_bank') ? $this->input->post('unit_bank') : $admin['unit_bank']); ?>" class="form-control" id="unit_bank" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="no_rekening" class="control-label">No Rekening</label>
 						<div class="form-group">
-							<input type="text" name="no_rekening" value="<?php echo ($this->input->post('no_rekening') ? $this->input->post('no_rekening') : $admin['no_rekening']); ?>" class="form-control" id="no_rekening" />
+							<input type="number" name="no_rekening" value="<?php echo ($this->input->post('no_rekening') ? $this->input->post('no_rekening') : $admin['no_rekening']); ?>" class="form-control" id="no_rekening" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="profile" class="control-label">Profile</label>
 						<div class="form-group">
-							<input type="text" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $admin['profile']); ?>" class="form-control" id="profile" />
+							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $admin['profile']); ?>" class="form-control" id="profile" />
 						</div>
 					</div>
 				</div>
