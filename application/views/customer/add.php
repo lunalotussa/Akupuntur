@@ -2,9 +2,9 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Costumer Add</h3>
+              	<h3 class="box-title">Customer Add</h3>
             </div>
-            <?php echo form_open('costumer/add'); ?>
+            <?php echo form_open('customer/add'); ?>
           	<div class="box-body">
           		<div class="row clearfix">
 					<div class="col-md-6">
