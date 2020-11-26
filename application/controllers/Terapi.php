@@ -121,5 +121,44 @@ class Terapi extends CI_Controller{
         else
             show_error('The terapi you are trying to delete does not exist.');
     }
+
+    function detail($id_terapis){
+             // check if the terapi exists before trying to edit it
+        $data['terapi'] = $this->Terapi_model->get_terapi($id_terapis);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        
+        if(isset($data['terapi']['id_terapis']))
+        {
+           
+                $data['_view'] = 'terapi/detail';
+                $this->load->view('layouts/main',$data);
+        }
+        else
+            show_error('The terapi you are trying to edit does not exist.');
+    }
+
+    function verifikasi($id_terapis){
+             // check if the terapi exists before trying to edit it
+        $data['terapi'] = $this->Terapi_model->get_terapi($id_terapis);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        
+        if(isset($data['terapi']['id_terapis']))
+        {
+        $params = array(
+                    'status' => '1',
+                );
+
+        $this->Terapi_model->update_verifikasi($id_terapis,$params);            
+        redirect('terapi/index'); 
+        }
+        else
+            show_error('The terapi you are trying to edit does not exist.');
+    }
     
 }

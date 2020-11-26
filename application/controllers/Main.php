@@ -20,9 +20,6 @@ class Main extends CI_Controller {
                 $_SESSION['nama']       = $tmp[0]['nama'];
                 $_SESSION['email']      = $tmp[0]['email'];
                 $_SESSION['hak_akses']  = $tmp[0]['hak_akses'];
-            }else{
-            	//-> Informasi password & username tidak cocok
-            	$this->session->set_flashdata('info', 'Email & Password tidak cocok!');
             }
             //end session
         }
