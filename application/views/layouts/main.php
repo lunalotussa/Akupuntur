@@ -94,6 +94,11 @@
                         <li class="header">MAIN NAVIGATION</li>
                         <?php
                         if ($hak_akses=="Admin") {
+                        $sql ="SELECT * FROM admin WHERE id_user=$id_user";
+                        $query = $this->db->query($sql);
+                        if ($query->num_rows() > 0) {
+                        foreach ($query->result() as $row) {
+                        $id_admin = $row->id_admin;
                         ?>
                           <li>
                             <a href="<?php echo site_url();?>">
@@ -124,7 +129,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo site_url('admin/edit/'.$id_admin);?>">
                                 <i class="fa fa-user"></i> <span>Profile</span>
                             </a>
                         </li>
@@ -134,7 +139,12 @@
                             </a>
                         </li>
 
-                        <?php } elseif ($hak_akses=="Customer") {
+                        <?php }}} elseif ($hak_akses=="Customer") {
+                        $sql ="SELECT * FROM customer WHERE id_user=$id_user";
+                        $query = $this->db->query($sql);
+                        if ($query->num_rows() > 0) {
+                        foreach ($query->result() as $row) {
+                        $id_customer = $row->id_customer;
                         ?>
                         <li>
                             <a href="<?php echo site_url();?>">
@@ -147,7 +157,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo site_url('customer/edit/'.$id_customer);?>">
                                 <i class="fa fa-user"></i> <span>Profile</span>
                             </a>
                         </li>
@@ -157,7 +167,12 @@
                             </a>
                         </li>
                         <?php
-                        }elseif ($hak_akses=="Terapis") {
+                        }}} elseif ($hak_akses=="Terapis") {
+                        $sql ="SELECT * FROM terapis WHERE id_user=$id_user";
+                        $query = $this->db->query($sql);
+                        if ($query->num_rows() > 0) {
+                        foreach ($query->result() as $row) {
+                        $id_terapis = $row->id_terapis;
                         ?>
                         <li>
                             <a href="<?php echo site_url();?>">
@@ -183,12 +198,17 @@
                             </a>
                         </li>
                         <li>
+                            <a href="<?php echo site_url('terapi/edit/'.$id_terapis);?>">
+                                <i class="fa fa-user"></i> <span>Profile</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="<?php echo site_url('dashboard/logout');?>">
                                 <i class="fa fa-sign-out"></i> <span>Logout</span>
                             </a>
                         </li>
 
-                        <?php } ?>
+                        <?php }}} ?>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
