@@ -3,45 +3,54 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">Terapis Listing</h3>
-            	<div class="box-tools">
-                    <a href="<?php echo site_url('terapi/add'); ?>" class="btn btn-success btn-sm">Add</a> 
-                </div>
             </div>
             <div class="box-body">
                 <table class="table table-striped">
                     <tr>
-						<th>Id Terapis</th>
-						<th>Id User</th>
+                    	<th>Nama</th>
+						<th>Email</th>
 						<th>Alamat</th>
 						<th>Telepon</th>
 						<th>Bank</th>
 						<th>Unit Bank</th>
 						<th>No Rekening</th>
-						<th>Ktp</th>
-						<th>Selfie Ktp</th>
-						<th>Profile</th>
 						<th>Status</th>
 						<th>Actions</th>
                     </tr>
-                    <?php foreach($terapis as $t){ ?>
+                    <?php foreach($terapis as $t){
+                    $status = $t['status'];
+                    $id_userTerapis = $t['id_user'];
+                    $sql ="SELECT * FROM user WHERE id_user=$id_userTerapis";
+		            $query = $this->db->query($sql);
+		            if ($query->num_rows() > 0) {
+		            foreach ($query->result() as $row) {
+		            $namaTerapis  = $row->nama;
+		            $emailTerapis = $row->email;
+                    ?>
                     <tr>
-						<td><?php echo $t['id_terapis']; ?></td>
-						<td><?php echo $t['id_user']; ?></td>
+                    	<td><?php echo $namaTerapis ?></td>
+						<td><?php echo $emailTerapis; ?></td>
 						<td><?php echo $t['alamat']; ?></td>
 						<td><?php echo $t['telepon']; ?></td>
 						<td><?php echo $t['bank']; ?></td>
 						<td><?php echo $t['unit_bank']; ?></td>
 						<td><?php echo $t['no_rekening']; ?></td>
-						<td><?php echo $t['ktp']; ?></td>
-						<td><?php echo $t['selfie_ktp']; ?></td>
-						<td><?php echo $t['profile']; ?></td>
-						<td><?php echo $t['status']; ?></td>
 						<td>
-                            <a href="<?php echo site_url('terapi/edit/'.$t['id_terapis']); ?>" class="btn btn-info btn-xs"><span class="fa fa-pencil"></span> Edit</a> 
-                            <a href="<?php echo site_url('terapi/remove/'.$t['id_terapis']); ?>" class="btn btn-danger btn-xs"><span class="fa fa-trash"></span> Delete</a>
+							<?php
+							if ($status==0) {
+							echo "<button class='btn btn-danger btn-xs'>Belum Diverifikasi</button>";
+							} else {
+							echo "<button class='btn btn-primary btn-xs'>Sudah Diverifikasi</button>";
+							}
+							
+							?>
+						</td>
+						<td>
+                            <a href="<?php echo site_url('terapi/detail/'.$t['id_terapis']); ?>" class="btn btn-warning btn-xs"><span class="fa fa-edit"></span>Detail</a> 
+                            <a href="<?php echo site_url('terapi/verifikasi/'.$t['id_terapis']); ?>" class="btn btn-success btn-xs"><span class="fa  fa-check-circle"></span> Verifikasi</a>
                         </td>
                     </tr>
-                    <?php } ?>
+                    <?php }}} ?>
                 </table>
                                 
             </div>

@@ -2,7 +2,7 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Terapi Edit</h3>
+              	<h3 class="box-title">Terapis Edit</h3>
             </div>
 			<?php echo form_open('terapi/edit/'.$terapi['id_terapis']); ?>
 			<div class="box-body">
@@ -70,12 +70,20 @@
 							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $terapi['profile']); ?>" class="form-control" id="profile" />
 						</div>
 					</div>
-					<!-- <div class="col-md-6">
+					<div class="col-md-6">
 						<label for="status" class="control-label">Status</label>
 						<div class="form-group">
-							<input type="text" name="status" value="<?php echo ($this->input->post('status') ? $this->input->post('status') : $terapi['status']); ?>" class="form-control" id="status" />
+						<?php $status = ($this->input->post('status') ? $this->input->post('status') : $terapi['status']); 
+						if ($status==0) {
+						?>
+						<button class="btn btn-danger" disabled="true">Belum Diverifikasi Admin</button>
+						<?php
+						} else {
+						?>
+						<button class="btn btn-primary" disabled="true">Sudah Diverifikasi Admin</button>
+						<?php } ?>
 						</div>
-					</div> -->
+					</div>
 				</div>
 			</div>
 			<div class="box-footer">
