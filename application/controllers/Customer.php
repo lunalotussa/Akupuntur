@@ -8,6 +8,12 @@ class Customer extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+         if(!isset($_SESSION)){
+            session_start();
+        }
+        if (!isset($_SESSION['id_user'])) {
+            redirect(base_url());
+        }
         $this->load->model('Customer_model');
     } 
 
@@ -16,6 +22,10 @@ class Customer extends CI_Controller{
      */
     function index()
     {
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         $data['customer'] = $this->Customer_model->get_all_customer();
         
         $data['_view'] = 'customer/index';
@@ -55,6 +65,10 @@ class Customer extends CI_Controller{
     function edit($id_customer)
     {   
         // check if the Customer exists before trying to edit it
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         $data['customer'] = $this->Customer_model->get_customer($id_customer);
         
         if(isset($data['customer']['id_customer']))
@@ -72,7 +86,9 @@ class Customer extends CI_Controller{
                 );
 
                 $this->Customer_model->update_Customer($id_customer,$params);            
-                redirect('customer/index');
+                //redirect('customer/edit');
+                $data['_view'] = 'dashboard';
+                $this->load->view('layouts/main',$data); 
             }
             else
             {

@@ -8,6 +8,12 @@ class Terapi extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+         if(!isset($_SESSION)){
+            session_start();
+        }
+        if (!isset($_SESSION['id_user'])) {
+            redirect(base_url());
+        }
         $this->load->model('Terapi_model');
     } 
 
@@ -16,6 +22,10 @@ class Terapi extends CI_Controller{
      */
     function index()
     {
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         $data['terapis'] = $this->Terapi_model->get_all_terapis();
         
         $data['_view'] = 'terapi/index';
@@ -59,6 +69,10 @@ class Terapi extends CI_Controller{
     {   
         // check if the terapi exists before trying to edit it
         $data['terapi'] = $this->Terapi_model->get_terapi($id_terapis);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         
         if(isset($data['terapi']['id_terapis']))
         {
@@ -78,7 +92,8 @@ class Terapi extends CI_Controller{
                 );
 
                 $this->Terapi_model->update_terapi($id_terapis,$params);            
-                redirect('terapi/index');
+                $data['_view'] = 'dashboard';
+                $this->load->view('layouts/main',$data);  
             }
             else
             {

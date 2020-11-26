@@ -8,6 +8,12 @@ class Admin extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+         if(!isset($_SESSION)){
+            session_start();
+        }
+        if (!isset($_SESSION['id_user'])) {
+            redirect(base_url());
+        }
         $this->load->model('Admin_model');
     } 
 
@@ -16,6 +22,10 @@ class Admin extends CI_Controller{
      */
     function index()
     {
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         $data['admin'] = $this->Admin_model->get_all_admin();
         
         $data['_view'] = 'admin/index';
@@ -56,6 +66,10 @@ class Admin extends CI_Controller{
     {   
         // check if the admin exists before trying to edit it
         $data['admin'] = $this->Admin_model->get_admin($id_admin);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
         
         if(isset($data['admin']['id_admin']))
         {
@@ -71,8 +85,10 @@ class Admin extends CI_Controller{
 					'profile' => $this->input->post('profile'),
                 );
 
-                $this->Admin_model->update_admin($id_admin,$params);            
-                redirect('admin/index');
+                $this->Admin_model->update_admin($id_admin,$params); 
+                $data['_view'] = 'dashboard';
+                $this->load->view('layouts/main',$data);        
+                // redirect('admin/index');
             }
             else
             {
