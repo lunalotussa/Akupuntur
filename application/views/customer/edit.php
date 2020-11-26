@@ -53,7 +53,9 @@
 					<div class="col-md-6">
 						<label for="profile" class="control-label">Profile</label>
 						<div class="form-group">
-							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $customer['profile']); ?>" class="form-control" id="profile" />
+							<img src="<?=base_url()?>resources/picture/download_(1).jpg" width="100">
+							<input type="hidden" name="filelama" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $customer['profile']); ?>" class="form-control" id="profile"/>
+							<input type="file" name="profile" value="<?php echo $this->input->post('profile'); ?>" class="form-control" id="profile" />
 						</div>
 					</div>
 				</div>
