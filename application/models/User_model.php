@@ -31,10 +31,24 @@ class User_model extends CI_Model
     /*
      * function to add new user
      */
-    function add_user($params)
+    function add_userCust($params)
     {
         $this->db->insert('user',$params);
-        return $this->db->insert_id();
+        // return $this->db->insert_id();
+        $data = array(
+        'id_user' => $this->db->insert_id(),
+        );
+        $this->db->insert('customer',$data);
+    }
+
+    function add_userTerapis($params)
+    {
+        $this->db->insert('user',$params);
+        // return $this->db->insert_id();
+        $data = array(
+        'id_user' => $this->db->insert_id(),
+        );
+        $this->db->insert('terapis',$data);
     }
     
     /*
