@@ -25,10 +25,11 @@ class User extends CI_Controller{
     /*
      * Adding a new user
      */
-    function add()
+    function addCust()
     {   
         if(isset($_POST) && count($_POST) > 0)     
         {   
+            $hak_akses = $this->input->post('hak_akses');
             $params = array(
 				'password' => $this->input->post('password'),
 				'nama' => $this->input->post('nama'),
@@ -36,8 +37,32 @@ class User extends CI_Controller{
 				'hak_akses' => $this->input->post('hak_akses'),
             );
             
-            $user_id = $this->User_model->add_user($params);
+            $user_id = $this->User_model->add_userCust($params);
             redirect('Main');
+            
+        }
+        else
+        {            
+            $data['_view'] = 'user/add';
+            $this->load->view('layouts/main',$data);
+        }
+    }  
+
+    function addTerapis()
+    {   
+        if(isset($_POST) && count($_POST) > 0)     
+        {   
+            $hak_akses = $this->input->post('hak_akses');
+            $params = array(
+                'password' => $this->input->post('password'),
+                'nama' => $this->input->post('nama'),
+                'email' => $this->input->post('email'),
+                'hak_akses' => $this->input->post('hak_akses'),
+            );
+            
+            $user_id = $this->User_model->add_userTerapis($params);
+            redirect('Main');
+            
         }
         else
         {            
