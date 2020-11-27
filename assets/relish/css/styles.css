@@ -1927,7 +1927,7 @@ header .inner-nav .logo > a > img {
 .tp-rightarrow {
   position: absolute;
   z-index: 40;
-  display: inline-block;
+  display: none;
   font-size: 24px;
   color: #ffffff;
   width: 38px;
