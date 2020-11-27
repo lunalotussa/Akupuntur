@@ -1105,5 +1105,16 @@
     <script src="assets/relish/js/scripts.js"></script>
 
     <!-- / SCRIPTS -->
+
+    <!-- SCRIPT STYLE FOR NAVBAR -->
+    <script>
+      $(document).ready(function () {
+        $("div.inner-nav li a").click(function (e) {
+          $("div.inner-nav li a").removeClass("active");
+          $(e.currentTarget).addClass("active");
+        });
+      });
+    </script>
+    <!-- /SCRIPT STYLE FOR NAVBAR -->
   </body>
 </html>
