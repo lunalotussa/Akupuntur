@@ -7747,3 +7747,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 * {
   font-family: "Work Sans", sans-serif; }
+
+.has-background-orange {
+  background-color: #f58423; }
+
+.has-background-green-dark {
+  background-color: #556359 !important; }
