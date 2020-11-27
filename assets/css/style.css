@@ -7753,3 +7753,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .has-background-green-dark {
   background-color: #556359 !important; }
+
+.border-round {
+  border-radius: 5px; }
