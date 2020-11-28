@@ -7749,10 +7749,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-family: "Work Sans", sans-serif; }
 
 .has-background-orange {
-  background-color: #f58423; }
+  background-color: #f58423 !important; }
 
 .has-background-green-dark {
   background-color: #556359 !important; }
 
 .border-round {
   border-radius: 5px; }
+
+.border-bottom-right-round {
+  border-bottom-right-radius: 5px; }
