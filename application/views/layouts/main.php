@@ -119,7 +119,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
+                             <a href="<?php echo site_url('terapi/index');?>">
                                 <i class="fa fa-check-square-o"></i> <span>Verifikasi Terapis</span>
                             </a>
                         </li>
@@ -173,30 +173,31 @@
                         if ($query->num_rows() > 0) {
                         foreach ($query->result() as $row) {
                         $id_terapis = $row->id_terapis;
+                        $status     = $row->status;
                         ?>
                         <li>
                             <a href="<?php echo site_url();?>">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
+                        <?php
+                        if ($status==1) {
+                        ?>
                         <li>
-                            <a href="#">
+                            <a href="<?php echo site_url('detaillayanan/index');?>">
                                 <i class="fa fa-desktop"></i> <span>Layanan</span>
                             </a>
-                            <ul class="treeview-menu">
-                                <li class="active">
-                                    <a href="#"><i class="fa fa-plus"></i>Tambah Layanan</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-list-ul"></i>Daftar Layanan</a>
-                                </li>
-                            </ul>
-                        </li>
+                        </li>  
                         <li>
                             <a href="#">
                                 <i class="fa fa-calendar"></i> <span>Jadwal Terapis</span>
                             </a>
                         </li>
+                        <?php } else {
+                            # code...
+                            # optional alert box dll
+                        }
+                        ?>
                         <li>
                             <a href="<?php echo site_url('terapi/edit/'.$id_terapis);?>">
                                 <i class="fa fa-user"></i> <span>Profile</span>
