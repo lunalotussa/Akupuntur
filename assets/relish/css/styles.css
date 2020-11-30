@@ -6097,3 +6097,20 @@ aside,
     margin-top: 0;
   }
 }
+
+/* CUSTOM STYLE */
+
+.g-bg-hijau {
+  background: #76c08a !important;
+}
+.g-border-radius {
+  border-radius: 5px;
+}
+.g-text-white {
+  color: #ffffff !important;
+}
+.g-pad-y {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 0;
+}
