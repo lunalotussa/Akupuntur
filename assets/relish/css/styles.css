@@ -6109,6 +6109,9 @@ aside,
 .g-text-white {
   color: #ffffff !important;
 }
+.g-text-black {
+  color: #000000 !important;
+}
 .g-pad-y {
   padding-top: 16px;
   padding-bottom: 16px;
