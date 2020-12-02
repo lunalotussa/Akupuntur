@@ -146,7 +146,7 @@
                     <a>/</a>
                   </li>
                   <li>
-                    <a href="login.html" class="nav-submenu">Masuk</a>
+                    <a href="login" class="nav-submenu">Masuk</a>
                   </li>
                 </ul>
               </div>
