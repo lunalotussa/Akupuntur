@@ -1,0 +1,8 @@
+.border {
+  &-round {
+    border-radius: 5px;
+  }
+  &-bottom-right-round {
+    border-bottom-right-radius: 5px;
+  }
+}
