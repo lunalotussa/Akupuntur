@@ -1,125 +1,57 @@
-<style type="text/css">
-body{
-  font-family: 'Open Sans', sans-serif;
-  background:#3498DB;
-  margin: 0 auto 0 auto;  
-  width:100%; 
-  text-align:center;
-  margin: 200px 0px 20px 0px;   
-}
-
-p{
-  font-size:12px;
-  text-decoration: none;
-  color:#ffffff;
-}
-
-h1{
-  font-size:1.5em;
-  color:#525252;
-}
-
-.box{
-  background:white;
-  width:300px;
-  border-radius:6px;
-  margin: 0 auto 0 auto;
-  padding:0px 0px 70px 0px;
-  border: #000000 4px solid; 
-}
-
-.email{
-  background:#ecf0f1;
-  border: #ccc 1px solid;
-  border-bottom: #ccc 2px solid;
-  padding: 8px;
-  width:250px;
-  color:#AAAAAA;
-  margin-top:10px;
-  font-size:1em;
-  border-radius:4px;
-}
-
-.password{
-  border-radius:4px;
-  background:#ecf0f1;
-  border: #ccc 1px solid;
-  padding: 8px;
-  width:250px;
-  font-size:1em;
-}
-
-.btn{
-  background:#3498DB;
-  width:125px;
-  padding-top:5px;
-  padding-bottom:5px;
-  color:white;
-  border-radius:4px;
-  border: #000000 3px solid;
-  
-  margin-top:20px;
-  margin-bottom:20px;
-  float:center;
-  margin-left:16px;
-  font-weight:800;
-  font-size:0.8em;
-  text-align:center;
-}
-
-.btn:hover{
-  background:#000000; 
-}
-
-</style>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Akupuntur</title>
-</head>
-<body>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-<!--  -->
-<form form action="<?=base_url();?>" method="POST">
-<div class="box">
-<h1>SIGN IN</h1>
-
-<input type="text" name="email" placeholder="Email" class="email" />
-  
-<input type="password" name="password" placeholder="Password" class="email" />
-  
-<input type="submit" class="btn" value="Sign In" name="login"><br>
-<a href="<?php echo site_url('main/register');?>"><font size="2" color="#000000">Don't have an account? Click here to Sign Up</font></a>
-</div> <!-- End Box -->
-</form>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
-</body>
-</html>
-<!-- <script type="text/javascript">
-  function field_focus(field, email)
-  {
-    if(field.value == email)
-    {
-      field.value = '';
-    }
-  }
-
-  function field_blur(field, email)
-  {
-    if(field.value == '')
-    {
-      field.value = email;
-    }
-  }
-
-//Fade in dashboard box
-$(document).ready(function(){
-    $('.box').hide().fadeIn(1000);
-    });
-
-//Stop click event
-$('a').click(function(event){
-    event.preventDefault(); 
-  });
-</script> -->
+<section class="section g-fullheight g-bg-hijau p-0">
+  <div class="columns is-vcentered g-fullheight">
+    <div class="column g-bg-hero-login g-fullheight is-hidden-touch">
+      <p class="has-text-right font-family-philosopher has-text-white is-size-5 mr-3 g-pos-bottom">
+        The Perfect Blend of Technique & Relaxation
+      </p>
+    </div>
+    <div class="column">
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <div class="container p-2">
+            <h1 class="title has-text-weight-bold font-family-philosopher has-text-success">
+              Selamat Datang
+            </h1>
+            <h2 class="subtitle font-family-philosopher is-hidden-desktop has-text-white">
+              The Perfect Blend of Technique & Relaxation
+            </h2>
+            <!-- Form -->
+            <form action="<?= base_url(); ?>" method="POST">
+              <div class="field">
+                <label class="label g-has-text-white-on-medium">Email</label>
+                <div class="control">
+                  <input class="input is-success" name="email" type="email" placeholder="Your Email" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label g-has-text-white-on-medium">Password</label>
+                <div class="control has-icons-right">
+                  <input class="input is-success" name="password" type="password" placeholder="Your Password" />
+                  <span class="icon is-small is-right mr-2">
+                    <span>Show</span>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <button type="submit" name="login" class="button is-success is-fullwidth has-text-white has-text-weight-medium">
+                    Masuk
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- End Form -->
+            <p class="has-text-grey has-text-centered mt-6 g-has-text-white-on-medium">
+              Pengguna Baru, Silahkan
+              <a href="customer-daftar-1.html" class="has-text-success">Daftar</a>
+            </p>
+            <p class="has-text-grey has-text-centered mt-1 g-has-text-white-on-medium">
+              Daftar klinik terapi Anda
+              <a href="terapis-daftar-1.html" class="has-text-success">Disini</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

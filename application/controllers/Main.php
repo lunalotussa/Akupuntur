@@ -1,20 +1,21 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Main extends CI_Controller {
+class Main extends CI_Controller
+{
 
-	public function index()
-	{
-        if(!isset($_SESSION)){
+    public function index()
+    {
+        if (!isset($_SESSION)) {
             session_start();
         }
         //-> cek login
-        if(isset($_POST["login"])){
+        if (isset($_POST["login"])) {
             $email      = $this->input->post("email");
             $password   = $this->input->post("password");
             $query      = $this->db->query("SELECT * FROM `user` WHERE email = '$email' AND password='$password'");
             //start session
-            if($query->num_rows() > 0){
+            if ($query->num_rows() > 0) {
                 $tmp = $query->result_array();
                 $_SESSION['id_user']    = $tmp[0]['id_user'];
                 $_SESSION['nama']       = $tmp[0]['nama'];
@@ -25,16 +26,15 @@ class Main extends CI_Controller {
         }
 
         //-> membuat perbedaan tingkat login
-        if(isset($_SESSION['id_user'])){
+        if (isset($_SESSION['id_user'])) {
 
-           redirect('Dashboard');
-        }
-
-        else{
+            redirect('Dashboard');
+        } else {
+            $this->load->view('templates/pure/header');
             $this->load->view('login/login');
+            $this->load->view('templates/pure/footer');
         }
-
-	}
+    }
 
     public function registerTerapis()
     {
@@ -45,7 +45,6 @@ class Main extends CI_Controller {
     {
         $this->load->view('login/register_cust');
     }
-
 }
 
 /* End of file Main.php */
