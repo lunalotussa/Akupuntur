@@ -16,7 +16,7 @@
               The Perfect Blend of Technique & Relaxation
             </h2>
             <!-- Form -->
-            <form action="<?= base_url(); ?>" method="POST">
+            <form action="<?= base_url('Main'); ?>" method="POST">
               <div class="field">
                 <label class="label g-has-text-white-on-medium">Email</label>
                 <div class="control">
