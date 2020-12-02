@@ -60,7 +60,7 @@
             <!-- End Form -->
             <p class="has-text-grey has-text-centered mt-6 g-has-text-white-on-medium">
               Sudah Punya
-              <a href="<?= base_url(); ?>" class="has-text-success">Akun?</a>
+              <a href="<?= base_url('login'); ?>" class="has-text-success">Akun?</a>
             </p>
           </div>
         </div>

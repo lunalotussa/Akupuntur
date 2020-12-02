@@ -100,7 +100,7 @@
                   <a>/</a>
                 </li>
                 <li>
-                  <a href="<?= base_url('Main'); ?>" class="nav-submenu">Masuk</a>
+                  <a href="<?= base_url('login'); ?>" class="nav-submenu">Masuk</a>
                 </li>
               </ul>
             </div>
