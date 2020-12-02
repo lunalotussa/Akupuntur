@@ -15,7 +15,7 @@
               </div>
             </div>
             <h1 class="title has-text-weight-bold font-family-philosopher has-text-success">
-              Daftar
+              Daftar Terapis
             </h1>
             <!-- Form -->
             <?= form_open('user/addTerapis'); ?>
