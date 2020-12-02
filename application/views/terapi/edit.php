@@ -4,7 +4,8 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Terapis Edit</h3>
             </div>
-			<?php echo form_open('terapi/edit/'.$terapi['id_terapis']); ?>
+			<!-- <?php echo form_open('terapi/edit/'.$terapi['id_terapis']); ?> -->
+			<form action="<?=base_url()?>index.php/terapi/edit/<?php echo $terapi['id_terapis'] ?>" method="post" enctype="multipart/form-data">
 			<div class="box-body">
 				<div class="row clearfix">
 					
@@ -55,19 +56,52 @@
 					<div class="col-md-6">
 						<label for="ktp" class="control-label">Ktp</label>
 						<div class="form-group">
+							<?php
+							if (empty($terapi['ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 							<input type="file" name="ktp" value="<?php echo ($this->input->post('ktp') ? $this->input->post('ktp') : $terapi['ktp']); ?>" class="form-control" id="ktp" />
+							<input type="hidden" name="ktplama" value="<?php echo ($this->input->post('ktplama') ? $this->input->post('ktplama') : $terapi['ktp']); ?>" class="form-control" id="ktplama">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="selfie_ktp" class="control-label">Selfie Ktp</label>
 						<div class="form-group">
+							<?php
+							if (empty($terapi['selfie_ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['selfie_ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 							<input type="file" name="selfie_ktp" value="<?php echo ($this->input->post('selfie_ktp') ? $this->input->post('selfie_ktp') : $terapi['selfie_ktp']); ?>" class="form-control" id="selfie_ktp" />
+							<input type="hidden" name="selfielama" value="<?php echo ($this->input->post('selfielama') ? $this->input->post('selfielama') : $terapi['selfie_ktp']); ?>" class="form-control" id="selfielama">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="profile" class="control-label">Profile</label>
 						<div class="form-group">
+							<?php
+							if (empty($terapi['profile'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['profile'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $terapi['profile']); ?>" class="form-control" id="profile" />
+							<input type="hidden" name="filelama" value="<?php echo ($this->input->post('filelama') ? $this->input->post('filelama') : $terapi['profile']); ?>" class="form-control" id="filelama">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -83,6 +117,7 @@
 						<button class="btn btn-primary" disabled="true">Sudah Diverifikasi Admin</button>
 						<?php } ?>
 						</div>
+						<input type="hidden" name="status" value="<?php echo ($this->input->post('stastus') ? $this->input->post('status') : $terapi['status']); ?>" class="form-control" readonly="true">
 					</div>
 				</div>
 			</div>
@@ -91,7 +126,8 @@
 					<i class="fa fa-check"></i> Save
 				</button>
 	        </div>				
-			<?php echo form_close(); ?>
+	    </form>
+			<!-- <?php echo form_close(); ?> -->
 		</div>
     </div>
 </div>
