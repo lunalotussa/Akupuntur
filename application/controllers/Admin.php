@@ -15,6 +15,7 @@ class Admin extends CI_Controller{
             redirect(base_url());
         }
         $this->load->model('Admin_model');
+        $this->load->library('upload');
     } 
 
     /*
@@ -62,10 +63,48 @@ class Admin extends CI_Controller{
     /*
      * Editing a admin
      */
-    function edit($id_admin)
+    // function edit($id_admin)
+    // {   
+    //     // check if the admin exists before trying to edit it
+    //     $data['admin'] = $this->Admin_model->get_admin($id_admin);
+    //     $data['nama']       = $_SESSION['nama'];
+    //     $data['hak_akses']  = $_SESSION['hak_akses'];
+    //     $data['id_user']    = $_SESSION['id_user'];
+    //     $data['email']      = $_SESSION['email'];
+        
+    //     if(isset($data['admin']['id_admin']))
+    //     {
+    //         if(isset($_POST) && count($_POST) > 0)     
+    //         {   
+    //             $params = array(
+				// 	'id_user' => $this->input->post('id_user'),
+				// 	'alamat' => $this->input->post('alamat'),
+				// 	'telepon' => $this->input->post('telepon'),
+				// 	'bank' => $this->input->post('bank'),
+				// 	'unit_bank' => $this->input->post('unit_bank'),
+				// 	'no_rekening' => $this->input->post('no_rekening'),
+				// 	'profile' => $this->input->post('profile'),
+    //             );
+
+    //             $this->Admin_model->update_admin($id_admin,$params); 
+    //             $data['_view'] = 'dashboard';
+    //             $this->load->view('layouts/main',$data);        
+    //             // redirect('admin/index');
+    //         }
+    //         else
+    //         {
+    //             $data['_view'] = 'admin/edit';
+    //             $this->load->view('layouts/main',$data);
+    //         }
+    //     }
+    //     else
+    //         show_error('The admin you are trying to edit does not exist.');
+    // } 
+
+        function edit($id_admin)
     {   
         // check if the admin exists before trying to edit it
-        $data['admin'] = $this->Admin_model->get_admin($id_admin);
+        $data['admin']      = $this->Admin_model->get_admin($id_admin);
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
@@ -75,20 +114,55 @@ class Admin extends CI_Controller{
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
+                $path = './resources/picture/';
+                // get foto
+                  $config['upload_path'] = './resources/picture';
+                  $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                  $config['max_size'] = '2048';  //2MB max
+                  $config['max_width'] = '4480'; // pixel
+                  $config['max_height'] = '4480'; // pixel
+                  $config['file_name'] = $_FILES['profile']['name'];
+
+                  $this->upload->initialize($config);
+
+                if (!empty($_FILES['profile']['name'])) {
+                    if ( $this->upload->do_upload('profile') ) {
+                        $foto   = $this->upload->data();
+                        $params = array(
+                                     'id_user' => $this->input->post('id_user'),
+                                     'alamat' => $this->input->post('alamat'),
+                                     'telepon' => $this->input->post('telepon'),
+                                     'bank' => $this->input->post('bank'),
+                                     'unit_bank' => $this->input->post('unit_bank'),
+                                     'no_rekening' => $this->input->post('no_rekening'),
+                                     'profile' => $foto['file_name'],
+                                    );
+                      // hapus foto pada direktori
+                      @unlink($path.$this->input->post('filelama'));
+
+                      $this->Admin_model->update_admin($id_admin,$params); 
+                      $data['_view'] = 'dashboard';
+                      $this->load->view('layouts/main',$data);        
+                      redirect('main/index');
+                    }else {
+                      die("gagal update");
+                    }
+                }else{
                 $params = array(
-					'id_user' => $this->input->post('id_user'),
-					'alamat' => $this->input->post('alamat'),
-					'telepon' => $this->input->post('telepon'),
-					'bank' => $this->input->post('bank'),
-					'unit_bank' => $this->input->post('unit_bank'),
-					'no_rekening' => $this->input->post('no_rekening'),
-					'profile' => $this->input->post('profile'),
+                 'id_user' => $this->input->post('id_user'),
+                 'alamat' => $this->input->post('alamat'),
+                 'telepon' => $this->input->post('telepon'),
+                 'bank' => $this->input->post('bank'),
+                 'unit_bank' => $this->input->post('unit_bank'),
+                 'no_rekening' => $this->input->post('no_rekening'),
+                 'profile' => $this->input->post('profile'),
                 );
 
                 $this->Admin_model->update_admin($id_admin,$params); 
                 $data['_view'] = 'dashboard';
                 $this->load->view('layouts/main',$data);        
-                // redirect('admin/index');
+                redirect('main/index');
+                }
             }
             else
             {
