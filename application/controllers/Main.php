@@ -38,7 +38,9 @@ class Main extends CI_Controller
 
     public function registerTerapis()
     {
+        $this->load->view('templates/pure/header');
         $this->load->view('login/register_terapis');
+        $this->load->view('templates/pure/footer');
     }
 
     public function registerCust()
