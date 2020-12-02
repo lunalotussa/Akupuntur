@@ -15,6 +15,7 @@ class Customer extends CI_Controller{
             redirect(base_url());
         }
         $this->load->model('Customer_model');
+        $this->load->library('upload');
     } 
 
     /*
@@ -62,33 +63,106 @@ class Customer extends CI_Controller{
     /*
      * Editing a Customer
      */
+    // function edit($id_customer)
+    // {   
+    //     // check if the Customer exists before trying to edit it
+    //     $data['nama']       = $_SESSION['nama'];
+    //     $data['hak_akses']  = $_SESSION['hak_akses'];
+    //     $data['id_user']    = $_SESSION['id_user'];
+    //     $data['email']      = $_SESSION['email'];
+    //     $data['customer'] = $this->Customer_model->get_customer($id_customer);
+        
+    //     if(isset($data['customer']['id_customer']))
+    //     {
+    //         if(isset($_POST) && count($_POST) > 0)     
+    //         {   
+    //             $params = array(
+				// 	'id_user' => $this->input->post('id_user'),
+				// 	'alamat' => $this->input->post('alamat'),
+				// 	'telepon' => $this->input->post('telepon'),
+				// 	'bank' => $this->input->post('bank'),
+				// 	'unit_bank' => $this->input->post('unit_bank'),
+				// 	'no_rekening' => $this->input->post('no_rekening'),
+				// 	'profile' => $this->input->post('profile'),
+    //             );
+
+    //             $this->Customer_model->update_Customer($id_customer,$params);            
+    //             //redirect('customer/edit');
+    //             $data['_view'] = 'dashboard';
+    //             $this->load->view('layouts/main',$data); 
+    //         }
+    //         else
+    //         {
+    //             $data['_view'] = 'customer/edit';
+    //             $this->load->view('layouts/main',$data);
+    //         }
+    //     }
+    //     else
+    //         show_error('The Customer you are trying to edit does not exist.');
+    // } 
+
     function edit($id_customer)
     {   
-        // check if the Customer exists before trying to edit it
+        // check if the admin exists before trying to edit it
+        $data['customer']   = $this->Customer_model->get_customer($id_customer);
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['customer'] = $this->Customer_model->get_customer($id_customer);
         
         if(isset($data['customer']['id_customer']))
         {
             if(isset($_POST) && count($_POST) > 0)     
             {   
+                $path = './resources/picture/';
+                // get foto
+                  $config['upload_path'] = './resources/picture';
+                  $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                  $config['max_size'] = '2048';  //2MB max
+                  $config['max_width'] = '4480'; // pixel
+                  $config['max_height'] = '4480'; // pixel
+                  $config['file_name'] = $_FILES['profile']['name'];
+
+                  $this->upload->initialize($config);
+
+                if (!empty($_FILES['profile']['name'])) {
+                    if ( $this->upload->do_upload('profile') ) {
+                        $foto   = $this->upload->data();
+                        $params = array(
+                                     'id_user' => $this->input->post('id_user'),
+                                     'alamat' => $this->input->post('alamat'),
+                                     'telepon' => $this->input->post('telepon'),
+                                     'bank' => $this->input->post('bank'),
+                                     'unit_bank' => $this->input->post('unit_bank'),
+                                     'no_rekening' => $this->input->post('no_rekening'),
+                                     'profile' => $foto['file_name'],
+                                    );
+                      // hapus foto pada direktori
+                      @unlink($path.$this->input->post('filelama'));
+
+                      $this->Customer_model->update_customer($id_customer,$params); 
+                      $data['_view'] = 'dashboard';
+                      $this->load->view('layouts/main',$data);        
+                      redirect('main/index');
+                    }else {
+                      die("gagal update");
+                    }
+                }else{
                 $params = array(
-					'id_user' => $this->input->post('id_user'),
-					'alamat' => $this->input->post('alamat'),
-					'telepon' => $this->input->post('telepon'),
-					'bank' => $this->input->post('bank'),
-					'unit_bank' => $this->input->post('unit_bank'),
-					'no_rekening' => $this->input->post('no_rekening'),
-					'profile' => $this->input->post('profile'),
+                 'id_user' => $this->input->post('id_user'),
+                 'alamat' => $this->input->post('alamat'),
+                 'telepon' => $this->input->post('telepon'),
+                 'bank' => $this->input->post('bank'),
+                 'unit_bank' => $this->input->post('unit_bank'),
+                 'no_rekening' => $this->input->post('no_rekening'),
+                 'profile' => $this->input->post('filelama'),
                 );
 
-                $this->Customer_model->update_Customer($id_customer,$params);            
-                //redirect('customer/edit');
+                $this->Customer_model->update_customer($id_customer,$params); 
                 $data['_view'] = 'dashboard';
-                $this->load->view('layouts/main',$data); 
+                $this->load->view('layouts/main',$data);        
+                redirect('main/index');
+                }
             }
             else
             {
@@ -97,7 +171,7 @@ class Customer extends CI_Controller{
             }
         }
         else
-            show_error('The Customer you are trying to edit does not exist.');
+            show_error('The admin you are trying to edit does not exist.');
     } 
 
     /*

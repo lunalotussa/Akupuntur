@@ -101,7 +101,7 @@ class Admin extends CI_Controller{
     //         show_error('The admin you are trying to edit does not exist.');
     // } 
 
-        function edit($id_admin)
+    function edit($id_admin)
     {   
         // check if the admin exists before trying to edit it
         $data['admin']      = $this->Admin_model->get_admin($id_admin);
@@ -155,7 +155,7 @@ class Admin extends CI_Controller{
                  'bank' => $this->input->post('bank'),
                  'unit_bank' => $this->input->post('unit_bank'),
                  'no_rekening' => $this->input->post('no_rekening'),
-                 'profile' => $this->input->post('profile'),
+                 'profile' => $this->input->post('filelama'),
                 );
 
                 $this->Admin_model->update_admin($id_admin,$params); 
