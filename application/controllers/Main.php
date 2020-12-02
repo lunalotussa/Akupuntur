@@ -43,7 +43,9 @@ class Main extends CI_Controller
 
     public function registerCust()
     {
+        $this->load->view('templates/pure/header');
         $this->load->view('login/register_cust');
+        $this->load->view('templates/pure/footer');
     }
 }
 
