@@ -65,19 +65,46 @@
 					<div class="col-md-6">
 						<label for="ktp" class="control-label">Ktp</label>
 						<div class="form-group">
-							<input type="text" name="ktp" value="<?php echo ($this->input->post('ktp') ? $this->input->post('ktp') : $terapi['ktp']); ?>" class="form-control" id="ktp" readonly="true" /> 
+							<?php
+							if (empty($terapi['ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="selfie_ktp" class="control-label">Selfie Ktp</label>
 						<div class="form-group">
-							<input type="text" name="selfie_ktp" value="<?php echo ($this->input->post('selfie_ktp') ? $this->input->post('selfie_ktp') : $terapi['selfie_ktp']); ?>" class="form-control" id="selfie_ktp" 	readonly="true"/> 
+							<?php
+							if (empty($terapi['selfie_ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['selfie_ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="profile" class="control-label">Profile</label>
 						<div class="form-group">
-							<input type="text" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $terapi['profile']); ?>" class="form-control" id="profile" readonly="true"/>
+							<?php
+							if (empty($terapi['profile'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['profile'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
 						</div>
 					</div>
 					<div class="col-md-6">
