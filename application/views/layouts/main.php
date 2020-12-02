@@ -139,7 +139,7 @@
                             </a>
                         </li>
 
-                        <?php }}} elseif ($hak_akses=="Customer") {
+                        <?php }}} else if ($hak_akses=="Customer") {
                         $sql ="SELECT * FROM customer WHERE id_user=$id_user";
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0) {
@@ -167,7 +167,7 @@
                             </a>
                         </li>
                         <?php
-                        }}} elseif ($hak_akses=="Terapis") {
+                        }}} else if ($hak_akses=="Terapis") {
                         $sql ="SELECT * FROM terapis WHERE id_user=$id_user";
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0) {
