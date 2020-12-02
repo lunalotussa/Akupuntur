@@ -43,11 +43,11 @@
             <!-- End Form -->
             <p class="has-text-grey has-text-centered mt-6 g-has-text-white-on-medium">
               Pengguna Baru, Silahkan
-              <a href="<?= base_url('main/registerCust'); ?>" class="has-text-success">Daftar</a>
+              <a href="<?= base_url('regisCustomer'); ?>" class="has-text-success">Daftar</a>
             </p>
             <p class="has-text-grey has-text-centered mt-1 g-has-text-white-on-medium">
               Daftar klinik terapi Anda
-              <a href="<?= base_url('main/registerTerapis'); ?>" class="has-text-success">Disini</a>
+              <a href="<?= base_url('regisTerapis'); ?>" class="has-text-success">Disini</a>
             </p>
           </div>
         </div>
