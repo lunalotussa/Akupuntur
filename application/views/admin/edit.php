@@ -4,7 +4,8 @@
             <div class="box-header with-border">
               	<h3 class="box-title">Admin Edit</h3>
             </div>
-			<?php echo form_open('admin/edit/'.$admin['id_admin']); ?>
+			<!-- <?php echo form_open('admin/edit/'.$admin['id_admin']); ?> -->
+			<form action="<?=base_url()?>index.php/admin/edit/<?php echo $admin['id_admin'] ?>" method="post" enctype="multipart/form-data">
 			<div class="box-body">
 				<div class="row clearfix">
 					<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $admin['id_user']); ?>" class="form-control" id="id_user" />
@@ -54,7 +55,18 @@
 					<div class="col-md-6">
 						<label for="profile" class="control-label">Profile</label>
 						<div class="form-group">
+							<?php
+							if (empty($admin['profile'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$admin['profile'];?>" alt="profile" width="100px">
+							<?php
+							} ?>
 							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $admin['profile']); ?>" class="form-control" id="profile" />
+							<input type="hidden" name="filelama" value="<?php echo ($this->input->post('filelama') ? $this->input->post('filelama') : $admin['profile']); ?>" class="form-control" id="filelama">
 						</div>
 					</div>
 				</div>
@@ -63,8 +75,9 @@
             	<button type="submit" class="btn btn-success">
 					<i class="fa fa-check"></i> Save
 				</button>
-	        </div>				
-			<?php echo form_close(); ?>
+	        </div>			
+	        </form>	
+			<!-- <?php echo form_close(); ?> -->
 		</div>
     </div>
 </div>
