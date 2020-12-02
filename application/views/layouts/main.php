@@ -93,7 +93,7 @@
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
                         <?php
-                        if ($hak_akses = "Admin") {
+                        if ($hak_akses=="Admin") {
                         $sql ="SELECT * FROM admin WHERE id_user=$id_user";
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0) {
@@ -139,7 +139,7 @@
                             </a>
                         </li>
 
-                        <?php }}} elseif ($hak_akses = "Customer") {
+                        <?php }}} elseif ($hak_akses=="Customer") {
                         $sql ="SELECT * FROM customer WHERE id_user=$id_user";
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0) {
@@ -167,7 +167,7 @@
                             </a>
                         </li>
                         <?php
-                        }}} elseif ($hak_akses = "Terapis") {
+                        }}} elseif ($hak_akses=="Terapis") {
                         $sql ="SELECT * FROM terapis WHERE id_user=$id_user";
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0) {
