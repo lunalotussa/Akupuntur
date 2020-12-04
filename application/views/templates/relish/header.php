@@ -62,19 +62,19 @@
                         <div class="inner-nav desktop-nav">
                             <ul class="clearlist">
                                 <li>
-                                    <a href="<?= base_url(); ?>" class="nav-submenu">Home</a>
+                                    <a href="<?= base_url(); ?>">Home</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('landing/jasa'); ?>" class="nav-submenu">Jasa</a>
+                                    <a href="<?= base_url('landing/jasa'); ?>">Jasa</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('#galeri'); ?>" class="nav-submenu">Galeri</a>
+                                    <a href="<?= base_url('#galeri'); ?>">Galeri</a>
                                 </li>
 
                                 <!-- logo menu -->
@@ -88,19 +88,19 @@
                                 <!-- / logo menu -->
 
                                 <li>
-                                    <a href="<?= base_url('#tentang'); ?>" class="nav-submenu">Tentang Kami</a>
+                                    <a href="<?= base_url('#tentang'); ?>">Tentang Kami</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('#kontak'); ?>" class="nav-submenu">Kontak</a>
+                                    <a href="<?= base_url('#kontak'); ?>">Kontak</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('login'); ?>" class="nav-submenu">Masuk</a>
+                                    <a href="<?= base_url('login'); ?>">Masuk</a>
                                 </li>
                             </ul>
                         </div>
