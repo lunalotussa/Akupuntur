@@ -1,3 +1,63 @@
+<!-- footer -->
+
+<footer>
+    <div class="footer-rect">
+        <img src="assets/relish/images/lines/rectangle-3.png" data-at2x="assets/relish/images/lines/rectangle-3@2x.png" alt />
+    </div>
+
+    <!-- footer top -->
+    <div class="footer-section">
+        <div class="container">
+            <div class="row">
+                <!-- footer contacts -->
+
+                <div class="col-md-4 col-xs-12 mb-lg-30 col-md-offset-8">
+                    <div class="footer-contact align-center">
+                        <a class="mail">Terms Of Service</a> |
+                        <a class="mail">Private Police</a> |
+                        <a class="mail">Information</a>
+                    </div>
+                </div>
+
+                <!-- / footer contacts -->
+            </div>
+        </div>
+    </div>
+
+    <!-- / footer top -->
+
+    <!-- footer bottom -->
+
+    <div class="bottom-footer">
+        <div class="container align-center">
+            <!-- footer copy -->
+
+            <!-- <div class="footer-copy"> -->
+            <span class="font-alt">Terapi Holistik Sayang Anak</span> © 2020.
+            All rights reserved.
+            <!-- </div> -->
+
+            <!-- / footer copy -->
+        </div>
+    </div>
+
+    <!-- / footer bottom -->
+</footer>
+
+<!-- / footer -->
+
+<!-- scroll-top -->
+
+<div id="scroll-top">
+    <i class="fa fa-angle-up"></i>
+    top
+</div>
+
+<!-- / scroll-top -->
+</div>
+
+<!-- / PAGE -->
+
 <!-- SCRIPTS -->
 
 <script src="<?= base_url('assets/relish/js/jquery.min.js'); ?>"></script>
