@@ -25,3 +25,88 @@
 </head>
 
 <body>
+    <!-- PAGE -->
+
+    <div class="page" id="top">
+        <!-- preloader -->
+
+        <div id="preloader">
+            <div class="preloader-wave"></div>
+        </div>
+
+        <!-- / preloader -->
+
+        <!-- sticky menu -->
+
+        <header class="sticky-header js-stick top-fixed">
+            <div class="container">
+                <nav class="main-nav">
+                    <div class="full-wrapper align-center">
+                        <!-- logo sticky -->
+
+                        <div class="nav-logo-wrap-sticky">
+                            <a href="index.html" class="logo">
+                                <img src="assets/relish/images/logo.png" data-at2x="assets/relish/images/logo@2x.png" alt />
+                            </a>
+                        </div>
+
+                        <!-- / logo sticky -->
+                        <!-- menu mobile bars -->
+
+                        <div class="mobile-nav">
+                            <i class="fa fa-bars"></i>
+                        </div>
+
+                        <!-- / menu mobile bars -->
+
+                        <div class="inner-nav desktop-nav">
+                            <ul class="clearlist">
+                                <li>
+                                    <a href="<?= base_url(); ?>" class="nav-submenu active">Home</a>
+                                </li>
+                                <li class="sep">
+                                    <a>/</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('jasa'); ?>" class="nav-submenu">Jasa</a>
+                                </li>
+                                <li class="sep">
+                                    <a>/</a>
+                                </li>
+                                <li>
+                                    <a href="#galeri" class="nav-submenu">Galeri</a>
+                                </li>
+
+                                <!-- logo menu -->
+
+                                <li class="nav-logo-wrap">
+                                    <a href="<?= base_url(); ?>" class="logo">
+                                        <img src="assets/relish/images/logo.png" data-at2x="assets/relish/images/logo@2x.png" alt />
+                                    </a>
+                                </li>
+
+                                <!-- / logo menu -->
+
+                                <li>
+                                    <a href="#tentang" class="nav-submenu">Tentang Kami</a>
+                                </li>
+                                <li class="sep">
+                                    <a>/</a>
+                                </li>
+                                <li>
+                                    <a href="#kontak" class="nav-submenu">Kontak</a>
+                                </li>
+                                <li class="sep">
+                                    <a>/</a>
+                                </li>
+                                <li>
+                                    <a href="<?= base_url('login'); ?>" class="nav-submenu">Masuk</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- / sticky menu -->
