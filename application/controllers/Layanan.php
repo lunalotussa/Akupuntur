@@ -57,7 +57,10 @@ class Layanan extends CI_Controller
             $data['id_user']    = $_SESSION['id_user'];
             $data['email']      = $_SESSION['email'];
             $data['_view'] = 'layanan/add';
-            $this->load->view('layouts/main', $data);
+
+            $this->load->view('templates/pure/header');
+            $this->load->view('layouts/bulma-dashboard/main', $data);
+            $this->load->view('templates/pure/footer');
         }
     }
 
@@ -86,7 +89,10 @@ class Layanan extends CI_Controller
                 $data['id_user']    = $_SESSION['id_user'];
                 $data['email']      = $_SESSION['email'];
                 $data['_view'] = 'layanan/edit';
-                $this->load->view('layouts/main', $data);
+
+                $this->load->view('templates/pure/header');
+                $this->load->view('layouts/bulma-dashboard/main', $data);
+                $this->load->view('templates/pure/footer');
             }
         } else
             show_error('The layanan you are trying to edit does not exist.');
