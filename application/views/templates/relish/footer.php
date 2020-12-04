@@ -2,7 +2,7 @@
 
 <footer>
     <div class="footer-rect">
-        <img src="assets/relish/images/lines/rectangle-3.png" data-at2x="assets/relish/images/lines/rectangle-3@2x.png" alt />
+        <img src="<?= base_url('assets/relish/images/lines/rectangle-3.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/rectangle-3@2x.png'); ?>" alt />
     </div>
 
     <!-- footer top -->
