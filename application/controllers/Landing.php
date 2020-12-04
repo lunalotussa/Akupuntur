@@ -6,10 +6,9 @@ class Landing extends CI_Controller
 
     public function index()
     {
-            // $this->load->view('templates/pure/header');
-            // $this->load->view('login/login');
-            // $this->load->view('templates/pure/footer');
-            $this->load->view('landing/main');
+        $this->load->view('templates/relish/header');
+        $this->load->view('landing/main');
+        $this->load->view('templates/relish/footer');
     }
 
 }
