@@ -7,10 +7,10 @@
 
           <div class="col-md-5 mb-md-20">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/big-img-1@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/big-img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media big">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/big-img-1.jpg" data-at2x="assets/relish/images/shop/big-img-1@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/big-img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/big-img-1@2x.jpg'); ?>" alt />
                   </div>
                 </div>
               </a>
@@ -36,13 +36,13 @@
                 <h3>Refleksi</h3>
               </a>
               <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-26.png" data-at2x="assets/relish/images/lines/img-line-26@2x.png" alt />
+                <img src="<?= base_url('assets/relish/images/lines/img-line-26.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-26@2x.png'); ?>" alt />
               </div>
               <a href="#">
                 <h3>Cupping</h3>
               </a>
               <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-26.png" data-at2x="assets/relish/images/lines/img-line-26@2x.png" alt />
+                <img src="<?= base_url('assets/relish/images/lines/img-line-26.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-26@2x.png'); ?>" alt />
               </div>
               <a href="#">
                 <h3>Relaksasi</h3>
@@ -94,10 +94,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-1@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-1.jpg" data-at2x="assets/relish/images/shop/img-1@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left font-alt">New</div>
                 </div>
@@ -127,10 +127,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-2@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-2.jpg" data-at2x="assets/relish/images/shop/img-2@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                 </div>
               </a>
@@ -159,10 +159,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-3@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-3.jpg" data-at2x="assets/relish/images/shop/img-3@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left alt font-alt">
                     Best<br />Price
@@ -193,14 +193,14 @@
           <!-- shop item -->
 
           <div class="sep-lane alt-1 mt-60 mb-60">
-            <span><img src="assets/relish/images/lines/img-line-0.png" data-at2x="assets/relish/images/lines/img-line-0@2x.png" alt /></span>
+            <span><img src="<?= base_url('assets/relish/images/lines/img-line-0.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-0@2x.png'); ?>" alt /></span>
           </div>
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-4@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-4.jpg" data-at2x="assets/relish/images/shop/img-4@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left font-alt">New</div>
                 </div>
@@ -230,10 +230,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-5@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-5.jpg" data-at2x="assets/relish/images/shop/img-5@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                 </div>
               </a>
@@ -262,10 +262,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-6@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-6.jpg" data-at2x="assets/relish/images/shop/img-6@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left font-alt">New</div>
                 </div>
@@ -294,14 +294,14 @@
           <!-- shop item -->
 
           <div class="sep-lane alt-1 mt-60 mb-60">
-            <span><img src="assets/relish/images/lines/img-line-0.png" data-at2x="assets/relish/images/lines/img-line-0@2x.png" alt /></span>
+            <span><img src="<?= base_url('assets/relish/images/lines/img-line-0.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-0@2x.png'); ?>" alt /></span>
           </div>
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-7@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-7.jpg" data-at2x="assets/relish/images/shop/img-7@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left alt font-alt">
                     Best<br />Price
@@ -333,10 +333,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-8@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-8.jpg" data-at2x="assets/relish/images/shop/img-8@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                 </div>
               </a>
@@ -365,10 +365,10 @@
 
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
-              <a href="assets/relish/images/shop/img-9@2x.jpg" class="lightbox mfp-image">
+              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
                 <div class="shop-media">
                   <div class="shop-img">
-                    <img src="assets/relish/images/shop/img-9.jpg" data-at2x="assets/relish/images/shop/img-9@2x.jpg" alt />
+                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                   </div>
                   <div class="label-new label-left alt font-alt">
                     Best<br />Price
@@ -453,7 +453,7 @@
             <div class="slider-item">
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-2.jpg" data-at2x="assets/relish/images/shop/mini/img-2@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>Crème De La Mer</h4>
                 <div class="shop-stars">
@@ -467,7 +467,7 @@
               </article>
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-3.jpg" data-at2x="assets/relish/images/shop/mini/img-3@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>MB Foot Wash</h4>
                 <div class="shop-stars">
@@ -481,7 +481,7 @@
               </article>
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-4.jpg" data-at2x="assets/relish/images/shop/mini/img-4@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>KAI Face Butter</h4>
                 <div class="shop-stars">
@@ -497,7 +497,7 @@
             <div class="slider-item">
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-2.jpg" data-at2x="assets/relish/images/shop/mini/img-2@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>Crème De La Mer</h4>
                 <div class="shop-stars">
@@ -511,7 +511,7 @@
               </article>
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-3.jpg" data-at2x="assets/relish/images/shop/mini/img-3@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>MB Foot Wash</h4>
                 <div class="shop-stars">
@@ -525,7 +525,7 @@
               </article>
               <article class="clearfix">
                 <div class="product">
-                  <img src="assets/relish/images/shop/mini/img-4.jpg" data-at2x="assets/relish/images/shop/mini/img-4@2x.jpg" alt />
+                  <img src="<?= base_url('assets/relish/images/shop/mini/img-2.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-2@2x.jpg'); ?>" alt />
                 </div>
                 <h4>KAI Face Butter</h4>
                 <div class="shop-stars">
@@ -548,14 +548,14 @@
         <aside class="widget-banner align-center">
           <article class="clearfix">
             <div class="product">
-              <img src="assets/relish/images/shop/mini/img-8.jpg" data-at2x="assets/relish/images/shop/mini/img-8@2x.jpg" alt />
+              <img src="<?= base_url('assets/relish/images/shop/mini/img-8.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini/img-8@2x.jpg'); ?>" alt />
             </div>
             <span class="font-alt">-20%</span>
             <div class="font-alt">
               Valentine's Day
               <div>
                 <div class="img-line">
-                  <img src="assets/relish/images/lines/img-line-26.png" data-at2x="assets/relish/images/lines/img-line-26@2x.png" alt />
+                  <img src="<?= base_url('assets/relish/images/lines/img-line-26.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-26@2x.png'); ?>" alt />
                 </div>
               </div>
             </div>
