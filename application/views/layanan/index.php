@@ -36,18 +36,26 @@
                     <td><?php echo $l['durasi']; ?></td>
                     <td><?php echo $l['harga']; ?></td>
                     <td>
-                        <a href="<?php echo site_url('layanan/edit/' . $l['id_layanan']); ?>" class="button is-small is-info">
-                            <span class="icon">
-                                <i class="fas fa-edit"></i>
-                            </span>
-                            <span>Edit</span>
-                        </a>
-                        <a href="<?php echo site_url('layanan/remove/' . $l['id_layanan']); ?>" class="button is-small is-danger">
-                            <span class="icon">
-                                <i class="fa fa-trash"></i>
-                            </span>
-                            <span> Delete </span>
-                        </a>
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a href="<?php echo site_url('layanan/edit/' . $l['id_layanan']); ?>" class="button is-small is-info">
+                                    <span class="icon">
+                                        <i class="fas fa-edit"></i>
+                                    </span>
+                                    <span>Edit</span>
+                                </a>
+                            </p>
+                            <p class="control">
+                                <a href="<?php echo site_url('layanan/remove/' . $l['id_layanan']); ?>" class="button is-small is-danger">
+                                    <span class="icon">
+                                        <i class="fa fa-trash"></i>
+                                    </span>
+                                    <span> Delete </span>
+                                </a>
+                            </p>
+                        </div>
+
+
                     </td>
                 </tr>
             <?php } ?>

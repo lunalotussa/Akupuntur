@@ -1,6 +1,6 @@
-<h1 class="title has-text-success font-family-philosopher">Tambah Layanan</h1>
-<div class="columns">
-	<div class="column is-full">
+<div class="columns is-centered">
+	<div class="column is-half">
+		<h1 class="title has-text-success font-family-philosopher">Tambah Layanan</h1>
 		<?= form_open('layanan/add'); ?>
 		<div class="field">
 			<label class="label" for="jenis">Jenis Layanan</label>
