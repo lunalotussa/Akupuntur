@@ -154,7 +154,11 @@ class Terapi extends CI_Controller
 
                         $this->Terapi_model->update_terapi($id_terapis, $params);
                         $data['_view'] = 'dashboard';
-                        $this->load->view('layouts/main', $data);
+
+                        $this->load->view('templates/pure/header');
+                        $this->load->view('layouts/bulma-dashboard/main', $data);
+                        $this->load->view('templates/pure/footer');
+
                         redirect('main/index');
                     } else {
                         die("gagal update");
@@ -175,12 +179,18 @@ class Terapi extends CI_Controller
 
                     $this->Terapi_model->update_terapi($id_terapis, $params);
                     $data['_view'] = 'dashboard';
-                    $this->load->view('layouts/main', $data);
+
+                    $this->load->view('templates/pure/header');
+                    $this->load->view('layouts/bulma-dashboard/main', $data);
+                    $this->load->view('templates/pure/footer');
                     redirect('main/index');
                 }
             } else {
                 $data['_view'] = 'terapi/edit';
-                $this->load->view('layouts/main', $data);
+
+                $this->load->view('templates/pure/header');
+                $this->load->view('layouts/bulma-dashboard/main', $data);
+                $this->load->view('templates/pure/footer');
             }
         } else
             show_error('The terapi you are trying to edit does not exist.');

@@ -1,6 +1,6 @@
-<h1 class="title has-text-success font-family-philosopher">Edit Layanan</h1>
-<div class="columns">
-	<div class="column is-full">
+<div class="columns is-centered">
+	<div class="column is-half">
+		<h1 class="title has-text-success font-family-philosopher">Edit Layanan</h1>
 		<?php echo form_open('layanan/edit/' . $layanan['id_layanan']); ?>
 		<div class="field">
 			<label class="label" for="jenis">Jenis Layanan</label>
