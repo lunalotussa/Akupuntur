@@ -68,7 +68,7 @@
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('jasa'); ?>" class="nav-submenu">Jasa</a>
+                                    <a href="<?= base_url('landing/jasa'); ?>" class="nav-submenu">Jasa</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
