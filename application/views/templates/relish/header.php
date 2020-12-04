@@ -45,8 +45,8 @@
                         <!-- logo sticky -->
 
                         <div class="nav-logo-wrap-sticky">
-                            <a href="index.html" class="logo">
-                                <img src="assets/relish/images/logo.png" data-at2x="assets/relish/images/logo@2x.png" alt />
+                            <a href="<?= base_url(); ?>" class="logo">
+                                <img src="<?= base_url('assets/relish/images/logo.png'); ?>" data-at2x="<?= base_url('assets/relish/images/logo@2x.png'); ?>" />
                             </a>
                         </div>
 
@@ -62,7 +62,7 @@
                         <div class="inner-nav desktop-nav">
                             <ul class="clearlist">
                                 <li>
-                                    <a href="<?= base_url(); ?>" class="nav-submenu active">Home</a>
+                                    <a href="<?= base_url(); ?>" class="nav-submenu">Home</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
@@ -74,27 +74,27 @@
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="#galeri" class="nav-submenu">Galeri</a>
+                                    <a href="<?= base_url('#galeri'); ?>" class="nav-submenu">Galeri</a>
                                 </li>
 
                                 <!-- logo menu -->
 
                                 <li class="nav-logo-wrap">
                                     <a href="<?= base_url(); ?>" class="logo">
-                                        <img src="assets/relish/images/logo.png" data-at2x="assets/relish/images/logo@2x.png" alt />
+                                        <img src="<?= base_url('assets/relish/images/logo.png'); ?>" data-at2x="<?= base_url('assets/relish/images/logo@2x.png'); ?>" alt />
                                     </a>
                                 </li>
 
                                 <!-- / logo menu -->
 
                                 <li>
-                                    <a href="#tentang" class="nav-submenu">Tentang Kami</a>
+                                    <a href="<?= base_url('#tentang'); ?>" class="nav-submenu">Tentang Kami</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="#kontak" class="nav-submenu">Kontak</a>
+                                    <a href="<?= base_url('#kontak'); ?>" class="nav-submenu">Kontak</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
