@@ -20,7 +20,9 @@ class Dashboard extends CI_Controller {
 		$data['id_user']	= $_SESSION['id_user'];
 		$data['email']		= $_SESSION['email'];
 		$data['_view'] = 'dashboard';
-        $this->load->view('layouts/main',$data);
+		$this->load->view('layouts/dash_header',$data);
+		$this->load->view('layouts/dash_main',$data);
+		$this->load->view('layouts/dash_footer',$data);
 	}
 
 	public function logout(){
