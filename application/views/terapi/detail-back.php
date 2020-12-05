@@ -2,27 +2,36 @@
     <div class="col-md-12">
       	<div class="box box-info">
             <div class="box-header with-border">
-              	<h3 class="box-title">Terapis Edit</h3>
+              	<h3 class="box-title">Detail Terapis</h3>
             </div>
-			<!-- <?php echo form_open('terapi/edit/'.$terapi['id_terapis']); ?> -->
-			<form action="<?=base_url()?>index.php/terapi/edit/<?php echo $terapi['id_terapis'] ?>" method="post" enctype="multipart/form-data">
+			<?php echo form_open('terapi/edit/'.$terapi['id_terapis']); 
+			?>
 			<div class="box-body">
 				<div class="row clearfix">
 					
 					<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']); ?>" class="form-control" id="id_user" />
-
+					<?php
+					$id_userTerapis = ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']);
+					$sql ="SELECT * FROM user WHERE id_user=$id_userTerapis";
+		            $query = $this->db->query($sql);
+		            if ($query->num_rows() > 0) {
+		            foreach ($query->result() as $row) {
+		            $namaTerapis  = $row->nama;
+		            $emailTerapis = $row->email;
+					?>
 					<div class="col-md-6">
 						<label for="alamat" class="control-label">Nama</label>
 						<div class="form-group">
-							<input type="text" name="alamat" value="<?php echo $nama;?>" class="form-control" id="alamat" readonly="true" required/>
+							<input type="text" name="alamat" value="<?php echo $namaTerapis;?>" class="form-control" id="alamat" readonly="true" required/>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<label for="alamat" class="control-label">Email</label>
 						<div class="form-group">
-							<input type="text" name="alamat" value="<?php echo $email;?>" class="form-control" id="alamat" readonly="true" required/>
+							<input type="text" name="alamat" value="<?php echo $emailTerapis;?>" class="form-control" id="alamat" readonly="true" required/>
 						</div>
 					</div>	
+					<?php }} ?>
 					<div class="col-md-6">
 						<label for="alamat" class="control-label">Alamat</label>
 						<div class="form-group">
@@ -66,8 +75,6 @@
 							<img src="<?=base_url()?>resources/picture/<?=$terapi['ktp'];?>" alt="profile" width="120px">
 							<?php
 							} ?>
-							<input type="file" name="ktp" value="<?php echo ($this->input->post('ktp') ? $this->input->post('ktp') : $terapi['ktp']); ?>" class="form-control" id="ktp" />
-							<input type="hidden" name="ktplama" value="<?php echo ($this->input->post('ktplama') ? $this->input->post('ktplama') : $terapi['ktp']); ?>" class="form-control" id="ktplama">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -83,8 +90,6 @@
 							<img src="<?=base_url()?>resources/picture/<?=$terapi['selfie_ktp'];?>" alt="profile" width="120px">
 							<?php
 							} ?>
-							<input type="file" name="selfie_ktp" value="<?php echo ($this->input->post('selfie_ktp') ? $this->input->post('selfie_ktp') : $terapi['selfie_ktp']); ?>" class="form-control" id="selfie_ktp" />
-							<input type="hidden" name="selfielama" value="<?php echo ($this->input->post('selfielama') ? $this->input->post('selfielama') : $terapi['selfie_ktp']); ?>" class="form-control" id="selfielama">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -100,8 +105,6 @@
 							<img src="<?=base_url()?>resources/picture/<?=$terapi['profile'];?>" alt="profile" width="120px">
 							<?php
 							} ?>
-							<input type="file" name="profile" value="<?php echo ($this->input->post('profile') ? $this->input->post('profile') : $terapi['profile']); ?>" class="form-control" id="profile" />
-							<input type="hidden" name="filelama" value="<?php echo ($this->input->post('filelama') ? $this->input->post('filelama') : $terapi['profile']); ?>" class="form-control" id="filelama">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -117,17 +120,12 @@
 						<button class="btn btn-primary" disabled="true">Sudah Diverifikasi Admin</button>
 						<?php } ?>
 						</div>
-						<input type="hidden" name="status" value="<?php echo ($this->input->post('stastus') ? $this->input->post('status') : $terapi['status']); ?>" class="form-control" readonly="true">
 					</div>
 				</div>
 			</div>
 			<div class="box-footer">
-            	<button type="submit" class="btn btn-success">
-					<i class="fa fa-check"></i> Save
-				</button>
 	        </div>				
-	    </form>
-			<!-- <?php echo form_close(); ?> -->
+			<?php echo form_close(); ?>
 		</div>
     </div>
 </div>

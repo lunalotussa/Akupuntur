@@ -224,7 +224,10 @@ class Terapi extends CI_Controller
         if (isset($data['terapi']['id_terapis'])) {
 
             $data['_view'] = 'terapi/detail';
-            $this->load->view('layouts/main', $data);
+
+            $this->load->view('templates/pure/header');
+            $this->load->view('layouts/bulma-dashboard/main', $data);
+            $this->load->view('templates/pure/footer');
         } else
             show_error('The terapi you are trying to edit does not exist.');
     }
