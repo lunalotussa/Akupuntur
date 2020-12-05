@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller
 		$data['id_user']	= $_SESSION['id_user'];
 		$data['email']		= $_SESSION['email'];
 		$data['_view'] = 'dashboard';
-
+    
 		$this->load->view('templates/pure/header');
 		$this->load->view('layouts/bulma-dashboard/main', $data);
 		$this->load->view('templates/pure/footer');
