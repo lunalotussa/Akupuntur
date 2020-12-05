@@ -25,7 +25,7 @@
                         $id_admin = $row->id_admin;
             ?>
                         <div class="navbar-end">
-                            <a class="navbar-item" href="<?php echo site_url(); ?>">Dashboard</a>
+                            <a class="navbar-item" href="<?php echo site_url('dashboard'); ?>">Dashboard</a>
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">Layanan</a>
                                 <div class="navbar-dropdown">
@@ -89,7 +89,7 @@
                     ?>
 
                         <div class="navbar-end">
-                            <a class="navbar-item" href="<?php echo site_url(); ?>">Dashboard</a>
+                            <a class="navbar-item" href="<?php echo site_url('dashboard'); ?>">Dashboard</a>
                             <a class="navbar-item" href="#">Booking Layanan</a>
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">Profile</a>
@@ -121,7 +121,7 @@
                         $status     = $row->status;
                     ?>
                         <div class="navbar-end">
-                            <a class="navbar-item" href="<?php echo site_url(); ?>">Dashboard</a>
+                            <a class="navbar-item" href="<?php echo site_url('dashboard'); ?>">Dashboard</a>
                             <?php
                             if ($status == 1) {
                             ?>
