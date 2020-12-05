@@ -1,62 +1,71 @@
-<div class="row">
-    <div class="col-md-12">
-      	<div class="box box-info">
-            <div class="box-header with-border">
-              	<h3 class="box-title">Transaksi Add</h3>
-            </div>
-            <?php echo form_open('transaksi/add'); ?>
-          	<div class="box-body">
-          		<div class="row clearfix">
-					<div class="col-md-6">
-						<div class="form-group">
-							<input type="checkbox" name="status_pembayaran" value="1"  id="status_pembayaran" />
-							<label for="status_pembayaran" class="control-label">Status Pembayaran</label>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<input type="checkbox" name="status_pemesanan" value="1"  id="status_pemesanan" />
-							<label for="status_pemesanan" class="control-label">Status Pemesanan</label>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="id_costumer" class="control-label">Id Costumer</label>
-						<div class="form-group">
-							<input type="text" name="id_costumer" value="<?php echo $this->input->post('id_costumer'); ?>" class="form-control" id="id_costumer" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="id_terapis" class="control-label">Id Terapis</label>
-						<div class="form-group">
-							<input type="text" name="id_terapis" value="<?php echo $this->input->post('id_terapis'); ?>" class="form-control" id="id_terapis" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="tanggal" class="control-label">Tanggal</label>
-						<div class="form-group">
-							<input type="text" name="tanggal" value="<?php echo $this->input->post('tanggal'); ?>" class="has-datepicker form-control" id="tanggal" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="total_harga" class="control-label">Total Harga</label>
-						<div class="form-group">
-							<input type="text" name="total_harga" value="<?php echo $this->input->post('total_harga'); ?>" class="form-control" id="total_harga" />
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="bukti_pembayaran" class="control-label">Bukti Pembayaran</label>
-						<div class="form-group">
-							<input type="text" name="bukti_pembayaran" value="<?php echo $this->input->post('bukti_pembayaran'); ?>" class="form-control" id="bukti_pembayaran" />
-						</div>
-					</div>
-				</div>
+<div class="columns is-centered">
+	<div class="column is-half">
+		<h1 class="title has-text-success font-family-philosopher">Tambah Transaksi</h1>
+		<?= form_open('transaksi/add'); ?>
+		<div class="field">
+			<label class="checkbox">
+				<input type="checkbox" name="status_pembayaran" value="1" id="status_pembayaran" />
+				Status Pembayaran
+			</label>
+		</div>
+		<div class="field">
+			<label class="checkbox">
+				<input type="checkbox" name="status_pemesanan" value="1" id="status_pemesanan" />
+				Status Pemesanan
+			</label>
+		</div>
+		<div class="field">
+			<label class="label" for="id_costumer">ID Customer</label>
+			<div class="control">
+				<input type="text" name="id_costumer" value="<?php echo $this->input->post('id_costumer'); ?>" class="input" id="id_costumer" />
 			</div>
-          	<div class="box-footer">
-            	<button type="submit" class="btn btn-success">
-            		<i class="fa fa-check"></i> Save
-            	</button>
-          	</div>
-            <?php echo form_close(); ?>
-      	</div>
-    </div>
+		</div>
+		<div class="field">
+			<label class="label" for="id_terapis">ID Terapis</label>
+			<div class="control">
+				<input type="text" name="id_terapis" value="<?php echo $this->input->post('id_terapis'); ?>" class="input" id="id_terapis" />
+			</div>
+		</div>
+		<div class="field">
+			<label class="label" for="tanggal">Tanggal</label>
+			<div class="control">
+				<input type="date" name="tanggal" value="<?php echo $this->input->post('tanggal'); ?>" class="input" id="tanggal" />
+			</div>
+		</div>
+		<div class="field">
+			<label class="label" for="total_harga">Total Harga</label>
+			<div class="control">
+				<input type="text" name="total_harga" value="<?php echo $this->input->post('total_harga'); ?>" class="input" id="total_harga" />
+			</div>
+		</div>
+		<div class="field">
+			<label class="label" for="bukti_pembayaran">Bukti Pembayaran</label>
+			<div class="control">
+				<input type="text" name="bukti_pembayaran" value="<?php echo $this->input->post('bukti_pembayaran'); ?>" class="input" id="bukti_pembayaran" />
+			</div>
+		</div>
+		<div class="field is-grouped is-pulled-right">
+			<p class="control">
+				<a href="<?= base_url('transaksi/index'); ?>" class="button is-light">
+					<span class="icon">
+						<i class="fas fa-arrow-left"></i>
+					</span>
+					<span>
+						Batal
+					</span>
+				</a>
+			</p>
+			<p class="control">
+				<button type="submit" class="button is-success">
+					<span class="icon">
+						<i class="fa fa-check"></i>
+					</span>
+					<span>
+						Simpan
+					</span>
+				</button>
+			</p>
+		</div>
+		<?= form_close(); ?>
+	</div>
 </div>

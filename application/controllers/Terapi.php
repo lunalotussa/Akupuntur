@@ -59,7 +59,9 @@ class Terapi extends CI_Controller
             redirect('terapi/index');
         } else {
             $data['_view'] = 'terapi/add';
-            $this->load->view('layouts/main', $data);
+            $this->load->view('templates/pure/header');
+            $this->load->view('layouts/bulma-dashboard/main', $data);
+            $this->load->view('templates/pure/footer');
         }
     }
 
@@ -112,7 +114,9 @@ class Terapi extends CI_Controller
 
                         $this->Terapi_model->update_terapi($id_terapis, $params);
                         $data['_view'] = 'dashboard';
-                        $this->load->view('layouts/main', $data);
+                        $this->load->view('templates/pure/header');
+                        $this->load->view('layouts/bulma-dashboard/main', $data);
+                        $this->load->view('templates/pure/footer');
                         redirect('main/index');
                     } elseif ($this->upload->do_upload('selfie_ktp')) {
                         $foto1  = $this->upload->data();
@@ -133,7 +137,9 @@ class Terapi extends CI_Controller
 
                         $this->Terapi_model->update_terapi($id_terapis, $params);
                         $data['_view'] = 'dashboard';
-                        $this->load->view('layouts/main', $data);
+                        $this->load->view('templates/pure/header');
+                        $this->load->view('layouts/bulma-dashboard/main', $data);
+                        $this->load->view('templates/pure/footer');
                         redirect('main/index');
                     } elseif ($this->upload->do_upload('ktp')) {
                         $foto2  = $this->upload->data();

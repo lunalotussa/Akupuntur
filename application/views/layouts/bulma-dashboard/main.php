@@ -127,16 +127,10 @@
                             ?>
 
                                 <a class="navbar-item" href="<?php echo site_url('detaillayanan/index'); ?>">
-                                    <span class="icon">
-                                        <i class="fa fa-desktop"></i>
-                                    </span>
-                                    <span> Layanan </span>
+                                    Layanan
                                 </a>
                                 <a class="navbar-item" href="#">
-                                    <span class="icon">
-                                        <i class="fa fa-calendar"></i>
-                                    </span>
-                                    <span> Jadwal Terapis </span>
+                                    Jadwal Terapis
                                 </a>
                             <?php } ?>
                             <div class="navbar-item has-dropdown is-hoverable">
