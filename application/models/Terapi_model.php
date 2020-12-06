@@ -45,6 +45,12 @@ class Terapi_model extends CI_Model
         $this->db->where('id_terapis',$id_terapis);
         return $this->db->update('terapis',$params);
     }
+
+    function update_verifikasi($id_terapis,$params)
+    {
+        $this->db->where('id_terapis',$id_terapis);
+        return $this->db->update('terapis',$params);
+    }
     
     /*
      * function to delete terapi
