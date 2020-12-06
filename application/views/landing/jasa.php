@@ -90,8 +90,8 @@
         <!-- shop products -->
 
         <div class="row mt-40 products">
-          <!-- shop item -->
-
+         <?php foreach($landing as $row) { ?>
+          <!-- shop item --><!-- start looping-->
           <div class="col-md-4 col-sm-4 mb-60">
             <div class="shop-container align-center alt-2">
               <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
@@ -102,8 +102,11 @@
                   <div class="label-new label-left font-alt">New</div>
                 </div>
               </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Luxury Spa</h3>
+              <a href="#">
+                <h3 class="shop-title font-alt"><?php echo $row->nama; ?></h3>
+              </a>
+              <a href="#">
+                <font size="2">Terapis : <?php echo $row->terapis; ?></font>
               </a>
               <div class="shop-stars">
                 <i class="fa fa-star"></i>
@@ -112,289 +115,18 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <div class="shop-price font-alt">$ 69<span>99</span></div>
+              <div class="shop-price font-alt"><?php echo "Rp ".number_format($row->harga, 2, ",", "."); ?>
+              <span></span></div>
               <p>
                 Phasellus tristique diam turpis, vitae rhoncus mi
                 ultricies vel
               </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
+              <a href="#" class="button small">Add to cart</a>
             </div>
           </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Spa Antistress</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div class="shop-price font-alt">$ 109<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                  <div class="label-new label-left alt font-alt">
-                    Best<br />Price
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Royal Spa</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="shop-price font-alt">$ 99<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="sep-lane alt-1 mt-60 mb-60">
-            <span><img src="<?= base_url('assets/relish/images/lines/img-line-0.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-0@2x.png'); ?>" alt /></span>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                  <div class="label-new label-left font-alt">New</div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Luxury Spa</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="shop-price font-alt">$ 69<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Spa Antistress</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div class="shop-price font-alt">$ 109<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                  <div class="label-new label-left font-alt">New</div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Royal Spa</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="shop-price font-alt">$ 99<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="sep-lane alt-1 mt-60 mb-60">
-            <span><img src="<?= base_url('assets/relish/images/lines/img-line-0.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-0@2x.png'); ?>" alt /></span>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                  <div class="label-new label-left alt font-alt">
-                    Best<br />Price
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Luxury Spa</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="shop-price font-alt">$ 69<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Spa Antistress</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <div class="shop-price font-alt">$ 109<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
-
-          <!-- shop item -->
-
-          <div class="col-md-4 col-sm-4 mb-60">
-            <div class="shop-container align-center alt-2">
-              <a href="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" class="lightbox mfp-image">
-                <div class="shop-media">
-                  <div class="shop-img">
-                    <img src="<?= base_url('assets/relish/images/shop/img-1.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
-                  </div>
-                  <div class="label-new label-left alt font-alt">
-                    Best<br />Price
-                  </div>
-                </div>
-              </a>
-              <a href="shop-single-item.html">
-                <h3 class="shop-title font-alt">Royal Spa</h3>
-              </a>
-              <div class="shop-stars">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="shop-price font-alt">$ 99<span>99</span></div>
-              <p>
-                Phasellus tristique diam turpis, vitae rhoncus mi
-                ultricies vel
-              </p>
-              <a href="shop-cart.html" class="button small">Add to cart</a>
-            </div>
-          </div>
-
-          <!-- /shop item -->
+        <?php }?>
+          <!-- /shop item --> <!-- /stop looping -->
+          
         </div>
 
         <!-- /shop products -->
@@ -404,14 +136,14 @@
 
         <aside class="widget-search">
           <h3>Search Products</h3>
-          <form method="get" class="form" action="#">
+           <?php echo form_open('landing/search'); ?>
             <label>
-              <input type="search" class="form-control" placeholder="Search..." value="" title="Search for:" />
+              <input type="search" class="form-control" placeholder="Search..." value="" name="keyword" title="Search for:" />
             </label>
             <button type="submit" class="search-submit">
               <i class="flaticon-search"></i>
             </button>
-          </form>
+          <?php echo form_close() ?>
         </aside>
 
         <!-- /widget search -->
