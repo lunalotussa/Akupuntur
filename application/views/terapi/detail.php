@@ -1,167 +1,131 @@
-<h1 class="title has-text-success font-family-philosopher">Detail Terapis</h1>
-<?php echo form_open('terapi/edit/' . $terapi['id_terapis']); ?>
-<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']); ?>" />
-<?php
-$id_userTerapis = ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']);
-$sql = "SELECT * FROM user WHERE id_user=$id_userTerapis";
-$query = $this->db->query($sql);
-if ($query->num_rows() > 0) {
-	foreach ($query->result() as $row) {
-		$namaTerapis  = $row->nama;
-		$emailTerapis = $row->email;
-	}
-}
-?>
-<fieldset disabled="disabled">
-	<div class="columns is-multiline">
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="nama">Nama</label>
-				<div class="control">
-
-					<input type="text" name="nama" value="<?php echo $namaTerapis; ?>" class="input" id="nama" readonly />
-				</div>
-			</div>
-		</div>
-		<div class="column is-half">
-			<fieldset disabled="disabled">
-				<div class="field">
-					<label class="label" for="email">Email</label>
-					<div class="control">
-						<input type="text" name="email" value="<?php echo $emailTerapis; ?>" class="input" id="email" readonly />
+<div class="row">
+    <div class="col-md-12">
+      	<div class="box box-info">
+            <div class="box-header with-border">
+              	<h3 class="box-title">Detail Terapis</h3>
+            </div>
+			<?php echo form_open('terapi/edit/'.$terapi['id_terapis']); 
+			?>
+			<div class="box-body">
+				<div class="row clearfix">
+					
+					<input type="hidden" name="id_user" value="<?php echo ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']); ?>" class="form-control" id="id_user" />
+					<?php
+					$id_userTerapis = ($this->input->post('id_user') ? $this->input->post('id_user') : $terapi['id_user']);
+					$sql ="SELECT * FROM user WHERE id_user=$id_userTerapis";
+		            $query = $this->db->query($sql);
+		            if ($query->num_rows() > 0) {
+		            foreach ($query->result() as $row) {
+		            $namaTerapis  = $row->nama;
+		            $emailTerapis = $row->email;
+					?>
+					<div class="col-md-6">
+						<label for="alamat" class="control-label">Nama</label>
+						<div class="form-group">
+							<input type="text" name="alamat" value="<?php echo $namaTerapis;?>" class="form-control" id="alamat" readonly="true" required/>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="alamat" class="control-label">Email</label>
+						<div class="form-group">
+							<input type="text" name="alamat" value="<?php echo $emailTerapis;?>" class="form-control" id="alamat" readonly="true" required/>
+						</div>
+					</div>	
+					<?php }} ?>
+					<div class="col-md-6">
+						<label for="alamat" class="control-label">Alamat</label>
+						<div class="form-group">
+							<input type="text" name="alamat" value="<?php echo ($this->input->post('alamat') ? $this->input->post('alamat') : $terapi['alamat']); ?>" class="form-control" id="alamat" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="telepon" class="control-label">Telepon</label>
+						<div class="form-group">
+							<input type="number" name="telepon" value="<?php echo ($this->input->post('telepon') ? $this->input->post('telepon') : $terapi['telepon']); ?>" class="form-control" id="telepon" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="bank" class="control-label">Bank</label>
+						<div class="form-group">
+							<input type="text" name="bank" value="<?php echo ($this->input->post('bank') ? $this->input->post('bank') : $terapi['bank']); ?>" class="form-control" id="bank" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="unit_bank" class="control-label">Unit Bank</label>
+						<div class="form-group">
+							<input type="text" name="unit_bank" value="<?php echo ($this->input->post('unit_bank') ? $this->input->post('unit_bank') : $terapi['unit_bank']); ?>" class="form-control" id="unit_bank" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="no_rekening" class="control-label">No Rekening</label>
+						<div class="form-group">
+							<input type="number" name="no_rekening" value="<?php echo ($this->input->post('no_rekening') ? $this->input->post('no_rekening') : $terapi['no_rekening']); ?>" class="form-control" id="no_rekening" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="ktp" class="control-label">Ktp</label>
+						<div class="form-group">
+							<?php
+							if (empty($terapi['ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="selfie_ktp" class="control-label">Selfie Ktp</label>
+						<div class="form-group">
+							<?php
+							if (empty($terapi['selfie_ktp'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['selfie_ktp'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="profile" class="control-label">Profile</label>
+						<div class="form-group">
+							<?php
+							if (empty($terapi['profile'])){
+							?>
+							<img src="<?=base_url()?>resources/picture/noimage.png" alt="profile" width="150px">
+							<?php	
+							}else{
+							?>
+							<img src="<?=base_url()?>resources/picture/<?=$terapi['profile'];?>" alt="profile" width="120px">
+							<?php
+							} ?>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<label for="status" class="control-label">Status</label>
+						<div class="form-group">
+						<?php $status = ($this->input->post('status') ? $this->input->post('status') : $terapi['status']); 
+						if ($status==0) {
+						?>
+						<button class="btn btn-danger" disabled="true">Belum Diverifikasi Admin</button>
+						<?php
+						} else {
+						?>
+						<button class="btn btn-primary" disabled="true">Sudah Diverifikasi Admin</button>
+						<?php } ?>
+						</div>
 					</div>
 				</div>
-			</fieldset>
-		</div>
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="alamat">Alamat</label>
-				<div class="control">
-					<input type="text" name="alamat" value="<?php echo ($this->input->post('alamat') ? $this->input->post('alamat') : $terapi['alamat']); ?>" class="input" id="alamat" />
-				</div>
 			</div>
+			<div class="box-footer">
+	        </div>				
+			<?php echo form_close(); ?>
 		</div>
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="telepon">Telepon</label>
-				<div class="control">
-					<input type="tel" name="telepon" value="<?php echo ($this->input->post('telepon') ? $this->input->post('telepon') : $terapi['telepon']); ?>" class="input" id="telepon" />
-				</div>
-			</div>
-		</div>
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="bank">Bank</label>
-				<div class="control">
-					<input type="text" name="bank" value="<?php echo ($this->input->post('bank') ? $this->input->post('bank') : $terapi['bank']); ?>" class="input" id="bank" />
-				</div>
-			</div>
-		</div>
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="unit_bank">Unit Bank</label>
-				<div class="control">
-					<input type="text" name="unit_bank" value="<?php echo ($this->input->post('unit_bank') ? $this->input->post('unit_bank') : $terapi['unit_bank']); ?>" class="input" id="unit_bank" />
-				</div>
-			</div>
-		</div>
-		<div class="column is-half">
-			<div class="field">
-				<label class="label" for="no_rekening">No Rekening</label>
-				<div class="control">
-					<input type="text" name="no_rekening" value="<?php echo ($this->input->post('no_rekening') ? $this->input->post('no_rekening') : $terapi['no_rekening']); ?>" class="input" id="no_rekening" />
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="columns">
-		<div class="column">
-			<label class="label" for="ktp">KTP</label>
-			<div class="field">
-				<?php
-				if (empty($terapi['ktp'])) {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/noimage.png" alt="profile">
-					</figure>
-				<?php
-				} else {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/<?= $terapi['ktp']; ?>" alt="profile">
-					</figure>
-				<?php
-				} ?>
-			</div>
-		</div>
-		<div class="column">
-			<label for="selfie_ktp" class="label">Selfie KTP</label>
-			<div class="field">
-				<?php
-				if (empty($terapi['selfie_ktp'])) {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/noimage.png" alt="profile">
-					</figure>
-				<?php
-				} else {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/<?= $terapi['selfie_ktp']; ?>" alt="profile">
-					</figure>
-				<?php
-				} ?>
-			</div>
-		</div>
-		<div class="column">
-			<label for="profile" class="label">Foto Profile</label>
-			<div class="field">
-				<?php
-				if (empty($terapi['profile'])) {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/noimage.png" alt="profile">
-					</figure>
-				<?php
-				} else {
-				?>
-					<figure class="image is-128x128">
-						<img src="<?= base_url() ?>resources/picture/<?= $terapi['profile']; ?>" alt="profile">
-					</figure>
-				<?php
-				} ?>
-			</div>
-		</div>
-	</div>
-	<div class="columns">
-		<div class="column is-one-quarter">
-			<label class="label">Status</label>
-			<?php $status = ($this->input->post('status') ? $this->input->post('status') : $terapi['status']);
-			if ($status == 0) {
-			?>
-				<span class="tag is-danger">Belum Diverifikasi Admin</span>
-			<?php
-			} else {
-			?>
-				<span class="tag is-success">Sudah Diverifikasi Admin</span>
-			<?php } ?>
-		</div>
-	</div>
-</fieldset>
-<div class="columns">
-	<div class="column is-full">
-		<div class="field is-grouped is-pulled-right">
-			<p class="control">
-				<a href="<?= base_url('terapi/index'); ?>" class="button is-light">
-					<span class="icon">
-						<i class="fas fa-arrow-left"></i>
-					</span>
-					<span>
-						Kembali
-					</span>
-				</a>
-			</p>
-		</div>
-	</div>
+    </div>
 </div>
-<?= form_close(); ?>
