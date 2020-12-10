@@ -78,7 +78,7 @@ class Cart extends CI_Controller
             $params = array(
                 'status_pembayaran' => "0",
                 'status_pemesanan' => "0",
-                'id_custumer' => $_SESSION['id_user'],
+                'id_customer' => $_SESSION['id_user'],
                 'tanggal' => "hari ini",
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",
