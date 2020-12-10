@@ -2486,7 +2486,6 @@ table .shopping-table-bot {
   border-top: 1px solid #c7d5d3;
   display: inline-block;
   width: 95%;
-  max-width: 805px;
 }
 table .shopping-table-bot .button {
   padding: 4px 15px;
