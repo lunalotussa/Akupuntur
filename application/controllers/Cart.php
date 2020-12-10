@@ -42,6 +42,7 @@ class Cart extends CI_Controller
             $params = array(
                 'id_detail_layanan' => $iddetaillayanan,
                 'id_customer' => $_SESSION['id_user'],
+                'status' => '1',
             );
 
             $customer_id = $this->Cart_model->add_cart($params);
@@ -92,6 +93,11 @@ class Cart extends CI_Controller
                     'id_cart' => $item,
                 );
                 $this->Cart_model->add_cart_detail($parampa);
+
+                $parampapa = array(
+                    'status' => '0',
+                );
+                $this->Cart_model->update_cart($item,$parampapa);
             }
 
             redirect('dashboard');

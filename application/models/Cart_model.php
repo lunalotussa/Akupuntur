@@ -33,6 +33,7 @@ class Cart_model extends CI_Model
         $this->db->join('detail_layanan', 'cart.id_detail_layanan=detail_layanan.id_detailLayanan');
         $this->db->join('layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
         $this->db->where('user.id_user', $user);
+        $this->db->where('cart.status', '1');
         return $this->db->get()->result();
     }
 
@@ -66,10 +67,10 @@ class Cart_model extends CI_Model
     /*
      * function to update customer
      */
-    function update_cart($id_customer,$params)
+    function update_cart($id_chart,$params)
     {
-        $this->db->where('id_customer',$id_customer);
-        return $this->db->update('customer',$params);
+        $this->db->where('id_chart',$id_chart);
+        return $this->db->update('cart',$params);
     }
     
     /*
