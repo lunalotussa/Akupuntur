@@ -22,7 +22,6 @@ class Cart extends CI_Controller
     
     function index()
     {
-        $data['layanan'] = $this->Layanan_model->get_all_layanan();
 
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
