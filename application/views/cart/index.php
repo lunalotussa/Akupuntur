@@ -20,7 +20,7 @@
                         <?php foreach($belanja as $row){?>
                         <tr>
                             <td>
-                                <input type="checkbox" name="selcheck" value="<?= $row->id_cart;?>">
+                                <input type="checkbox" name="selcheck" value="<?= $row->id_chart;?>">
                                 <div class="shop-img">
                                     <img src="<?= base_url('assets/relish/images/shop/mini-img-9.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" alt>
                                 </div>
