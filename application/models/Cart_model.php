@@ -56,6 +56,12 @@ class Cart_model extends CI_Model
         $this->db->insert('cart',$params);
         return $this->db->insert_id();
     }
+
+    function add_cart_detail($params)
+    {
+        $this->db->insert('detail_transaksi',$params);
+        return $this->db->insert_id();
+    }
     
     /*
      * function to update customer
