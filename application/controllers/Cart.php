@@ -91,7 +91,7 @@ class Cart extends CI_Controller
                     'no_transaksi' => $transaksi_id,
                     'id_cart' => $item,
                 );
-                $this->Cart_model->add_cart($parampa);
+                $this->Cart_model->add_cart_detail($parampa);
             }
 
             redirect('dashboard');
