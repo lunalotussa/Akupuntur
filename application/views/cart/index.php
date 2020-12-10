@@ -47,12 +47,12 @@
                         <tr>
                             <td colspan="7">
                                 <div class="shopping-table-bot">
-                                    <!-- <div class="left clearfix">
-                                        <form action="#" class="form">
-                                            <input class="mb-0 mb-xs-10 input-sm" style="width: 170px;" type="text" pattern=".{3,100}" required="">
-                                            <button type="submit" class="button small">Aply Coupon</button>
-                                        </form>
-                                    </div> -->
+                                    <div class="left clearfix">
+                                        <div class="form">
+                                            <label for="tanggal-penggunaan">Tanggal penggunaan </label>
+                                            <input id="tanggal-penggunaan" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="date" required>
+                                        </div>
+                                    </div>
                                     <div class="right">
                                         <!-- <a href="#" class="button button-border small">Update cart</a> -->
                                         <button class="button button-border small">Proceed to Chekout</button>
