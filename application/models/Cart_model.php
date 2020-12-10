@@ -9,6 +9,7 @@ class Cart_model extends CI_Model
     function __construct()
     {
         parent::__construct();
+        
     }
     
     /*
@@ -32,6 +33,18 @@ class Cart_model extends CI_Model
         $this->db->join('detail_layanan', 'cart.id_detail_layanan=detail_layanan.id_detailLayanan');
         $this->db->join('layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
         $this->db->where('user.id_user', $user);
+        return $this->db->get()->result();
+    }
+
+    function get_harga_layanan($id_cart)
+    {
+        // $this->db->order_by('cart', 'desc');
+        // return $this->db->get('customer')->result_array();
+        $this->db->select('layanan.harga');
+        $this->db->from('cart');
+        $this->db->join('detail_layanan', 'cart.id_detail_layanan = detail_layanan.id_detailLayanan');
+        $this->db->join('layanan', 'detail_layanan.id_layanan = layanan.id_layanan');
+        $this->db->where('cart.id_chart', $id_cart);
         return $this->db->get()->result();
     }
         
@@ -59,5 +72,11 @@ class Cart_model extends CI_Model
     function delete_cart($id_cart)
     {
         return $this->db->delete('cart',array('id_chart'=>$id_cart));
+    }
+
+    function add_transaksi($params)
+    {
+        $this->db->insert('transaksi',$params);
+        return $this->db->insert_id();
     }
 }

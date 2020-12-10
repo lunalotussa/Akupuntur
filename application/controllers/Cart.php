@@ -17,6 +17,7 @@ class Cart extends CI_Controller
         }
         $this->load->model('Cart_model');
         $this->load->library('upload');
+        $this->load->model('Transaksi_model');
         date_default_timezone_set('Asia/Jakarta');
     }
     
@@ -63,5 +64,43 @@ class Cart extends CI_Controller
             redirect('cart/index');
         } else
             show_error('Error when delete data');
+    }
+
+    function pay(){
+        if (isset($_POST) && count($_POST) > 0) {
+            $cart =$this->input->post('selcheck');
+            $tot = 0;
+            foreach($cart as $item){
+                $harga = $this->Cart_model->get_harga_layanan($item);
+                $tot += $harga->harga;
+            }
+            
+            $params = array(
+                'status_pembayaran' => "0",
+                'status_pemesanan' => "0",
+                'id_costumer' => $_SESSION['id_user'],
+                'tanggal' => "hari ini",
+                'total_harga' => $tot,
+                'bukti_pembayaran' => "0",
+            );
+
+            $transaksi_id = $this->Cart_model->add_transaksi($params);
+
+            foreach($cart as $item){
+                $parampa = array(
+                    'no_transaksi' => $transaksi_id,
+                    'id_cart' => $item,
+                );
+                $this->Cart_model->add_cart($parampa);
+            }
+
+            redirect('dashboard');
+        } else {
+            $data['_view'] = 'dashboard';
+    
+		$this->load->view('templates/pure/header');
+		$this->load->view('layouts/bulma-dashboard/main', $data);
+		$this->load->view('templates/pure/footer');
+        }
     }
 }
