@@ -22,15 +22,16 @@ class Cart_model extends CI_Model
     /*
      * Get all customer
      */
-    function get_all_cart()
+    function get_all_cart($user)
     {
         // $this->db->order_by('cart', 'desc');
         // return $this->db->get('customer')->result_array();
-        $this->db->select('user.nama as terapis,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga,detail_layanan.id_detailLayanan as iddetaillayanan');
-        $this->db->from('layanan');
-        $this->db->join('detail_layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
-        $this->db->join('terapis', 'terapis.id_terapis=detail_layanan.id_terapis');
-        $this->db->join('user', 'user.id_user=terapis.id_user');
+        $this->db->select('cart.id_chart,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga');
+        $this->db->from('user');
+        $this->db->join('cart', 'user.id_user=cart.id_customer');
+        $this->db->join('detail_layanan', 'cart.id_detail_layanan=detail_layanan.id_detailLayanan');
+        $this->db->join('layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
+        $this->db->where('user.id_user', $user);
         return $this->db->get()->result();
     }
         
