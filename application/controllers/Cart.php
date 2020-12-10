@@ -72,7 +72,7 @@ class Cart extends CI_Controller
             $tot = 0;
             foreach($cart as $item){
                 $harga = $this->Cart_model->get_harga_layanan($item);
-                $tot += $harga[0];
+                $tot += $harga[0]->harga;
             }
             
             $params = array(
