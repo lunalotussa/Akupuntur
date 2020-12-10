@@ -24,12 +24,12 @@
                                 <a href="shop-single-item.html" class="shop-cart-name"><?php echo $row->nama; ?></a>
                             </td>
                             <td>
-                            <?php echo $row->harga; ?>
+                            <?php echo "IDR ".$row->harga; ?>
                             </td>
                             <td>
                                 <?php echo $row->durasi; ?>
                             </td>
-                            <td><?php echo $row->nama; ?></td>
+                            <td><?php echo "IDR ".$row->harga; ?></td>
                             <td>
                                 <a href="#">
                                     <i class="fa fa-times"></i>

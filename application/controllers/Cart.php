@@ -27,12 +27,12 @@ class Cart extends CI_Controller
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['belanja']    = $this->Cart_model->get_all_cart();
+        $data['belanja']    = $this->Cart_model->get_all_cart($_SESSION['id_user']);
         $data['_view'] = 'cart/index';
 
-        $this->load->view('templates/pure/header');
-        $this->load->view('layouts/bulma-dashboard/main', $data);
-        $this->load->view('templates/pure/footer');
+        $this->load->view('templates/relish/header');
+        $this->load->view('cart/index');
+        $this->load->view('templates/relish/footer');
     }
 
     function add($iddetaillayanan)

@@ -121,7 +121,7 @@
                 Phasellus tristique diam turpis, vitae rhoncus mi
                 ultricies vel
               </p>
-              <a href="cart/add/<?php echo $row->iddetaillayanan; ?>" class="button small">Add to cart</a>
+              <a href="<?php echo base_url('cart/add/').$row->iddetaillayanan; ?>" class="button small">Add to cart</a>
             </div>
           </div>
         <?php }?>
