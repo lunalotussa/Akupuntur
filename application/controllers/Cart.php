@@ -52,4 +52,16 @@ class Cart extends CI_Controller
         //     $this->load->view('templates/pure/footer');
         // }
     }
+
+    function remove($id_cart)
+    {
+        $item = $this->Cart_model->get_cart($id_cart);
+
+        // check if the Customer exists before trying to delete it
+        if (isset($item['id_customer'])) {
+            $this->Cart_model->delete_cart($id_cart);
+            redirect('cart/index');
+        } else
+            show_error('Error when delete data');
+    }
 }

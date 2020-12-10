@@ -14,9 +14,9 @@ class Cart_model extends CI_Model
     /*
      * Get customer by id_customer
      */
-    function get_cart($id_customer)
+    function get_cart($id_cart)
     {
-        return $this->db->get_where('customer',array('id_customer'=>$id_customer))->row_array();
+        return $this->db->get_where('cart',array('id_chart'=>$id_cart))->row_array();
     }
         
     /*
@@ -56,8 +56,8 @@ class Cart_model extends CI_Model
     /*
      * function to delete customer
      */
-    function delete_cart($id_customer)
+    function delete_cart($id_cart)
     {
-        return $this->db->delete('customer',array('id_customer'=>$id_customer));
+        return $this->db->delete('cart',array('id_chart'=>$id_cart));
     }
 }

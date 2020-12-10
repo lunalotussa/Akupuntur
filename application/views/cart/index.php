@@ -6,7 +6,7 @@
                 <a href="<?= base_url('landing/jasa'); ?>" class="button small right mt-20">Back to shopping</a>
 
                 <!-- shop cart table -->
-                <?php foreach($belanja as $row){?>
+                
                 <table class="table shopping-cart-table mb-50">
                     <tbody>
                         <tr class="font-alt">
@@ -16,6 +16,7 @@
                             <th>Total</th>
                             <th></th>
                         </tr>
+                        <?php foreach($belanja as $row){?>
                         <tr>
                             <td>
                                 <div class="shop-img">
@@ -31,22 +32,23 @@
                             </td>
                             <td><?php echo "IDR ".$row->harga; ?></td>
                             <td>
-                                <a href="#">
+                                <a href="<?php echo base_url('cart/remove/').$row->id_chart;?>">
                                     <i class="fa fa-times"></i>
                                 </a>
                             </td>
                         </tr>
+                        <?php }?>
                         <tr>
                             <td colspan="5">
                                 <div class="shopping-table-bot">
-                                    <!-- <div class="left clearfix">
+                                    <div class="left clearfix">
                                         <form action="#" class="form">
                                             <input class="mb-0 mb-xs-10 input-sm" style="width: 170px;" type="text" pattern=".{3,100}" required="">
                                             <button type="submit" class="button small">Aply Coupon</button>
                                         </form>
-                                    </div> -->
+                                    </div>
                                     <div class="right">
-                                        <!-- <a href="#" class="button button-border small">Update cart</a> -->
+                                        <a href="#" class="button button-border small">Update cart</a>
                                         <a href="checkout/" class="button button-border small">Proceed to Chekout</a>
                                     </div>
                                 </div>
@@ -54,7 +56,6 @@
                         </tr>
                     </tbody>
                 </table>
-                <?php }?>
                 <!-- /shop cart table -->
 
                 <div class="sep-lane mb-60 mt-60"><span><img src="<?= base_url('assets/relish/images/lines/img-line-0.png'); ?>" data-at2x="<?= base_url('assets/relish/images/lines/img-line-0@2x.png'); ?>" alt></span></div>
