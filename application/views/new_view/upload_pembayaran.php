@@ -11,7 +11,7 @@
 
                     <!-- shop description -->
                 </div>
-                <?php foreach($bayar[0] as $pay){?>
+
                 <div class="row">
                     <div class="col-md-12">
                         <p>
@@ -30,7 +30,7 @@
                         <small><strong>Tagihan yang harus dibayar</strong></small>
                         <div class="row">
                             <div class="col-md-4">
-                                <h2>IDR <?= $pay->total_harga?></h2>
+                                <h2>IDR <?= $bayar[0]->total_harga?></h2>
                             </div>
                             <div class="col-md-8">
                                 <div class="row">
@@ -53,17 +53,16 @@
                 <div class="container">
                     <div class="row g-bg-hijau g-border-radius g-text-white">
                         <div class="col-md-4">
-                            <p class="g-pad-y"><?= $pay->lama?></p>
+                            <p class="g-pad-y"><?= $bayar[0]->lama?></p>
                         </div>
                         <div class="col-md-4">
-                            <p class="g-pad-y"><?= $pay->nama?></p>
+                            <p class="g-pad-y"><?= $bayar[0]->nama?></p>
                         </div>
                         <div class="col-md-4">
-                            <p class="g-pad-y">IDR <?= $pay->total_harga?></p>
+                            <p class="g-pad-y">IDR <?= $bayar[0]->total_harga?></p>
                         </div>
                     </div>
                 </div>
-                <?php }?>
                 <div class="row mt-40">
                     <div class="col-md-12">
                         <div class="row">
