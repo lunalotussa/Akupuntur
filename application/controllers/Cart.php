@@ -84,6 +84,7 @@ class Cart extends CI_Controller
                 'tanggal' => $day,
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",
+                'rekening_pengirim' => "0",
             );
 
             $transaksi_id = $this->Cart_model->add_transaksi($params);
