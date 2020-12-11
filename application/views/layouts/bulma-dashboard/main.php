@@ -126,7 +126,7 @@
                             if ($status == 1) {
                             ?>
 
-                                <a class="navbar-item" href="<?php echo site_url('detaillayanan/index'); ?>">
+                                <a class="navbar-item" href="<?php echo site_url('DetailLayanan/index'); ?>">
                                     Layanan
                                 </a>
                                 <a class="navbar-item" href="#">

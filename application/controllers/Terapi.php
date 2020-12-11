@@ -121,7 +121,7 @@ class Terapi extends CI_Controller
                     } elseif ($this->upload->do_upload('selfie_ktp')) {
                         $foto1  = $this->upload->data();
                         $params = array(
-                            'id_user' => $this->input->post('id_user'),
+                            // 'id_user' => $this->input->post('id_user'),
                             'alamat' => $this->input->post('alamat'),
                             'telepon' => $this->input->post('telepon'),
                             'bank' => $this->input->post('bank'),
