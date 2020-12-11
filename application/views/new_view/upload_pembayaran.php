@@ -11,17 +11,17 @@
 
                     <!-- shop description -->
                 </div>
-
+                <?php foreach($bayar as $pay){?>
                 <div class="row">
                     <div class="col-md-12">
                         <p>
-                            Lakukan pembayaran sebelum 24 November 2020, 19.00 WIB.
-                            Upload bukti pembayaran, sesuai bank yang dipilih
+                            Lakukan pembayaran sesuai dengan nominal yang tertulis
+                            Upload bukti pembayaran, transfer ke rekening di bawah
                         </p>
-                        <p>
+                        <!-- <p>
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                             23 jam 22 menit
-                        </p>
+                        </p> -->
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@
                         <small><strong>Tagihan yang harus dibayar</strong></small>
                         <div class="row">
                             <div class="col-md-4">
-                                <h2>Rp. 75.000</h2>
+                                <h2>IDR <?= $pay->total_harga?></h2>
                             </div>
                             <div class="col-md-8">
                                 <div class="row">
@@ -53,22 +53,22 @@
                 <div class="container">
                     <div class="row g-bg-hijau g-border-radius g-text-white">
                         <div class="col-md-4">
-                            <p class="g-pad-y">3 Pelanggan dalam 1 minggu</p>
+                            <p class="g-pad-y"><?= $pay->lama?></p>
                         </div>
                         <div class="col-md-4">
-                            <p class="g-pad-y">Akupuntur</p>
+                            <p class="g-pad-y"><?= $pay->nama?></p>
                         </div>
                         <div class="col-md-4">
-                            <p class="g-pad-y">Rp. 75.000</p>
+                            <p class="g-pad-y">IDR <?= $pay->total_harga?></p>
                         </div>
                     </div>
                 </div>
-
+                <?php }?>
                 <div class="row mt-40">
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-5">
-                                <form>
+                                <?= form_open('cart/transaksi'); ?>
                                     <div class="form-group">
                                         <label for="inputFile">Upload Bukti Pembayaran</label>
                                         <input type="file" class="form-control" id="inputFile" />
@@ -85,10 +85,10 @@
                                         <label for="inputCabangBank">Unit/Cabang Bank</label>
                                         <input type="text" class="form-control" id="inputCabangBank" placeholder="Unit/Cabang Bank" />
                                     </div>
-                                    <a href="<?= base_url('dummy/pembayaran_selesai') ?>" class="button small">
+                                    <button class="button small">
                                         Upload
-                                    </a>
-                                </form>
+                                    </button>
+                                    <?= form_close(); ?>
                             </div>
                         </div>
                     </div>

@@ -17,10 +17,12 @@
                             <th>Total</th>
                             <th></th>
                         </tr>
-                        <?php foreach ($belanja as $row) { ?>
+                        <?php 
+                        $io = 0;
+                        foreach ($belanja as $row) { ?>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="selcheck[]" value="<?= $row->id_chart; ?>">
+                                    <input type="checkbox" name="selcheck[]" value="<?= $row->id_chart; ?>" <?php if($io=0){echo "required";} ?>>
                                 </td>
                                 <td>
                                     <div class="shop-img">
@@ -42,7 +44,7 @@
                                 </td>
                             </tr>
                         <?php
-
+                            $io += 1;
                         } ?>
                         <tr>
                             <td colspan="7">
@@ -50,7 +52,7 @@
                                     <div class="left clearfix">
                                         <div class="form">
                                             <label for="tanggal-penggunaan">Tanggal penggunaan </label>
-                                            <input id="tanggal-penggunaan" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="date" required>
+                                            <input id="tanggal-penggunaan" name="date" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="date" required>
                                         </div>
                                     </div>
                                     <div class="right">

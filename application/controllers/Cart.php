@@ -69,7 +69,8 @@ class Cart extends CI_Controller
 
     function pay(){
         if (isset($_POST) && count($_POST) > 0) {
-            $cart =$this->input->post('selcheck');
+            $cart = $this->input->post('selcheck');
+            $day = $this->input->post('date');
             $tot = 0;
             foreach($cart as $item){
                 $harga = $this->Cart_model->get_harga_layanan($item);
@@ -80,13 +81,16 @@ class Cart extends CI_Controller
                 'status_pembayaran' => "0",
                 'status_pemesanan' => "0",
                 'id_customer' => $_SESSION['id_user'],
-                'tanggal' => "hari ini",
+                'tanggal' => $day,
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",
             );
 
             $transaksi_id = $this->Cart_model->add_transaksi($params);
 
+            // $data['notrans'] = $transaksi_id;
+            // $data['bayar'] = $tot;
+            
             foreach($cart as $item){
                 $parampa = array(
                     'no_transaksi' => $transaksi_id,
@@ -99,14 +103,20 @@ class Cart extends CI_Controller
                 );
                 $this->Cart_model->update_cart($item,$parampapa);
             }
-
-            redirect('dashboard');
+            $data['bayar'] = $this->Cart_model->get_bayar_detail($transaksi_id);
+            $this->load->view('templates/relish/header');
+            $this->load->view('new_view/upload_pembayaran', $data);
+            $this->load->view('templates/relish/footer');
         } else {
-            $data['_view'] = 'dashboard';
-    
-		$this->load->view('templates/pure/header');
-		$this->load->view('layouts/bulma-dashboard/main', $data);
-		$this->load->view('templates/pure/footer');
+            $data['_view'] = 'cart/index';
+
+        $this->load->view('templates/relish/header');
+        $this->load->view('cart/index',$data);
+        $this->load->view('templates/relish/footer');
         }
+    }
+
+    function transaction(){
+
     }
 }
