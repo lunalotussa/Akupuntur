@@ -117,6 +117,14 @@ class Cart extends CI_Controller
     }
 
     function transaction(){
+        if (isset($_POST) && count($_POST) > 0) {
+           
+        } else {
+            $data['_view'] = 'cart/index';
 
+        $this->load->view('templates/relish/header');
+        $this->load->view('cart/index',$data);
+        $this->load->view('templates/relish/footer');
+        }
     }
 }

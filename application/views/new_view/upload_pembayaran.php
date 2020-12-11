@@ -71,15 +71,15 @@
                                 <?= form_open('cart/transaksi'); ?>
                                     <div class="form-group">
                                         <label for="inputFile">Upload Bukti Pembayaran</label>
-                                        <input type="file" class="form-control" id="inputFile" />
+                                        <input type="file" name="bukti" class="form-control" id="inputFile" />
                                     </div>
                                     <div class="form-group">
                                         <label for="inputRekening">No Rekening</label>
-                                        <input type="text" class="form-control" id="inputRekening" placeholder="No Rekening" />
+                                        <input type="text" name="rekening" class="form-control" id="inputRekening" placeholder="No Rekening" />
                                     </div>
                                     <div class="form-group">
                                         <label for="inputNamaBank">Nama Bank</label>
-                                        <input type="text" class="form-control" id="inputNamaBank" placeholder="Nama Bank" />
+                                        <input type="text" name="bank" class="form-control" id="inputNamaBank" placeholder="Nama Bank" />
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCabangBank">Unit/Cabang Bank</label>
