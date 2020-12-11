@@ -115,7 +115,7 @@
                                         <span>Layanan</span>
                                         <div class="field is-grouped">
                                             <p class="control">
-                                                <a href="<?php echo site_url('detaillayanan/index'); ?>" class="tag is-info">Lihat Layanan</a>
+                                                <a href="<?php echo site_url('DetailLayanan/index'); ?>" class="tag is-info">Lihat Layanan</a>
                                             </p>
                                         </div>
                                     </p>
