@@ -11,7 +11,7 @@
 
                     <!-- shop description -->
                 </div>
-                <?php foreach($bayar as $pay){?>
+                <?php foreach($bayar[0] as $pay){?>
                 <div class="row">
                     <div class="col-md-12">
                         <p>
