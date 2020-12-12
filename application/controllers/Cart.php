@@ -109,7 +109,7 @@ class Cart extends CI_Controller
             // $this->load->view('templates/relish/header');
             // $this->load->view('new_view/upload_pembayaran', $data);
             // $this->load->view('templates/relish/footer');
-            redirect('checkout/'.$transaksi_id);
+            redirect('cart/checkout/'.$transaksi_id);
         } else {
             $data['_view'] = 'cart/index';
 
