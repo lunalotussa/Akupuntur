@@ -109,6 +109,6 @@ class Cart_model extends CI_Model
         $this->db->join('layanan', 'detail_layanan.id_layanan=layanan.id_layanan');
         $this->db->where('detail_transaksi.no_transaksi', $param);
         $this->db->group_by($param);
-        return $this->db->get('transaksi')->result_array();
+        return $this->db->get()->result();
     }
 }

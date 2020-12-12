@@ -16,6 +16,7 @@ class Pembayaran extends CI_Controller
             redirect(base_url());
         }
         $this->load->model('Cart_model');
+        $this->load->model('Terapi_model');
         $this->load->library('upload');
     }
 
@@ -28,8 +29,8 @@ class Pembayaran extends CI_Controller
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['transaksi'] = $this->Cart_model->get_all_transaction();
-        $data['_view'] = 'pembayaran/index';
+        $data['transaksi'] = $this->Cart_model->get_all_terapis();
+        $data['_view'] = 'terapis/index';
 
         $this->load->view('templates/pure/header');
         $this->load->view('layouts/bulma-dashboard/main', $data);
