@@ -29,8 +29,8 @@ class Pembayaran extends CI_Controller
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['transaksi'] = $this->Terapi_model->get_all_terapis();
-        $data['_view'] = 'terapi/index';
+        $data['terapis'] = $this->Terapi_model->get_all_terapis();
+        $data['_view'] = 'pembayaran/index';
 
         $this->load->view('templates/pure/header');
         $this->load->view('layouts/bulma-dashboard/main', $data);
