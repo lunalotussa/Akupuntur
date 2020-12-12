@@ -29,7 +29,7 @@ class Pembayaran extends CI_Controller
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['transaksi'] = $this->Cart_model->get_all_terapis();
+        $data['transaksi'] = $this->Terapi_model->get_all_terapis();
         $data['_view'] = 'terapis/index';
 
         $this->load->view('templates/pure/header');
