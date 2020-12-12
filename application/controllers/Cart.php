@@ -110,7 +110,7 @@ class Cart extends CI_Controller
             // $this->load->view('new_view/upload_pembayaran', $data);
             // $this->load->view('templates/relish/footer');
             $year = date('Y');
-            redirect('cart/checkout/'.$year.'AK-'.$transaksi_id);
+            redirect('cart/checkout/'.$year.'AK-'.($transaksi_id*13));
         } else {
             $data['_view'] = 'cart/index';
 
@@ -121,8 +121,8 @@ class Cart extends CI_Controller
     }
 
     function checkout($param){
-            $asd = explode($param,"-");
-            $data['bayar'] = $this->Cart_model->get_bayar_detail($asd['1']);
+            $asd = explode("-",$param);
+            $data['bayar'] = $this->Cart_model->get_bayar_detail(($asd['1']/13));
             $this->load->view('templates/relish/header');
             $this->load->view('new_view/upload_pembayaran', $data);
             $this->load->view('templates/relish/footer');
