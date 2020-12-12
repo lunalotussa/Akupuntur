@@ -105,10 +105,11 @@ class Cart extends CI_Controller
                 // );
                 // $this->Cart_model->update_cart($item,$parampapa);
             }
-            $data['bayar'] = $this->Cart_model->get_bayar_detail($transaksi_id);
-            $this->load->view('templates/relish/header');
-            $this->load->view('new_view/upload_pembayaran', $data);
-            $this->load->view('templates/relish/footer');
+            // $data['bayar'] = $this->Cart_model->get_bayar_detail($transaksi_id);
+            // $this->load->view('templates/relish/header');
+            // $this->load->view('new_view/upload_pembayaran', $data);
+            // $this->load->view('templates/relish/footer');
+            redirect('checkout/'.$transaksi_id);
         } else {
             $data['_view'] = 'cart/index';
 
@@ -118,15 +119,10 @@ class Cart extends CI_Controller
         }
     }
 
-    function transaction(){
-        if (isset($_POST) && count($_POST) > 0) {
-           
-        } else {
-            $data['_view'] = 'cart/index';
-
-        $this->load->view('templates/relish/header');
-        $this->load->view('cart/index',$data);
-        $this->load->view('templates/relish/footer');
-        }
+    function checkout($param){
+            $data['bayar'] = $this->Cart_model->get_bayar_detail($param);
+            $this->load->view('templates/relish/header');
+            $this->load->view('new_view/upload_pembayaran', $data);
+            $this->load->view('templates/relish/footer');
     }
 }
