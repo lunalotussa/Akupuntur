@@ -81,7 +81,7 @@ class Cart extends CI_Controller
                 'status_pembayaran' => "0",
                 'status_pemesanan' => "0",
                 'id_customer' => $_SESSION['id_user'],
-                'tanggal' => $day,
+                'tanggal' => date("Y-m-d, H:m:s"),
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",
                 'rekening_pengirim' => "0",
@@ -96,13 +96,14 @@ class Cart extends CI_Controller
                 $parampa = array(
                     'no_transaksi' => $transaksi_id,
                     'id_cart' => $item,
+                    'tanggal' => $day,
                 );
                 $this->Cart_model->add_cart_detail($parampa);
 
-                $parampapa = array(
-                    'status' => '0',
-                );
-                $this->Cart_model->update_cart($item,$parampapa);
+                // $parampapa = array(
+                //     'status' => '0',
+                // );
+                // $this->Cart_model->update_cart($item,$parampapa);
             }
             $data['bayar'] = $this->Cart_model->get_bayar_detail($transaksi_id);
             $this->load->view('templates/relish/header');

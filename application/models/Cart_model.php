@@ -99,4 +99,16 @@ class Cart_model extends CI_Model
         $this->db->group_by($param);
         return $this->db->get()->result();
     }
+
+    function get_all_transaksi(){
+        $this->db->select('transaksi.total_harga,nama,sum(layanan.durasi) as lama ');
+        $this->db->from('transaksi');
+        $this->db->join('detail_transaksi', 'transaksi.no_transaksi=detail_transaksi.no_transaksi');
+        $this->db->join('cart', 'detail_transaksi.id_cart=cart.id_chart');
+        $this->db->join('detail_layanan', 'detail_layanan.id_detailLayanan=cart.id_detail_layanan');
+        $this->db->join('layanan', 'detail_layanan.id_layanan=layanan.id_layanan');
+        $this->db->where('detail_transaksi.no_transaksi', $param);
+        $this->db->group_by($param);
+        return $this->db->get('transaksi')->result_array();
+    }
 }
