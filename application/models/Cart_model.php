@@ -19,6 +19,11 @@ class Cart_model extends CI_Model
     {
         return $this->db->get_where('cart',array('id_chart'=>$id_cart))->row_array();
     }
+
+    function get_transaksi($id_transaksi)
+    {
+        return $this->db->get_where('transaksi',array('no_transaksi'=>$id_transaksi))->row_array();
+    }
         
     /*
      * Get all customer
@@ -72,6 +77,12 @@ class Cart_model extends CI_Model
         $this->db->where('id_chart',$id_chart);
         return $this->db->update('cart',$params);
     }
+
+    function update_transaksi($id_transaksi,$params)
+    {
+        $this->db->where('no_transaksi',$id_transaksi);
+        return $this->db->update('transaksi',$params);
+    }
     
     /*
      * function to delete customer
@@ -89,7 +100,7 @@ class Cart_model extends CI_Model
 
     function get_bayar_detail($param)
     {
-        $this->db->select('transaksi.total_harga,nama,sum(layanan.durasi) as lama ');
+        $this->db->select('transaksi.no_transaksi,transaksi.total_harga,nama,sum(layanan.durasi) as lama ');
         $this->db->from('transaksi');
         $this->db->join('detail_transaksi', 'transaksi.no_transaksi=detail_transaksi.no_transaksi');
         $this->db->join('cart', 'detail_transaksi.id_cart=cart.id_chart');
