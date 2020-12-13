@@ -67,23 +67,24 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-5">
-                                <?= form_open('cart/transaksi'); ?>
+                                <?php echo form_open_multipart('cart/transaksi/'.$bayar[0]->no_transaksi); ?>
                                     <div class="form-group">
                                         <label for="inputFile">Upload Bukti Pembayaran</label>
-                                        <input type="file" name="bukti" class="form-control" id="inputFile" />
+                                        <input type="file" name="bukti" class="form-control" id="inputFile" value="<?php echo $this->input->post('bukti'); ?>" required="true" />
                                     </div>
                                     <div class="form-group">
                                         <label for="inputRekening">No Rekening</label>
-                                        <input type="text" name="rekening" class="form-control" id="inputRekening" placeholder="No Rekening" />
+                                        <input type="number" name="rekening" class="form-control" id="inputRekening" placeholder="No Rekening" value="<?php echo $this->input->post('rekening'); ?>" required="true" />
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="inputNamaBank">Nama Bank</label>
-                                        <input type="text" name="bank" class="form-control" id="inputNamaBank" placeholder="Nama Bank" />
+                                        <input type="text" name="bank" class="form-control" id="inputNamaBank" placeholder="Nama Bank" value="<?php echo $this->input->post('bank'); ?>" required="true" />
                                     </div>
                                     <div class="form-group">
                                         <label for="inputCabangBank">Unit/Cabang Bank</label>
-                                        <input type="text" class="form-control" id="inputCabangBank" placeholder="Unit/Cabang Bank" />
-                                    </div>
+                                        <input type="text" name="CabangBank" class="form-control" id="inputCabangBank" placeholder="Unit/Cabang Bank" value="<?php echo $this->input->post('CabangBank'); ?>" required="true"/>
+                                    </div> -->
+                                    <input type="hidden" name="idTransaksi" value="<?php echo $bayar[0]->no_transaksi ?>">
                                     <button class="button small">
                                         Upload
                                     </button>
