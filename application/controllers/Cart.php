@@ -127,4 +127,42 @@ class Cart extends CI_Controller
             $this->load->view('new_view/upload_pembayaran', $data);
             $this->load->view('templates/relish/footer');
     }
-}
+
+    function transaksi($id_transaksi){
+        // check if the admin exists before trying to edit it
+        $data['transaksi']   = $this->Cart_model->get_transaksi($id_transaksi);
+
+        if (isset($data['transaksi']['no_transaksi'])) {
+            if (isset($_POST) && count($_POST) > 0) {
+                $path = './resources/picture/bukti_pembayaran';
+                // get foto
+                $config['upload_path'] = './resources/picture/bukti_pembayaran';
+                $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                $config['max_size'] = '2048';  //2MB max
+                $config['max_width'] = '4480'; // pixel
+                $config['max_height'] = '4480'; // pixel
+                $config['file_name'] = $_FILES['bukti']['name'];
+
+                $this->upload->initialize($config);
+
+                if (!empty($_FILES['bukti']['name'])) {
+                    if ($this->upload->do_upload('bukti')) {
+                        $foto   = $this->upload->data();
+                        $params = array(
+                            'bukti_pembayaran' => $foto['file_name'],
+                            'rekening_pengirim' => $this->input->post('rekening'),
+                        );
+                        // hapus foto pada direktori
+                        //@unlink($path . $this->input->post('filelama'));
+
+                        $this->Cart_model->update_transaksi($id_transaksi, $params);
+                        redirect('landing/jasa');
+                    } else {
+                        die("gagal update");
+                    }
+                }
+        } else{
+            show_error('The admin you are trying to edit does not exist.');
+        }
+    }
+}}
