@@ -122,4 +122,16 @@ class Cart_model extends CI_Model
         $this->db->group_by($param);
         return $this->db->get()->result();
     }
+
+    function update_verifikasi_pembayaran($no_transaksi,$params)
+    {
+        $this->db->where('no_transaksi',$no_transaksi);
+        return $this->db->update('transaksi',$params);
+    }
+
+    function update_verifikasi_pemesanan($no_transaksi,$params)
+    {
+        $this->db->where('no_transaksi',$no_transaksi);
+        return $this->db->update('transaksi',$params);
+    }
 }
