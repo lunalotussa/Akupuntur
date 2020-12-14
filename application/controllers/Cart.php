@@ -36,6 +36,34 @@ class Cart extends CI_Controller
         $this->load->view('templates/relish/footer');
     }
 
+    function detail_list(){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        //$data['belanja']    = $this->Terapi_model->get_all_chart();
+        $data['_view'] = 'cart/detail_list';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
+    function detail($no_transaksi){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        $data['transaksi']  = $this->Cart_model->get_transaksi($no_transaksi);
+        $data['_view']      = 'cart/detail';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
     function add($iddetaillayanan)
     {
         // if (isset($_POST) && count($_POST) > 0) {
@@ -165,4 +193,5 @@ class Cart extends CI_Controller
             show_error('The admin you are trying to edit does not exist.');
         }
     }
-}}
+    }
+}
