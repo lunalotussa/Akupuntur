@@ -84,7 +84,7 @@
                                     <span>Layanan</span>
                                     <div class="field is-grouped">
                                         <p class="control">
-                                            <a href="#" class="tag is-info">Booking Layanan</a>
+                                            <a href="<?php echo site_url('Cart/detail_list'); ?>" class="tag is-info">Booking Layanan</a>
                                         </p>
                                     </div>
 
