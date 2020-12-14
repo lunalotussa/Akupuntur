@@ -55,10 +55,15 @@
                                             <a href="<?= base_url('terapi/index'); ?>" class="tag is-info">Verifikasi Terapis</a>
                                         </p>
                                         <p class="control">
-                                            <a href="#" class="tag is-info">Verifikasi Pembayaran</a>
-                                        </p>
+                                            <a href="<?= base_url('Cart/list_verifikasi_pembayaran')?>" class="tag is-info">Verifikasi Pembayaran</a>
+                                        </p><br>
                                     </div>
 
+                                     <div class="field is-grouped">
+                                        <p class="control">
+                                            <a href="<?= base_url('Cart/list_verifikasi_pemesanan')?>" class="tag is-info">Verifikasi Pemesanan</a>
+                                        </p><br>
+                                    </div>
                                 </p>
                             </div>
                         </div>
