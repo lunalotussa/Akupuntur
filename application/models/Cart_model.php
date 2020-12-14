@@ -20,9 +20,9 @@ class Cart_model extends CI_Model
         return $this->db->get_where('cart',array('id_chart'=>$id_cart))->row_array();
     }
 
-    function get_transaksi($id_transaksi)
+    function get_transaksi($no_transaksi)
     {
-        return $this->db->get_where('transaksi',array('no_transaksi'=>$id_transaksi))->row_array();
+        return $this->db->get_where('transaksi',array('no_transaksi'=>$no_transaksi))->row_array();
     }
         
     /*
