@@ -1,4 +1,4 @@
-<h1 class="title has-text-success font-family-philosopher">Daftar Booking</h1>
+<h1 class="title has-text-success font-family-philosopher">Daftar Verifikasi Pemesanan</h1>
 
 <div class="table-container">
     <table class="table is-fullwidth">
@@ -20,7 +20,7 @@
         </tfoot>
         <tbody>
             <?php 
-                $sql = "SELECT * FROM transaksi WHERE id_customer=$id_user";
+                $sql = "SELECT * FROM transaksi";
                 $query = $this->db->query($sql);
                 if ($query->num_rows() > 0) {
                     foreach ($query->result() as $row) {
@@ -52,12 +52,22 @@
                             <td>
                                 <div class="field is-grouped">
                                     <p class="control">
-                                        <a href="<?php echo site_url('cart/detail/' . $row->no_transaksi); ?>" class="button is-info is-small">
+                                        <a href="<?php echo site_url('cart/detail_pembayaran/' . $row->no_transaksi); ?>" class="button is-info is-small">
                                             <span class="icon">
                                                 <i class="fa fa-edit"></i>
                                             </span>
                                             <span>
                                                 Detail
+                                            </span>
+                                        </a>
+                                    </p>
+                                    <p class="control">
+                                        <a href="<?php echo site_url('cart/verifikasi_pemesanan/' . $row->no_transaksi); ?>" class="button is-success is-small">
+                                            <span class="icon">
+                                                <i class="fa  fa-check-circle"></i>
+                                            </span>
+                                            <span>
+                                                Verifikasi Pemesanan
                                             </span>
                                         </a>
                                     </p>
