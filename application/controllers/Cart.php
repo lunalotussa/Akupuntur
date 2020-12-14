@@ -50,6 +50,34 @@ class Cart extends CI_Controller
 
     }
 
+    function list_verifikasi_pembayaran(){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        //$data['belanja']    = $this->Terapi_model->get_all_chart();
+        $data['_view'] = 'cart/list_verifikasi_pembayaran';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
+    function list_verifikasi_pemesanan(){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        //$data['belanja']    = $this->Terapi_model->get_all_chart();
+        $data['_view'] = 'cart/list_verifikasi_pemesanan';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
     function detail($no_transaksi){
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
@@ -57,6 +85,20 @@ class Cart extends CI_Controller
         $data['email']      = $_SESSION['email'];
         $data['transaksi']  = $this->Cart_model->get_transaksi($no_transaksi);
         $data['_view']      = 'cart/detail';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
+    function detail_pembayaran($no_transaksi){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        $data['transaksi']  = $this->Cart_model->get_transaksi($no_transaksi);
+        $data['_view']      = 'cart/detail_pembayaran';
 
         $this->load->view('templates/pure/header');
         $this->load->view('layouts/bulma-dashboard/main', $data);
@@ -193,5 +235,45 @@ class Cart extends CI_Controller
             show_error('The admin you are trying to edit does not exist.');
         }
     }
+    }
+
+    function verifikasi_pembayaran($no_transaksi)
+    {
+        // check if the terapi exists before trying to edit it
+        $data['belanja']    = $this->Cart_model->get_transaksi($no_transaksi);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+
+        if (isset($data['belanja']['no_transaksi'])) {
+            $params = array(
+                'status_pembayaran' => '1',
+            );
+
+            $this->Cart_model->update_verifikasi_pembayaran($no_transaksi, $params);
+            redirect('cart/list_verifikasi_pembayaran');
+        } else
+            show_error('The terapi you are trying to edit does not exist.');
+    }
+
+    function verifikasi_pemesanan($no_transaksi)
+    {
+        // check if the terapi exists before trying to edit it
+        $data['belanja']    = $this->Cart_model->get_transaksi($no_transaksi);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+
+        if (isset($data['belanja']['no_transaksi'])) {
+            $params = array(
+                'status_pemesanan' => '1',
+            );
+
+            $this->Cart_model->update_verifikasi_pemesanan($no_transaksi, $params);
+            redirect('cart/list_verifikasi_pemesanan');
+        } else
+            show_error('The terapi you are trying to edit does not exist.');
     }
 }
