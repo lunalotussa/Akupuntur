@@ -126,6 +126,7 @@ class Cart_model extends CI_Model
     function update_verifikasi_pembayaran($no_transaksi,$params)
     {
         $this->db->where('no_transaksi',$no_transaksi);
+        $this->db->query("UPDATE transaksi JOIN detail_transaksi ON transaksi.no_transaksi=detail_transaksi.no_transaksi JOIN cart ON detail_transaksi.id_cart=cart.id_chart SET cart.status='0' WHERE transaksi.no_transaksi=$no_transaksi");
         return $this->db->update('transaksi',$params);
     }
 
