@@ -1,7 +1,7 @@
 <h1 class="title has-text-success font-family-philosopher">Detail Layanan Terapis</h1>
 <?php echo form_open('DetailLayanan/add_admin');  ?>
 <?php $id_userTerapis = $detail['id_user'];?>
-<input type="text" name="id_user" value="<?php echo $id_userTerapis; ?>">
+<input type="hidden" name="id_user" value="<?php echo $id_userTerapis; ?>">
                 <?php
                     $sql="SELECT user.id_user, user.nama, user.email, terapis.id_terapis FROM user JOIN terapis ON user.id_user=terapis.id_user WHERE user.id_user=$id_userTerapis;";
                     $query          = $this->db->query($sql);
@@ -12,7 +12,7 @@
                     $emailTerapis   = $row->email;
                     ?>
 
-<input type="text" name="id_terapis" value="<?php echo $id_terapis;?>">
+<input type="hidden" name="id_terapis" value="<?php echo $id_terapis;?>">
 <div class="columns is-multiline">
 	<div class="column is-half">
 		<fieldset disabled="disabled">
