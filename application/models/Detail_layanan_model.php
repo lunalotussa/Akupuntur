@@ -9,7 +9,25 @@ class Detail_layanan_model extends CI_Model{
 		return $query;
 	}
 
+	function get_terapi($id_terapis)
+    {
+        return $this->db->get_where('terapis',array('id_terapis'=>$id_terapis))->row_array();
+    }
+
+	function get_all_terapis()
+    {
+        $this->db->order_by('id_terapis', 'desc');
+        $this->db->where('status','1');
+        return $this->db->get('terapis')->result_array();
+    }
+
 	function add_detail_layanan($data)
+	{
+	$this->db->insert('detail_layanan', $data);
+	return $this->db->insert_id();
+ 	}
+
+ 	function add_detail_layanan_admin($data)
 	{
 	$this->db->insert('detail_layanan', $data);
 	return $this->db->insert_id();
