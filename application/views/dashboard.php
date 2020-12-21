@@ -46,6 +46,11 @@
                                             <a href="<?= base_url('layanan/add'); ?>" class="tag is-success">Tambah Daftar Layanan</a>
                                         </p>
                                     </div>
+                                    <div class="field is-grouped">
+                                        <p class="control">
+                                            <a href="<?= base_url('DetailLayanan/listDetailLayanan'); ?>" class="tag is-info">Lihat Layanan Terapis</a>
+                                        </p>
+                                    </div>
 
                                 </p>
                                 <p>
