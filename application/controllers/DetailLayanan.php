@@ -107,7 +107,18 @@ class DetailLayanan extends CI_Controller
     function add_admin()
     {
 
-
+        $layanan_list   = $this->input->post('layanan');
+        $id_terapis     = $this->input->post('id_terapis');
+        $this->Detail_layanan_model->delete_detail_layanan($id_terapis);
+            //hapus dulu baru tambah
+            foreach ($layanan_list as $layanan) {
+                $data = array(
+                    'id_terapis' => $id_terapis,
+                    'id_layanan' => $layanan
+                );
+                $this->Detail_layanan_model->add_detail_layanan($data);
+            }
+            redirect('DetailLayanan/listDetailLayanan');
     }
 
         /*
