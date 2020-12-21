@@ -16,6 +16,7 @@ class DetailLayanan extends CI_Controller
             redirect(base_url());
         }
         $this->load->model('Detail_layanan_model');
+        //$this->load->model('Terapi_model');
     }
 
     /*
@@ -35,6 +36,20 @@ class DetailLayanan extends CI_Controller
         $this->load->view('templates/pure/footer');
     }
 
+    function listDetailLayanan()
+    {
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        $data['detail'] = $this->Detail_layanan_model->get_all_terapis();
+        $data['_view'] = 'layanan/list_layanan_admin';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+    }
+
     function add()
     {
         $data['nama']       = $_SESSION['nama'];
@@ -48,8 +63,8 @@ class DetailLayanan extends CI_Controller
         $this->load->view('templates/pure/footer');
 
         if (isset($_POST) && count($_POST) > 0) {
-            $layanan_list = $this->input->post('layanan');
-            $id_terapis = $this->input->post('id_terapis');
+            $layanan_list   = $this->input->post('layanan');
+            $id_terapis     = $this->input->post('id_terapis');
             $this->Detail_layanan_model->delete_detail_layanan($id_terapis);
             //hapus dulu baru tambah
             foreach ($layanan_list as $layanan) {
@@ -66,9 +81,36 @@ class DetailLayanan extends CI_Controller
             $this->load->view('layouts/bulma-dashboard/main', $data);
             $this->load->view('templates/pure/footer');
         }
+    }
+
+    function detail_layanan_admin($id_terapis)
+    {
+        // check if the terapi exists before trying to edit it
+        $data['detail']     = $this->Detail_layanan_model->get_terapi($id_terapis);
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+
+        if (isset($data['detail']['id_terapis'])) {
+
+            $data['_view'] = 'layanan/detail_layanan_admin';
+
+            $this->load->view('templates/pure/header');
+            $this->load->view('layouts/bulma-dashboard/main', $data);
+            $this->load->view('templates/pure/footer');
+        } else
+        show_error('The terapi you are trying to edit does not exist.');
+    }
+
+
+    function add_admin()
+    {
+
+
+    }
 
         /*
      * Adding a new Customer
      */
     }
-}
