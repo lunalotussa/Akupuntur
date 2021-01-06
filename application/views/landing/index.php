@@ -56,19 +56,14 @@
 
   <div class="slider-4 dots-alt">
     <div class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="images/portfolio/img-1@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/cupping.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-1.jpg" data-at2x="assets/relish/images/portfolio/img-1@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/cupping.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/cupping.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Cupping</h3>
             <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
-            <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
               </p>
@@ -83,19 +78,14 @@
     <!-- portfolio slider item -->
 
     <div class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="images/portfolio/img-2@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/refleksi.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-2.jpg" data-at2x="assets/relish/images/portfolio/img-2@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/refleksi.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/refleksi.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Refleksi</h3>
             <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
-            <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
               </p>
@@ -110,19 +100,14 @@
     <!-- portfolio slider item -->
 
     <div class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="images/portfolio/img-3@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/akupuntur.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-3.jpg" data-at2x="assets/relish/images/portfolio/img-3@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/akupuntur.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/akupuntur.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Akupuntur</h3>
             <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
-            <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
               </p>
@@ -137,19 +122,14 @@
     <!-- portfolio slider item -->
 
     <div class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="images/portfolio/img-4@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/relaksasi.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-4.jpg" data-at2x="assets/relish/images/portfolio/img-4@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/relaksasi.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/relaksasi.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Relaksasi</h3>
             <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
-            <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
               </p>
@@ -164,18 +144,13 @@
     <!-- portfolio slider item -->
 
     <div class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="images/portfolio/img-5@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-5.jpg" data-at2x="assets/relish/images/portfolio/img-5@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Baby Spa</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
@@ -324,18 +299,13 @@
     <!-- portfolio item -->
 
     <li class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="assets/relish/images/portfolio/img-1@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-1.jpg" data-at2x="assets/relish/images/portfolio/img-1@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Mauris eleifend</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
@@ -351,18 +321,13 @@
     <!-- portfolio item -->
 
     <li class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="assets/relish/images/portfolio/img-2@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-2.jpg" data-at2x="assets/relish/images/portfolio/img-2@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Mauris eleifend</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
@@ -378,18 +343,13 @@
     <!-- portfolio item -->
 
     <li class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="assets/relish/images/portfolio/img-3@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-3.jpg" data-at2x="assets/relish/images/portfolio/img-3@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Mauris eleifend</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
@@ -405,18 +365,13 @@
     <!-- portfolio item -->
 
     <li class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="assets/relish/images/portfolio/img-4@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-4.jpg" data-at2x="assets/relish/images/portfolio/img-4@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Mauris eleifend</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
@@ -432,18 +387,13 @@
     <!-- portfolio item -->
 
     <li class="portfolio-item ih-item circle effect13 from_left_and_right font-alt">
-      <a href="assets/relish/images/portfolio/img-5@2x.jpg" class="lightbox mfp-image">
+      <a href="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" class="lightbox mfp-image">
         <div class="portfolio-media">
           <div class="portfolio-img">
-            <img src="assets/relish/images/portfolio/img-5.jpg" data-at2x="assets/relish/images/portfolio/img-5@2x.jpg" alt />
+            <img src="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" data-at2x="<?= base_url('assets/img/landing/baby-spa.jpg') ?>" alt />
           </div>
           <div class="info">
             <h3>Mauris eleifend</h3>
-            <div>
-              <div class="img-line">
-                <img src="assets/relish/images/lines/img-line-7.png" data-at2x="assets/relish/images/lines/img-line-7@2x.png" alt />
-              </div>
-            </div>
             <div>
               <p>
                 Integer ex nunc, placerat vel orci quis, blandit varius
