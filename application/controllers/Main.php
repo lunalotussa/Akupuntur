@@ -12,7 +12,7 @@ class Main extends CI_Controller
         //-> cek login
         if (isset($_POST["login"])) {
             $email      = $this->input->post("email");
-            $password   = $this->input->post("password");
+            $password   = md5($this->input->post("password"));
             $query      = $this->db->query("SELECT * FROM `user` WHERE email = '$email' AND password='$password'");
             //start session
             if ($query->num_rows() > 0) {

@@ -33,7 +33,7 @@ class User extends CI_Controller
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
             $params = array(
-                'password' => $this->input->post('password'),
+                'password' => md5($this->input->post('password')),
                 'nama' => $this->input->post('nama'),
                 'email' => $this->input->post('email'),
                 'hak_akses' => $this->input->post('hak_akses'),
@@ -54,7 +54,7 @@ class User extends CI_Controller
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
             $params = array(
-                'password' => $this->input->post('password'),
+                'password' => md5($this->input->post('password')),
                 'nama' => $this->input->post('nama'),
                 'email' => $this->input->post('email'),
                 'hak_akses' => $this->input->post('hak_akses'),
@@ -81,7 +81,7 @@ class User extends CI_Controller
         if (isset($data['user']['id_user'])) {
             if (isset($_POST) && count($_POST) > 0) {
                 $params = array(
-                    'password' => $this->input->post('password'),
+                    'password' => md5($this->input->post('password')),
                     'nama' => $this->input->post('nama'),
                     'email' => $this->input->post('email'),
                     'hak_akses' => $this->input->post('hak_akses'),
