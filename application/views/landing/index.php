@@ -192,10 +192,10 @@
         <!-- shop carousel item -->
 
         <div class="shop-container align-center alt-2">
-          <a href="images/shop/img-1@2x.jpg" class="lightbox-single mfp-image">
+          <a href="<?= base_url('assets/img/landing/item-1.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="assets/relish/images/shop/img-1.jpg" data-at2x="assets/relish/images/shop/img-1@2x.jpg" alt />
+                <img src="<?= base_url('assets/img/landing/item-1.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-1.png') ?>" alt />
               </div>
               <div class="label-new label-left font-alt">New</div>
             </div>
@@ -219,10 +219,10 @@
         <!-- shop carousel item -->
 
         <div class="shop-container align-center alt-2">
-          <a href="images/shop/img-2@2x.jpg" class="lightbox-single mfp-image">
+          <a href="<?= base_url('assets/img/landing/item-2.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="assets/relish/images/shop/img-2.jpg" data-at2x="assets/relish/images/shop/img-2@2x.jpg" alt />
+                <img src="<?= base_url('assets/img/landing/item-2.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-2.png') ?>" alt />
               </div>
             </div>
           </a>
@@ -245,10 +245,10 @@
         <!-- shop carousel item -->
 
         <div class="shop-container align-center alt-2">
-          <a href="images/shop/img-3@2x.jpg" class="lightbox-single mfp-image">
+          <a href="<?= base_url('assets/img/landing/item-3.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="assets/relish/images/shop/img-3.jpg" data-at2x="assets/relish/images/shop/img-3@2x.jpg" alt />
+                <img src="<?= base_url('assets/img/landing/item-3.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-3.png') ?>" alt />
               </div>
               <div class="label-new label-left alt font-alt">
                 Best<br />Price
