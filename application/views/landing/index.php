@@ -419,8 +419,8 @@
       <!-- banner -->
 
       <div class="col-md-12 col-lg-6">
-        <a href="assets/relish/images/promo-1@2x.jpg" class="lightbox-single mfp-image">
-          <img class="img-border" src="assets/relish/images/promo-1.jpg" data-at2x="assets/relish/images/promo-1@2x.jpg" alt />
+        <a href="<?= base_url('assets/img/landing/relax.jpg'); ?>" class="lightbox-single mfp-image">
+          <img class="img-border" src="<?= base_url('assets/img/landing/relax.jpg'); ?>" data-at2x="<?= base_url('assets/img/landing/relax.jpg'); ?>" alt />
         </a>
       </div>
       <div class="col-md-12 col-lg-6 mt-lg-50">
