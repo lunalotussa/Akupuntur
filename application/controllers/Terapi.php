@@ -237,6 +237,21 @@ class Terapi extends CI_Controller
             show_error('The terapi you are trying to edit does not exist.');
     }
 
+    function jadwal()
+    {
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        //$data['belanja']    = $this->Terapi_model->get_all_chart();
+        $data['_view'] = 'cart/list_verifikasi_pemesanan';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
     function verifikasi($id_terapis)
     {
         // check if the terapi exists before trying to edit it
