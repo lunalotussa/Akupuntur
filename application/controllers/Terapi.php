@@ -244,7 +244,7 @@ class Terapi extends CI_Controller
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
         //$data['belanja']    = $this->Terapi_model->get_all_chart();
-        $data['_view'] = 'cart/list_verifikasi_pemesanan';
+        $data['_view'] = 'terapi/jadwal';
 
         $this->load->view('templates/pure/header');
         $this->load->view('layouts/bulma-dashboard/main', $data);
