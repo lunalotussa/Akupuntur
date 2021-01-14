@@ -89,7 +89,7 @@ class Cart_model extends CI_Model
      */
     function delete_cart($id_cart)
     {   
-        return $this->db->delete('detail_transaksi',array('id_cart'=>$id_cart));
+        $this->db->delete('detail_transaksi',array('id_cart'=>$id_cart));
         return $this->db->delete('cart',array('id_chart'=>$id_cart));
     }
 
