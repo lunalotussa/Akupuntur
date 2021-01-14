@@ -39,9 +39,7 @@
     </h3>
     <div class="col-md-10 col-md-offset-1">
       <p>
-        Morbi fringilla sapien in venenatis rhoncus. Sed nec nisi elit.
-        Donec at finibus odio, sit amet dignissim odio. Nam sollicitudin
-        erat nec diam faucibus, eu condimentum nunc laoreet.
+        Selalu memberikan pelayanan dengan sepenuh hati hanya untuk Anda
       </p>
     </div>
   </div>
@@ -65,7 +63,7 @@
             <h3>Cupping</h3>
             <div>
               <p>
-                Integer ex nunc, placerat vel orci quis, blandit varius
+                Terapi bekam
               </p>
             </div>
           </div>
@@ -87,7 +85,7 @@
             <h3>Refleksi</h3>
             <div>
               <p>
-                Integer ex nunc, placerat vel orci quis, blandit varius
+                Pijat refleksi
               </p>
             </div>
           </div>
@@ -109,7 +107,7 @@
             <h3>Akupuntur</h3>
             <div>
               <p>
-                Integer ex nunc, placerat vel orci quis, blandit varius
+                Terapi akupuntur
               </p>
             </div>
           </div>
@@ -131,7 +129,7 @@
             <h3>Relaksasi</h3>
             <div>
               <p>
-                Integer ex nunc, placerat vel orci quis, blandit varius
+                Terapi relaksasi
               </p>
             </div>
           </div>
@@ -153,7 +151,7 @@
             <h3>Baby Spa</h3>
             <div>
               <p>
-                Integer ex nunc, placerat vel orci quis, blandit varius
+                Terapi Baby Spa
               </p>
             </div>
           </div>
@@ -180,9 +178,7 @@
     </h3>
     <div class="col-md-10 col-md-offset-1 mb-30">
       <p>
-        Donec rhoncus diam in lectus finibus, eget ultrices urna commodo.
-        Fusce dignissim lobortis erat, tristique lobortis justo imperdiet
-        at. Aliquam congue orci non pulvinar gravida.
+        Jasa yang paling banyak digunakan
       </p>
     </div>
     <div class="row mt-30">
@@ -286,9 +282,7 @@
     <h3 class="section-title bottom-line font-alt">Galeri</h3>
     <div class="col-md-10 col-md-offset-1">
       <p>
-        Morbi fringilla sapien in venenatis rhoncus. Sed nec nisi elit.
-        Donec at finibus odio, sit amet dignissim odio. Nam sollicitudin
-        erat nec diam faucibus, eu condimentum nunc laoreet.
+        Dokumentasi dari pelayanan kami
       </p>
     </div>
   </div>
@@ -429,11 +423,7 @@
         </h3>
         <div class="section-text mt-10">
           <p>
-            Donec lobortis et est id consequat. Nam quam turpis, lobortis
-            in venenas at, condiment ut orci. Nullam et egestas nulla.
-            Nulla gravida ligula et est ultricies tortor. Duis interdum
-            venenatis dictum. Cras id sodales mi. Mauris varius ornare
-            erat eu vehila.
+            Terapi Holistik Sayang Anak adalah
           </p>
         </div>
         <div class="banner-bottom row">
@@ -464,19 +454,12 @@
 
       <div class="col-md-6 col-lg-4 mb-md-30">
         <div class="contact-offices">
-          <h4 class="contact-title font-alt">Our Offices</h4>
+          <h4 class="contact-title font-alt">Kantor Kami</h4>
           <div class="img-line">
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia
-            nostra, per inceptos. Phasellus sodales elementum vestibulum.
-            In et dolor felis. Curabitur sapien nibh, lobortis vitae diam
-          </p>
-          <p>
-            Eleifend consequat lacus. Ut elementum, dolor sit amet auctor
-            elementum, arcu nulla eleifend arcu, eu tempus neque dolor
-            dapibus nisi
+            Kami berlokasi di Malang
           </p>
         </div>
       </div>
@@ -487,15 +470,15 @@
 
       <div class="col-md-6 col-lg-4 mb-md-30">
         <div class="contact-forms">
-          <h4 class="contact-title font-alt">Contact Us</h4>
+          <h4 class="contact-title font-alt">Hubungi Kami</h4>
           <div class="img-line">
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <div class="email_server_responce"></div>
           <form action="php/contacts-process.php" id="contact-form" class="contact-form form mt-10" method="post">
-            <input id="name" name="name" type="text" value="" size="30" aria-required="true" placeholder="Your Name" class="input-md form-control" />
-            <input id="email" name="email" type="text" value="" size="30" aria-required="true" placeholder="Your E-Mail" class="input-md form-control" />
-            <textarea id="message" name="message" cols="45" rows="8" aria-required="true" placeholder="Your Message" class="input-md form-control mb-20"></textarea>
+            <input id="name" name="name" type="text" value="" size="30" aria-required="true" placeholder="Nama" class="input-md form-control" />
+            <input id="email" name="email" type="text" value="" size="30" aria-required="true" placeholder="Email" class="input-md form-control" />
+            <textarea id="message" name="message" cols="45" rows="8" aria-required="true" placeholder="Pesan" class="input-md form-control mb-20"></textarea>
             <button class="button small" name="submit" type="submit">
               Submit
             </button>
@@ -509,7 +492,7 @@
 
       <div class="col-md-12 col-lg-4">
         <div class="contact-follow">
-          <h4 class="contact-title font-alt">Our Contacts</h4>
+          <h4 class="contact-title font-alt">Kontak Kami</h4>
           <div class="img-line">
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
