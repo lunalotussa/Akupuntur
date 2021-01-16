@@ -1,7 +1,7 @@
 <section class="page-section">
   <div class="container">
     <div class="row shop-single">
-      <div class="col-md-12 woocommerce">
+      <div class="col-md-9 woocommerce">
         <div class="row">
           <!-- shop images -->
 
@@ -131,8 +131,24 @@
 
         <!-- /shop products -->
       </div>
+      <div class="col-md-3">
+        <!-- widget search -->
+
+        <aside class="widget-search">
+          <h3>Search Products</h3>
+          <?php echo form_open('landing/search'); ?>
+          <label>
+            <input type="search" class="form-control" placeholder="Search..." value="" name="keyword" title="Search for:" />
+          </label>
+          <button type="submit" class="search-submit">
+            <i class="flaticon-search"></i>
+          </button>
+          <?php echo form_close() ?>
+        </aside>
+
+        <!-- /widget search -->
+      </div>
     </div>
-  </div>
 </section>
 
 <hr class="mt-0 mb-0 alt-2" />
