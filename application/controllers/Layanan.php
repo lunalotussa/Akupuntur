@@ -16,6 +16,7 @@ class Layanan extends CI_Controller
             redirect(base_url());
         }
         $this->load->model('Layanan_model');
+        $this->load->library('upload');
     }
 
     /*
@@ -42,15 +43,36 @@ class Layanan extends CI_Controller
     function add()
     {
         if (isset($_POST) && count($_POST) > 0) {
-            $params = array(
-                'jenis' => $this->input->post('jenis'),
-                'nama' => $this->input->post('nama'),
-                'durasi' => $this->input->post('durasi'),
-                'harga' => $this->input->post('harga'),
-            );
+             $path = './resources/picture/layanan';
+                // get foto
+                $config['upload_path'] = './resources/picture/layanan';
+                $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                $config['max_size'] = '2048';  //2MB max
+                $config['max_width'] = '4480'; // pixel
+                $config['max_height'] = '4480'; // pixel
+                $config['file_name'] = $_FILES['gambar']['name'];
 
-            $layanan_id = $this->Layanan_model->add_layanan($params);
-            redirect('layanan/index');
+                $this->upload->initialize($config);
+
+                if (!empty($_FILES['gambar']['name'])) {
+                    if ($this->upload->do_upload('gambar')) {
+                        $foto   = $this->upload->data();
+                        $params = array(
+                            'jenis' => $this->input->post('jenis'),
+                            'nama' => $this->input->post('nama'),
+                            'durasi' => $this->input->post('durasi'),
+                            'harga' => $this->input->post('harga'),
+                            'gambar' => $foto['file_name']
+                        );
+                        // hapus foto pada direktori
+                        //@unlink($path . $this->input->post('filelama'));
+
+                        $layanan_id = $this->Layanan_model->add_layanan($params);
+                        redirect('layanan/index');
+                    } else {
+                        die("gagal update");
+                    }
+                }
         } else {
             $data['nama']       = $_SESSION['nama'];
             $data['hak_akses']  = $_SESSION['hak_akses'];
@@ -67,23 +89,58 @@ class Layanan extends CI_Controller
     /*
      * Editing a layanan
      */
-    function edit($id_layanan)
+function edit($id_layanan)
     {
         // check if the layanan exists before trying to edit it
         $data['layanan'] = $this->Layanan_model->get_layanan($id_layanan);
 
         if (isset($data['layanan']['id_layanan'])) {
             if (isset($_POST) && count($_POST) > 0) {
-                $params = array(
-                    'jenis' => $this->input->post('jenis'),
-                    'nama' => $this->input->post('nama'),
-                    'durasi' => $this->input->post('durasi'),
-                    'harga' => $this->input->post('harga'),
-                );
+                $path = './resources/picture/layanan/';
+                // get foto
+                $config['upload_path'] = './resources/picture/layanan';
+                $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                $config['max_size'] = '2048';  //2MB max
+                $config['max_width'] = '4480'; // pixel
+                $config['max_height'] = '4480'; // pixel
+                $config['file_name'] = $_FILES['gambar']['name'];
 
-                $this->Layanan_model->update_layanan($id_layanan, $params);
-                redirect('layanan/index');
-            } else {
+                $this->upload->initialize($config);
+
+                if (!empty($_FILES['gambar']['name'])) {
+                    if ($this->upload->do_upload('gambar')) {
+                        $foto   = $this->upload->data();
+                        $params = array(
+                            'jenis' => $this->input->post('jenis'),
+                            'nama' => $this->input->post('nama'),
+                            'durasi' => $this->input->post('durasi'),
+                            'harga' => $this->input->post('harga'),
+                            'gambar' => $foto['file_name']
+                        );
+                        // hapus foto pada direktori
+                        @unlink($path . $this->input->post('filelama'));
+
+                        $this->Layanan_model->update_layanan($id_layanan, $params);
+                        redirect('layanan/index');
+                    }else {
+                        die("gagal update");
+                    }
+                }else{
+                     $params = array(
+                        'jenis' => $this->input->post('jenis'),
+                        'nama' => $this->input->post('nama'),
+                        'durasi' => $this->input->post('durasi'),
+                        'harga' => $this->input->post('harga'),
+                        'gambar' => $this->input->post('filelama'),
+                    );
+
+                    $this->Layanan_model->update_layanan($id_layanan, $params);
+                    $data['_view'] = 'layanan/edit';
+                    $this->load->view('templates/pure/header');
+                    $this->load->view('layouts/bulma-dashboard/main', $data);
+                    $this->load->view('templates/pure/footer');
+                    redirect('layanan/index');
+                }} else {
                 $data['nama']       = $_SESSION['nama'];
                 $data['hak_akses']  = $_SESSION['hak_akses'];
                 $data['id_user']    = $_SESSION['id_user'];
@@ -97,6 +154,7 @@ class Layanan extends CI_Controller
         } else
             show_error('The layanan you are trying to edit does not exist.');
     }
+
 
     /*
      * Deleting layanan
