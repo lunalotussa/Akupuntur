@@ -1,7 +1,7 @@
 <div class="columns is-centered">
 	<div class="column is-half">
 		<h1 class="title has-text-success font-family-philosopher">Edit Layanan</h1>
-		<?php echo form_open('layanan/edit/' . $layanan['id_layanan']); ?>
+		<?php echo form_open_multipart('layanan/edit/' . $layanan['id_layanan']); ?>
 		<div class="field">
 			<label class="label" for="jenis">Jenis Layanan</label>
 			<div class="control">
@@ -24,6 +24,27 @@
 			<label class="label" for="harga">Harga</label>
 			<div class="control">
 				<input type="text" name="harga" value="<?php echo ($this->input->post('harga') ? $this->input->post('harga') : $layanan['harga']); ?>" class="input" id="harga" />
+			</div>
+		</div>
+		<div class="field">
+			<label class="label" for="gambar">Gambar</label>
+			<div class="control">
+				<?php
+				if (empty($layanan['gambar'])) {
+				?>
+					<figure class="image is-128x128">
+						<img src="<?= base_url() ?>resources/picture/noimage.png" alt="profile">
+					</figure>
+				<?php
+				} else {
+				?>
+					<figure class="image is-128x128">
+						<img src="<?= base_url() ?>resources/picture/layanan/<?= $layanan['gambar']; ?>" alt="profile">
+					</figure>
+				<?php
+				} ?>
+			<input type="file" name="gambar" value="<?php echo ($this->input->post('gambar') ? $this->input->post('gambar') : $layanan['gambar']); ?>" class="input" id="gambar" />
+			<input type="hidden" name="filelama" value="<?php echo ($this->input->post('filelama') ? $this->input->post('filelama') : $layanan['gambar']); ?>">
 			</div>
 		</div>
 		<div class="field is-grouped is-pulled-right">
