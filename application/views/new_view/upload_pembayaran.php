@@ -64,8 +64,8 @@
                         <tbody>
                         <?php foreach($detail as $row){?>
                             <tr>
-                                <td><?php echo $row->durasi?> menit</td>
-                                <td><?php echo $row->layanan?></td>
+                                <td><?php echo $row->durasi?></td>
+                                <td><?php echo $row->nama?></td>
                                 <td>IDR <?php echo $row->harga?></td>
                             </tr>
                         <?php }?>
