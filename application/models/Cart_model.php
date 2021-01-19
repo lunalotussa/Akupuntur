@@ -37,10 +37,8 @@ class Cart_model extends CI_Model
         $this->db->join('cart', 'user.id_user=cart.id_customer');
         $this->db->join('detail_layanan', 'cart.id_detail_layanan=detail_layanan.id_detailLayanan');
         $this->db->join('layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
-        $this->db->join('detail_transaksi', 'detail_transaksi.id_cart=cart.id_chart');
-        $this->db->join('transaksi', 'transaksi.no_transaksi=detail_transaksi.no_transaksi');
         $this->db->where('user.id_user', $user);
-        $this->db->where('transaksi.bukti_pembayaran', '0');
+        $this->db->where('cart.status', '1');
         return $this->db->get()->result();
     }
 
@@ -77,6 +75,12 @@ class Cart_model extends CI_Model
     function update_cart($id_chart,$params)
     {
         $this->db->where('id_chart',$id_chart);
+        return $this->db->update('cart',$params);
+    }
+
+    function update_cart_user($id_user,$params)
+    {
+        $this->db->where('id_customer',$id_user);
         return $this->db->update('cart',$params);
     }
 
