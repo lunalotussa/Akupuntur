@@ -12,7 +12,7 @@ class Search_model extends CI_Model
     }
 
     public function get_all(){
-            $this->db->select('user.nama as terapis,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga,detail_layanan.id_detailLayanan as iddetaillayanan');
+            $this->db->select('user.nama as terapis,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga,detail_layanan.id_detailLayanan as iddetaillayanan,gambar');
             $this->db->from('layanan');
             $this->db->join('detail_layanan', 'layanan.id_layanan=detail_layanan.id_layanan');
             $this->db->join('terapis', 'terapis.id_terapis=detail_layanan.id_terapis');
