@@ -32,6 +32,7 @@ class Cart extends CI_Controller
         $data['_view'] = 'cart/index';
 
         $this->load->view('templates/relish/header');
+        $this->load->view('templates/loadBulma');
         $this->load->view('cart/index',$data);
         $this->load->view('templates/relish/footer');
     }
