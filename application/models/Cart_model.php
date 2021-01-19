@@ -40,7 +40,7 @@ class Cart_model extends CI_Model
         $this->db->join('detail_transaksi', 'detail_transaksi.id_cart=cart.id_chart');
         $this->db->join('transaksi', 'transaksi.no_transaksi=detail_transaksi.no_transaksi');
         $this->db->where('user.id_user', $user);
-        $this->db->where('transaksi.bukti_pembayaran !=', '0');
+        $this->db->where('transaksi.bukti_pembayaran', '0');
         return $this->db->get()->result();
     }
 
