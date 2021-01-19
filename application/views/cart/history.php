@@ -17,13 +17,12 @@
                 <th>Nomor Transaksi</th>
                 <th>Layanan</th>
                 <th>Status Pembayaran</th>
-                <th>Detail Pembayaran</th>
                 <th>Status Pemesanan</th>
             </tr>
         </tfoot>
         <tbody>
             <?php 
-                $sql = "SELECT *,d.tanggal as tunggul FROM layanan a join detail_layanan b on a.id_layanan = b.id_layanan join cart c on b.id_detailLayanan = c.id_detail_layanan join detail_transaksi d on c.id_chart=d.id_cart join transaksi e on d.no_transaksi=e.no_transaksi where e.id_customer='$id_user'";
+                $sql = "SELECT * FROM layanan a join detail_layanan b on a.id_layanan = b.id_layanan join cart c on b.id_detailLayanan = c.id_detail_layanan join detail_transaksi d on c.id_chart=d.id_cart join transaksi e on d.no_transaksi=e.no_transaksi where e.id_customer='$id_user'";
                 $query = $this->db->query($sql);
                 if ($query->num_rows() > 0) {
                     foreach ($query->result() as $row) {
@@ -32,7 +31,7 @@
                          $year = date('Y');
             ?>
                         <tr>
-                            <td><?php echo $row->tunggul?></td>
+                            <td><?php echo $row->tanggal?></td>
                             <td><?php echo $year.'AK-'.($row->no_transaksi*13)?></td>
                             <td><?php echo $row->nama?></td>
                             <td>
