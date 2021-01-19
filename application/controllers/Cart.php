@@ -246,7 +246,7 @@ class Cart extends CI_Controller
                             'status' => '0',
                         );
                         $this->Cart_model->update_transaksi($id_transaksi, $params);
-                        $this->Cart_model->update_cart($_SESSION['id_user'], $purum);
+                        $this->Cart_model->update_cart_user($_SESSION['id_user'], $purum);
                         redirect('landing/jasa');
                     } else {
                         die("gagal update");
