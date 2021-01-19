@@ -39,7 +39,7 @@
                                 $number = $year.'AK-'.($row->no_transaksi*13);
                                 if ($status_pembayaran == 0) {
                                     echo "<span class='tag is-danger'>Pembayaran Belum Diverifikasi</span>";
-                                    echo "<a href=\"cart/checkout/$number\" ><span class='tag is-info'>Lakukan Pembayaran</span></a>";
+                                    echo "<a href=\"checkout/$number\" ><span class='tag is-info'>Lakukan Pembayaran</span></a>";
                                 } else {
                                     echo "<span class='tag is-success'>Pembayaran Sudah Diverifikasi</span>";
                                 }
