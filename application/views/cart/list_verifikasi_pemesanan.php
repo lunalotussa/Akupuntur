@@ -26,8 +26,9 @@
                 $query = $this->db->query($sql);
                 if ($query->num_rows() > 0) {
                     $year = date('Y');
-                    $number = $year.'AK-'.($row->no_transaksi*13);
+                    
                     foreach ($query->result() as $row) {
+                        $number = $year.'AK-'.($row->no_transaksi*13);
                          $status_pemesanan  = $row->status_pemesanan;
                          $status_pembayaran = $row->status_pembayaran;
             ?>
