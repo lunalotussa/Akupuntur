@@ -1,4 +1,4 @@
-<h1 class="title has-text-success font-family-philosopher">Daftar Verifikasi Pemesanan</h1>
+<h1 class="title has-text-success font-family-philosopher">History Layanan Anda</h1>
 
 <div class="table-container">
     <table class="table is-fullwidth">
