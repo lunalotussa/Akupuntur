@@ -26,7 +26,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <small>
-                        <?= var_dump($detail)?>
                             <strong>Tagihan yang harus dibayar</strong>
                         </small>
                         <div class="row">
@@ -57,19 +56,19 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Durasi</th>
                                 <th scope="col">Layanan</th>
                                 <th scope="col">Harga</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php foreach($detail as $row){?>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td><?php echo $row->durasi?> menit</td>
+                                <td><?php echo $row->layanan?></td>
+                                <td>IDR <?php echo $row->harga?></td>
                             </tr>
+                        <?php }?>
                         </tbody>
                     </table>
                     <div class="row g-bg-hijau g-border-radius g-text-white">
