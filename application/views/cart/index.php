@@ -25,8 +25,8 @@
                                     <input type="checkbox" name="selcheck[]" value="<?= $row->id_chart; ?>" <?php if($io=0){echo "required";} ?>>
                                 </td>
                                 <td>
-                                    <figure class="shop-img image is-96x96">
-                                        <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" alt>
+                                    <figure class="shop-img image">
+                                        <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" height=90 widht=90 alt>
                                     </figure>
                                     <a href="shop-single-item.html" class="shop-cart-name"><?php echo $row->nama; ?></a>
                                 </td>
