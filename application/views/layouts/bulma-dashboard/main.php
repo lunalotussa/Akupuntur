@@ -1,7 +1,7 @@
 <nav class="navbar is-black py-3" role="navigation" aria-label="main dropdown navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="<?= base_url('Dashboard'); ?>">
                 <img src="<?= base_url('assets/img/logo.png'); ?>" /> &nbsp;&nbsp;
                 <span class="font-family-philosopher has-text-success">
                     Terapi Holistik Sayang Anak
@@ -52,12 +52,6 @@
                                         </span>
                                         <span> Verifikasi Terapis </span>
                                     </a>
-                                    <a class="navbar-item" href="#">
-                                        <span class="icon">
-                                            <i class="fas fa-money-bill-alt"></i>
-                                        </span>
-                                        <span> Verifikasi Pembayaran </span>
-                                    </a>
                                 </div>
                             </div>
                             <div class="navbar-item has-dropdown is-hoverable">
@@ -90,7 +84,7 @@
 
                         <div class="navbar-end">
                             <a class="navbar-item" href="<?php echo site_url('dashboard'); ?>">Dashboard</a>
-                            <a class="navbar-item" href="#">Booking Layanan</a>
+                            <a class="navbar-item" href="<?= base_url('landing/jasa') ?>">Booking Layanan</a>
                             <div class="navbar-item has-dropdown is-hoverable">
                                 <a class="navbar-link">Profile</a>
                                 <div class="navbar-dropdown">
@@ -128,9 +122,6 @@
 
                                 <a class="navbar-item" href="<?php echo site_url('DetailLayanan/index'); ?>">
                                     Layanan
-                                </a>
-                                <a class="navbar-item" href="#">
-                                    Jadwal Terapis
                                 </a>
                             <?php } ?>
                             <div class="navbar-item has-dropdown is-hoverable">
