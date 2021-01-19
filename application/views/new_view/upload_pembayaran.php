@@ -71,6 +71,8 @@
                         <?php }?>
                         </tbody>
                     </table>
+
+                    <h3>Total :</h3>
                     <div class="row g-bg-hijau g-border-radius g-text-white">
                         <div class="col-md-4">
                             <p class="g-pad-y"><?= $bayar[0]->lama?>
