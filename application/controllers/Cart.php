@@ -36,6 +36,23 @@ class Cart extends CI_Controller
         $this->load->view('templates/relish/footer');
     }
 
+    function history()
+    {
+
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+        // $data['belanja']    = $this->Cart_model->get_all_cart($_SESSION['id_user']);
+        // $data['_view'] = 'cart/index';
+
+        $data['_view'] = 'cart/history';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+    }
+
     function detail_list(){
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
