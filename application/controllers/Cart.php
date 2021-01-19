@@ -53,6 +53,22 @@ class Cart extends CI_Controller
         $this->load->view('templates/pure/footer');
     }
 
+    function detail_history($no_transaksi){
+        $data['nama']       = $_SESSION['nama'];
+        $data['hak_akses']  = $_SESSION['hak_akses'];
+        $data['id_user']    = $_SESSION['id_user'];
+        $data['email']      = $_SESSION['email'];
+
+        $asd = explode("-",$no_transaksi);
+        $data['transaksi']  = $this->Cart_model->get_transaksi(($asd['1']/13));
+        $data['_view']      = 'cart/detail_pembayaran';
+
+        $this->load->view('templates/pure/header');
+        $this->load->view('layouts/bulma-dashboard/main', $data);
+        $this->load->view('templates/pure/footer');
+
+    }
+
     function detail_list(){
         $data['nama']       = $_SESSION['nama'];
         $data['hak_akses']  = $_SESSION['hak_akses'];
