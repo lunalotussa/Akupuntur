@@ -226,6 +226,7 @@ class Cart extends CI_Controller
     function checkout($param){
             $asd = explode("-",$param);
             $data['bayar'] = $this->Cart_model->get_bayar_detail(($asd['1']/13));
+            $data['status_bayar'] = $this->Cart_model->get_bayar_status(($asd['1']/13));
             $data['detail'] = $this->Cart_model->checkout_detail(($asd['1']/13));
             $this->load->view('templates/relish/header');
             $this->load->view('new_view/upload_pembayaran', $data);
