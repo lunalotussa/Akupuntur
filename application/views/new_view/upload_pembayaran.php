@@ -91,6 +91,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-5">
+                            <?php if($status_bayar == '0'){?>
                                 <?php echo form_open_multipart('cart/transaksi/'.$bayar[0]->no_transaksi); ?>
                                 <div class="form-group">
                                     <label for="inputFile">Upload Bukti Pembayaran</label>
@@ -129,6 +130,10 @@
                                     Upload
                                 </button>
                                 <?= form_close(); ?>
+                                <?php }else{
+                                    ?>
+                                    <h2>Bukti Bayar Sudah diterima, tunggu admin memverifikasi pembayaran. Terimakasih</h2>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
