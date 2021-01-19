@@ -28,7 +28,7 @@
                                     <figure class="shop-img image">
                                         <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" height=90 width=90 alt>
                                     </figure>
-                                    <a href="shop-single-item.html" class="shop-cart-name"><?php echo $row->nama; ?></a>
+                                    <a href="#" class="shop-cart-name"><?php echo $row->nama; ?></a>
                                 </td>
                                 <td>
                                     <?php echo "IDR " . $row->harga; ?>
