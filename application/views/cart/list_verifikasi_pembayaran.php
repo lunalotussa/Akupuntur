@@ -5,6 +5,7 @@
         <thead>
             <tr>
                 <th>Tanggal Transaksi</th>
+                <th>Nomor Transaksi</th>
                 <th>Status Pembayaran</th>
                 <th>Status Pemesanan</th>
                 <th>Aksi</th>
@@ -13,6 +14,7 @@
         <tfoot>
             <tr>
                 <th>Tanggal Transaksi</th>
+                <th>Nomor Transaksi</th>
                 <th>Status Pembayaran</th>
                 <th>Status Pemesanan</th>
                 <th>Aksi</th>
@@ -23,12 +25,15 @@
                 $sql = "SELECT * FROM transaksi";
                 $query = $this->db->query($sql);
                 if ($query->num_rows() > 0) {
+                    $year = date('Y');
+                    $number = $year.'AK-'.($row->no_transaksi*13);
                     foreach ($query->result() as $row) {
                          $status_pemesanan  = $row->status_pemesanan;
                          $status_pembayaran = $row->status_pembayaran;
             ?>
                         <tr>
                             <td><?php echo $row->tanggal?></td>
+                            <td><?php echo $number?></td>
                             <td>
                                 <?php
                                 if ($status_pembayaran == 0) {
