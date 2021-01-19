@@ -136,4 +136,16 @@ class Cart_model extends CI_Model
         $this->db->where('no_transaksi',$no_transaksi);
         return $this->db->update('transaksi',$params);
     }
+
+    function checkout_detail($no_transaksi){
+        // select * from transaksi a join detail_transaksi b on a.no_transaksi=b.no_transaksi join cart c on b.id_cart=c.id_chart join detail_layanan d on c.id_detail_layanan=d.id_detailLayanan join layanan e on d.id_layanan=e.id_layanan where a.no_transaksi='83';
+        $this->db->select('e.durasi as durasi,e.nama as nama,e.harga as harga');
+        $this->db->from('transaksi a');
+        $this->db->join('detail_transaksi b', 'a.no_transaksi=b.no_transaksi');
+        $this->db->join('cart c', 'b.id_cart=c.id_chart');
+        $this->db->join('detail_layanan d', 'c.id_detail_layanan=d.id_detailLayanan');
+        $this->db->join('layanan e', 'd.id_layanan=e.id_layanan');
+        $this->db->where('b.no_transaksi', $no_transaksi);
+        return $this->db->get()->result();
+    }
 }
