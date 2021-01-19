@@ -71,8 +71,6 @@
                         <?php }?>
                         </tbody>
                     </table>
-
-                    <h3>Total :</h3>
                     <div class="row g-bg-hijau g-border-radius g-text-white">
                         <div class="col-md-4">
                             <p class="g-pad-y"><?= $bayar[0]->lama?>
@@ -91,7 +89,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-5">
-                            <?php if($status_bayar == '0'){?>
+                            <?php if($status_bayar[0]->bukti_pembayaran == '0'){?>
                                 <?php echo form_open_multipart('cart/transaksi/'.$bayar[0]->no_transaksi); ?>
                                 <div class="form-group">
                                     <label for="inputFile">Upload Bukti Pembayaran</label>
