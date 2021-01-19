@@ -17,6 +17,7 @@
                 <th>Nomor Transaksi</th>
                 <th>Layanan</th>
                 <th>Status Pembayaran</th>
+                <th>Detail Pembayaran</th>
                 <th>Status Pemesanan</th>
             </tr>
         </tfoot>
@@ -42,6 +43,7 @@
                                     echo "<a href=\"checkout/$number\" ><span class='tag is-info'>Lakukan Pembayaran</span></a>";
                                 } else {
                                     echo "<span class='tag is-success'>Pembayaran Sudah Diverifikasi</span>";
+                                    echo "<a href=\"detail_history/$number\" ><span class='tag is-info'>Cek bukti pembayaran</span></a>";
                                 }
 
                                 ?>
