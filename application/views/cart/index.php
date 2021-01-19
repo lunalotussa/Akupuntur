@@ -26,7 +26,7 @@
                                 </td>
                                 <td>
                                     <div class="shop-img">
-                                        <img src="<?= base_url('assets/relish/images/shop/mini-img-9.jpg'); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" alt>
+                                        <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" alt>
                                     </div>
                                     <a href="shop-single-item.html" class="shop-cart-name"><?php echo $row->nama; ?></a>
                                 </td>

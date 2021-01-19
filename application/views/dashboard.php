@@ -95,6 +95,8 @@
                                     <div class="field is-grouped">
                                         <p class="control">
                                             <a href="<?php echo site_url('landing/jasa'); ?>" class="tag is-info">Booking Layanan</a>
+                                            <a href="<?php echo site_url('cart/index'); ?>" class="tag is-success">Checkout sekarang</a>
+                                            <a href="<?php echo site_url('cart/history'); ?>" class="tag is-info">Riwayat Layanan</a>
                                         </p>
                                     </div>
 
