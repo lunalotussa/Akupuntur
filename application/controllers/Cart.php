@@ -186,7 +186,7 @@ class Cart extends CI_Controller
             $params = array(
                 'status_pembayaran' => "0",
                 'status_pemesanan' => "0",
-                'id_customer' => $cuscus,
+                'id_customer' => $cuscus[0]->id_customer,
                 'tanggal' => date("Y-m-d, H:m:s"),
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",
