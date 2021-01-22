@@ -164,4 +164,11 @@ class Cart_model extends CI_Model
         $this->db->where('no_transaksi', $no_transaksi);
         return $this->db->get()->result();
     }
+
+    function get_id_customer($param){
+        $this->db->select('id_customer');
+        $this->db->from('customer');
+        $this->db->where('id_user', $param);
+        return $this->db->get()->result();
+    }
 }

@@ -60,7 +60,8 @@ class Cart extends CI_Controller
         $data['email']      = $_SESSION['email'];
 
         $asd = explode("-",$no_transaksi);
-        $data['transaksi']  = $this->Cart_model->get_transaksi(($asd['1']/13));
+        $cuscus = $this->Cart_model->get_id_customer(($asd['1']/13));
+        $data['transaksi']  = $this->Cart_model->get_transaksi($cuscus);
         $data['_view']      = 'cart/detail_pembayaran';
 
         $this->load->view('templates/pure/header');
@@ -131,6 +132,7 @@ class Cart extends CI_Controller
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
         $data['transaksi']  = $this->Cart_model->get_transaksi($no_transaksi);
+        $data['test'] = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $data['_view']      = 'cart/detail_pembayaran';
 
         $this->load->view('templates/pure/header');
@@ -142,9 +144,11 @@ class Cart extends CI_Controller
     function add($iddetaillayanan)
     {
         // if (isset($_POST) && count($_POST) > 0) {
+
+            $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
             $params = array(
                 'id_detail_layanan' => $iddetaillayanan,
-                'id_customer' => $_SESSION['id_user'],
+                'id_customer' => $cuscus,
                 'status' => '1',
             );
 
@@ -179,11 +183,11 @@ class Cart extends CI_Controller
                 $harga = $this->Cart_model->get_harga_layanan($item);
                 $tot += $harga[0]->harga;
             }
-            
+            $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
             $params = array(
                 'status_pembayaran' => "0",
                 'status_pemesanan' => "0",
-                'id_customer' => $_SESSION['id_user'],
+                'id_customer' => $a,
                 'tanggal' => date("Y-m-d, H:m:s"),
                 'total_harga' => $tot,
                 'bukti_pembayaran' => "0",

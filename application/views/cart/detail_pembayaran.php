@@ -1,6 +1,7 @@
 <h1 class="title has-text-success font-family-philosopher">Detail Booking</h1>
 <?php echo form_open_multipart(); ?>
 <?php 
+var_dump($test);
 $id_customer = $transaksi['id_customer'];
 $sql = "SELECT user.nama,user.email FROM user JOIN customer on user.id_user=customer.id_user WHERE id_customer=$id_customer";
 $query = $this->db->query($sql);
