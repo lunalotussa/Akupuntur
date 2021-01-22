@@ -28,7 +28,8 @@ class Cart extends CI_Controller
         $data['hak_akses']  = $_SESSION['hak_akses'];
         $data['id_user']    = $_SESSION['id_user'];
         $data['email']      = $_SESSION['email'];
-        $data['belanja']    = $this->Cart_model->get_all_cart($_SESSION['id_user']);
+        $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
+        $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
         $data['_view'] = 'cart/index';
 
         $this->load->view('templates/relish/header');
