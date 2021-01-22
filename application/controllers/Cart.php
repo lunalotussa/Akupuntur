@@ -144,7 +144,7 @@ class Cart extends CI_Controller
         // if (isset($_POST) && count($_POST) > 0) {
 
             $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
-            var_dump($cuscus->id_customer);
+            var_dump($cuscus[0]->id_customer);
             $params = array(
                 'id_detail_layanan' => $iddetaillayanan,
                 'id_customer' => $cuscus,
