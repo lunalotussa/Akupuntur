@@ -61,7 +61,7 @@ class Cart extends CI_Controller
 
         $asd = explode("-",$no_transaksi);
         $cuscus = $this->Cart_model->get_id_customer(($asd['1']/13));
-        $data['transaksi']  = $this->Cart_model->get_transaksi($cuscus);
+        $data['transaksi']  = $this->Cart_model->get_transaksi(($asd['1']/13));
         $data['_view']      = 'cart/detail_pembayaran';
 
         $this->load->view('templates/pure/header');
