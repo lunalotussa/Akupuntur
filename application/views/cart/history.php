@@ -22,7 +22,7 @@
         </tfoot>
         <tbody>
             <?php 
-                $sql = "SELECT * FROM layanan a join detail_layanan b on a.id_layanan = b.id_layanan join cart c on b.id_detailLayanan = c.id_detail_layanan join detail_transaksi d on c.id_chart=d.id_cart join transaksi e on d.no_transaksi=e.no_transaksi where e.id_customer='$id_user'";
+                $sql = "SELECT * FROM layanan a join detail_layanan b on a.id_layanan = b.id_layanan join cart c on b.id_detailLayanan = c.id_detail_layanan join detail_transaksi d on c.id_chart=d.id_cart join transaksi e on d.no_transaksi=e.no_transaksi join customer f on f.id_customer=e.id_customer where f.id_user='$id_user'";
                 $query = $this->db->query($sql);
                 if ($query->num_rows() > 0) {
                     foreach ($query->result() as $row) {
