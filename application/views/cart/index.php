@@ -17,16 +17,18 @@
                             <th>Total</th>
                             <th></th>
                         </tr>
-                        <?php 
+                        <?php
                         $io = 0;
                         foreach ($belanja as $row) { ?>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="selcheck[]" value="<?= $row->id_chart; ?>" <?php if($io=0){echo "required";} ?>>
+                                    <input type="checkbox" name="selcheck[]" value="<?= $row->id_chart; ?>" <?php if ($io = 0) {
+                                                                                                                echo "required";
+                                                                                                            } ?>>
                                 </td>
                                 <td>
                                     <figure class="shop-img image">
-                                        <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" height=90 width=90 alt>
+                                        <img src="<?= base_url('resources/picture/layanan/' . $row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/mini-img-9@2x.jpg'); ?>" height=90 width=90 alt>
                                     </figure>
                                     <a href="#" class="shop-cart-name"><?php echo $row->nama; ?></a>
                                 </td>
@@ -50,9 +52,13 @@
                             <td colspan="7">
                                 <div class="shopping-table-bot">
                                     <div class="left clearfix">
-                                        <div class="form">
+                                        <div class="form" style="margin-bottom: 20px;">
                                             <label for="tanggal-penggunaan">Tanggal penggunaan </label>
                                             <input id="tanggal-penggunaan" name="date" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="date" required>
+                                        </div>
+                                        <div class="form">
+                                            <label for="jam-penggunaan">Jam penggunaan </label>
+                                            <input id="jam-penggunaan" name="pukul" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00" max="17:00" required>
                                         </div>
                                     </div>
                                     <div class="right">
