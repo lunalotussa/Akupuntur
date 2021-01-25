@@ -5204,6 +5204,7 @@ aside ul {
 .form input[type="password"],
 .form input[type="date"],
 .form input[type="color"],
+.form input[type="time"],
 .form select {
   display: inline-block;
   height: 44px;
@@ -5253,6 +5254,7 @@ aside ul {
 .form input[type="password"].input-sm,
 .form input[type="date"].input-sm,
 .form input[type="color"].input-sm,
+.form input[type="time"].input-sm,
 .form select.input-sm {
   height: 30px;
   padding-left: 8px;
