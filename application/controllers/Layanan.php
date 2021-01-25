@@ -62,7 +62,8 @@ class Layanan extends CI_Controller
                             'nama' => $this->input->post('nama'),
                             'durasi' => $this->input->post('durasi'),
                             'harga' => $this->input->post('harga'),
-                            'gambar' => $foto['file_name']
+                            'gambar' => $foto['file_name'],
+                            'deskripsi' => $this->input->post('deskripsi'),
                         );
                         // hapus foto pada direktori
                         //@unlink($path . $this->input->post('filelama'));
@@ -115,7 +116,8 @@ function edit($id_layanan)
                             'nama' => $this->input->post('nama'),
                             'durasi' => $this->input->post('durasi'),
                             'harga' => $this->input->post('harga'),
-                            'gambar' => $foto['file_name']
+                            'gambar' => $foto['file_name'],
+                            'deskripsi' => $this->input->post('deskripsi'),
                         );
                         // hapus foto pada direktori
                         @unlink($path . $this->input->post('filelama'));
@@ -132,6 +134,7 @@ function edit($id_layanan)
                         'durasi' => $this->input->post('durasi'),
                         'harga' => $this->input->post('harga'),
                         'gambar' => $this->input->post('filelama'),
+                        'deskripsi' => $this->input->post('deskripsi'),
                     );
 
                     $this->Layanan_model->update_layanan($id_layanan, $params);

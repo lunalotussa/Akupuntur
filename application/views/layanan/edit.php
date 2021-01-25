@@ -27,6 +27,12 @@
 			</div>
 		</div>
 		<div class="field">
+			<label class="label" for="gambar">Deskripsi Layanan</label>
+			<div class="control">
+				<textarea name="deskripsi" value="<?php echo ($this->input->post('deskripsi') ? $this->input->post('deskripsi') : $layanan['deskripsi']); ?>" class="input" id="deskripsi"></textarea>
+			</div>
+		</div>
+		<div class="field">
 			<label class="label" for="gambar">Gambar</label>
 			<div class="control">
 				<?php
