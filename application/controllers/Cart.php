@@ -145,20 +145,38 @@ class Cart extends CI_Controller
         // if (isset($_POST) && count($_POST) > 0) {
 
             $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
+            $id_customerr= $cuscus[0]->id_customer;
             $params = array(
                 'id_detail_layanan' => $iddetaillayanan,
-                'id_customer' => $cuscus[0]->id_customer,
+                'id_customer' => $id_customerr,
                 'status' => '1',
             );
 
-            $customer_id = $this->Cart_model->add_cart($params);
-            redirect('cart/index');
-        // } else {
-        //     $data['_view'] = 'customer/add';
-        //     $this->load->view('templates/pure/header');
-        //     $this->load->view('layouts/bulma-dashboard/main', $data);
-        //     $this->load->view('templates/pure/footer');
-        // }
+            $sql = "SELECT * FROM detail_layanan WHERE id_detailLayanan=$iddetaillayanan";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) {
+            foreach ($query->result() as $a) {
+                $id_terapis=$a->id_terapis;
+            }}
+
+            $sqll = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='1'";
+            $queryy = $this->db->query($sqll);
+            if ($queryy->num_rows() > 0) {
+            foreach ($queryy->result() as $zz) {
+                $id_terapiss=$zz->id_terapis;
+            }}
+
+            // $customer_id = $this->Cart_model->add_cart($params);
+            // redirect('cart/index');
+
+            if ($id_terapiss==$id_terapis) {
+               $customer_id = $this->Cart_model->add_cart($params);
+               redirect('cart/index');
+            }else{
+                redirect('landing/jasa');
+                //kurang kasih alert
+            }
+            
     }
 
     function remove($id_cart)
