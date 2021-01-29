@@ -164,19 +164,19 @@ class Cart extends CI_Controller
             if ($queryy->num_rows() > 0) {
             foreach ($queryy->result() as $zz) {
                 $id_terapiss=$zz->id_terapis;
-            }}
-
-            // $customer_id = $this->Cart_model->add_cart($params);
-            // redirect('cart/index');
-
-            if ($id_terapiss==$id_terapis) {
-               $customer_id = $this->Cart_model->add_cart($params);
-               redirect('cart/index');
-            }else{
-                redirect('landing/jasa');
-                //kurang kasih alert
             }
-            
+                if ($id_terapiss==$id_terapis) {
+                   $customer_id = $this->Cart_model->add_cart($params);
+                   redirect('cart/index');
+                }else{
+                    redirect('landing/jasa');
+                    //kurang kasih alert
+                }
+            }else{
+                $customer_id = $this->Cart_model->add_cart($params);
+                redirect('cart/index');
+
+            }      
     }
 
     function remove($id_cart)
@@ -335,4 +335,5 @@ class Cart extends CI_Controller
         } else
             show_error('The terapi you are trying to edit does not exist.');
     }
+
 }
