@@ -193,8 +193,15 @@ class Cart extends CI_Controller
 
     function pay(){
         if (isset($_POST) && count($_POST) > 0) {
+            date_default_timezone_set('Asia/Jakarta');
             $cart = $this->input->post('selcheck');
             $day = $this->input->post('date');
+            $jam_mulai = $this->input->post('jam_mulai');
+
+            $jam_lama = $this->input->post('jam_selesai'). " minutes";
+            $temp_jam = strtotime("$jam_mulai + $jam_lama");
+            $jam_selesai = date("H:i", $temp_jam);
+
             $tot = 0;
             foreach($cart as $item){
                 $harga = $this->Cart_model->get_harga_layanan($item);
@@ -221,6 +228,8 @@ class Cart extends CI_Controller
                     'no_transaksi' => $transaksi_id,
                     'id_cart' => $item,
                     'tanggal' => $day,
+                    'jam_mulai' => $jam_mulai,
+                    'jam_selesai' => $jam_selesai
                 );
                 $this->Cart_model->add_cart_detail($parampa);
 
