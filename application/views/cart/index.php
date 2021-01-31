@@ -79,7 +79,6 @@
                     </tbody>
                 </table>
                 <input type="hidden" value="<?= $durasi?>" name="jam_selesai">
-                <h1><?= $durasi?></h1>
                 <?= form_close(); ?>
                 <!-- /shop cart table -->
 
