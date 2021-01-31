@@ -78,8 +78,6 @@ foreach ($query->result() as $ca) {
 
 			</div>
 		</fieldset>
-	</div>
-	<div class="column is-half">
 		<fieldset disabled="disabled">
 			<div class="field">
 				<label class="label" for="email">Durasi</label>
