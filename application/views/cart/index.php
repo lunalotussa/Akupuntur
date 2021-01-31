@@ -62,7 +62,11 @@
                                         </div>
                                         <div class="form">
                                             <label for="jam-penggunaan">Jam penggunaan </label>
-                                            <input id="jam-penggunaan" name="jam_mulai" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00" max="17:00" required>
+                                            <!-- <input id="jam-penggunaan" name="jam_mulai" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00:00" max="17:00" required> -->
+                                            <select name="jam_mulai" id="jam-penggunaan">
+                                                <option value="08:00">08:00</option>
+                                                <option value="08:30">08:30</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="right">
