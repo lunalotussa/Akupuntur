@@ -57,7 +57,7 @@ foreach ($query->result() as $ca) {
 				<div class="control">
 					<?php
 					$no_transaksi = $transaksi['no_transaksi'];
-					$sql = "SELECT layanan.nama,user.nama as nama_terapis,transaksi.no_transaksi,transaksi.bukti_pembayaran,transaksi.rekening_pengirim,transaksi.status_pembayaran,transaksi.status_pemesanan,transaksi.tanggal as tanggal_trans,layanan.harga, detail_transaksi.tanggal,detail_transaksi.id_detail FROM transaksi JOIN detail_transaksi ON transaksi.no_transaksi=detail_transaksi.no_transaksi JOIN cart ON detail_transaksi.id_cart=cart.id_chart JOIN detail_layanan ON detail_layanan.id_detailLayanan=cart.id_detail_layanan JOIN layanan ON layanan.id_layanan=detail_layanan.id_layanan JOIN terapis ON detail_layanan.id_terapis=terapis.id_terapis JOIN user ON terapis.id_user=user.id_user WHERE transaksi.no_transaksi=$no_transaksi";
+					$sql = "SELECT detail_transaksi.jam_mulai as mulai, detail_transaksi.jam_selesai as selesai,layanan.nama,user.nama as nama_terapis,transaksi.no_transaksi,transaksi.bukti_pembayaran,transaksi.rekening_pengirim,transaksi.status_pembayaran,transaksi.status_pemesanan,transaksi.tanggal as tanggal_trans,layanan.harga, detail_transaksi.tanggal,detail_transaksi.id_detail FROM transaksi JOIN detail_transaksi ON transaksi.no_transaksi=detail_transaksi.no_transaksi JOIN cart ON detail_transaksi.id_cart=cart.id_chart JOIN detail_layanan ON detail_layanan.id_detailLayanan=cart.id_detail_layanan JOIN layanan ON layanan.id_layanan=detail_layanan.id_layanan JOIN terapis ON detail_layanan.id_terapis=terapis.id_terapis JOIN user ON terapis.id_user=user.id_user WHERE transaksi.no_transaksi=$no_transaksi";
                 	$query = $this->db->query($sql);
                 	if ($query->num_rows() > 0) {
                     foreach ($query->result() as $row) {
@@ -74,6 +74,17 @@ foreach ($query->result() as $ca) {
 				<label class="label" for="email">Tanggal Pelayanan</label>
 				<div class="control">
 					<input type="text" name="tanggal" value="<?php echo $row->tanggal; ?>" class="input" id="email" readonly />
+				</div>
+
+			</div>
+		</fieldset>
+	</div>
+	<div class="column is-half">
+		<fieldset disabled="disabled">
+			<div class="field">
+				<label class="label" for="email">Durasi</label>
+				<div class="control">
+					<input type="text" name="tanggal" value="<?php echo $row->mulai." - ".$row->selesai; ?>" class="input" id="email" readonly />
 				</div>
 
 			</div>
