@@ -19,6 +19,7 @@
                         </tr>
                         <?php
                         $io = 0;
+                        $durasi = 0;
                         foreach ($belanja as $row) { ?>
                             <tr>
                                 <td>
@@ -36,7 +37,10 @@
                                     <?php echo "IDR " . $row->harga; ?>
                                 </td>
                                 <td>
-                                    <?php echo $row->durasi; ?>
+                                    <?php echo $row->durasi; 
+                                    $temp = explode(" ", $row->durasi);
+                                    $durasi += $temp[0];
+                                    ?>
                                 </td>
                                 <td><?php echo "IDR " . $row->harga; ?></td>
                                 <td>
@@ -58,7 +62,7 @@
                                         </div>
                                         <div class="form">
                                             <label for="jam-penggunaan">Jam penggunaan </label>
-                                            <input id="jam-penggunaan" name="pukul" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00" max="17:00" required>
+                                            <input id="jam-penggunaan" name="jam_mulai" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00" max="17:00" required>
                                         </div>
                                     </div>
                                     <div class="right">
@@ -70,6 +74,8 @@
                         </tr>
                     </tbody>
                 </table>
+                <input type="hidden" value="<?= $durasi?>" name="jam_selesai">
+                <h1><?= $durasi?></h1>
                 <?= form_close(); ?>
                 <!-- /shop cart table -->
 
