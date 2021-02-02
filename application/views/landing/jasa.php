@@ -84,6 +84,16 @@
 
         <!-- /shop grid or list -->
 
+        <!-- message -->
+
+        <div class="group mt-40">
+          <strong class="text-danger">
+            Pastikan Anda memilih terapis yang sama jika memesan lebih dari 1 layanan
+          </strong>
+        </div>
+
+        <!-- /message -->
+
         <!-- shop products -->
 
         <div class="row mt-40 products">
@@ -92,10 +102,10 @@
             <!-- start looping-->
             <div class="col-md-4 col-sm-4 mb-60">
               <div class="shop-container align-center alt-2">
-                <a href="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" class="lightbox mfp-image">
+                <a href="<?= base_url('resources/picture/layanan/' . $row->gambar); ?>" class="lightbox mfp-image">
                   <div class="shop-media">
                     <div class="shop-img">
-                      <img src="<?= base_url('resources/picture/layanan/'.$row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
+                      <img src="<?= base_url('resources/picture/layanan/' . $row->gambar); ?>" data-at2x="<?= base_url('assets/relish/images/shop/img-1@2x.jpg'); ?>" alt />
                     </div>
                     <div class="label-new label-left font-alt">New</div>
                   </div>
