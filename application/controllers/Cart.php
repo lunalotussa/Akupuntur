@@ -30,10 +30,12 @@ class Cart extends CI_Controller
         $data['email']      = $_SESSION['email'];
         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
-        $idcus = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
+        $cus = $cuscus[0]->id_customer;
         $data['_view'] = 'cart/index';
 
-        $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$idcus AND cart.status='1'";
+        
+
+        $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$cus AND cart.status='1'";
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $x) {
