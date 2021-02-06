@@ -144,17 +144,17 @@ class Cart extends CI_Controller
     {
         // if (isset($_POST) && count($_POST) > 0) {
 
-            $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
-            $id_customerr= $cuscus[0]->id_customer;
-            $params = array(
-                'id_detail_layanan' => $iddetaillayanan,
-                'id_customer' => $id_customerr,
-                'status' => '1',
-            );
+        $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
+        $id_customerr= $cuscus[0]->id_customer;
+        $params = array(
+            'id_detail_layanan' => $iddetaillayanan,
+            'id_customer' => $id_customerr,
+            'status' => '1',
+        );
 
-            $sql = "SELECT * FROM detail_layanan WHERE id_detailLayanan=$iddetaillayanan";
-            $query = $this->db->query($sql);
-            if ($query->num_rows() > 0) {
+        $sql = "SELECT * FROM detail_layanan WHERE id_detailLayanan=$iddetaillayanan";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
             foreach ($query->result() as $a) {
                 $id_terapis=$a->id_terapis;
             }}
@@ -162,21 +162,21 @@ class Cart extends CI_Controller
             $sqll = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='1'";
             $queryy = $this->db->query($sqll);
             if ($queryy->num_rows() > 0) {
-            foreach ($queryy->result() as $zz) {
-                $id_terapiss=$zz->id_terapis;
-            }
-                if ($id_terapiss==$id_terapis) {
-                   $customer_id = $this->Cart_model->add_cart($params);
-                   redirect('cart/index');
-                }else{
-                    redirect('landing/jasa');
-                    //kurang kasih alert
+                foreach ($queryy->result() as $zz) {
+                    $id_terapiss=$zz->id_terapis;
                 }
-            }else{
-                $customer_id = $this->Cart_model->add_cart($params);
-                redirect('cart/index');
+                if ($id_terapiss==$id_terapis) {
+                 $customer_id = $this->Cart_model->add_cart($params);
+                 redirect('cart/index');
+             }else{
+                redirect('landing/jasa');
+                    //kurang kasih alert
+            }
+        }else{
+            $customer_id = $this->Cart_model->add_cart($params);
+            redirect('cart/index');
 
-            }      
+        }      
     }
 
     function remove($id_cart)
@@ -188,7 +188,7 @@ class Cart extends CI_Controller
             $this->Cart_model->delete_cart($id_cart);
             redirect('cart/index');
         } else
-            show_error('Error when delete data');
+        show_error('Error when delete data');
     }
 
     function pay(){
@@ -197,6 +197,7 @@ class Cart extends CI_Controller
             $cart = $this->input->post('selcheck');
             $day = $this->input->post('date');
             $jam_mulai = $this->input->post('jam_mulai');
+            $now = strtotime($jam_mulai);
 
             $jam_lama = $this->input->post('jam_selesai'). " minutes";
             $temp_jam = strtotime("$jam_mulai + $jam_lama");
@@ -208,52 +209,82 @@ class Cart extends CI_Controller
                 $tot += $harga[0]->harga;
             }
             $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
-            $params = array(
-                'status_pembayaran' => "0",
-                'status_pemesanan' => "0",
-                'id_customer' => $cuscus[0]->id_customer,
-                'tanggal' => date("Y-m-d, H:m:s"),
-                'total_harga' => $tot,
-                'bukti_pembayaran' => "0",
-                'rekening_pengirim' => "0",
-            );
+            $id_customerr= $cuscus[0]->id_customer;
 
-            $transaksi_id = $this->Cart_model->add_transaksi($params);
+            //cari terapis dari id customer session
+            $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='1'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) {
+                foreach ($query->result() as $x) {
+                    $id_terapiss        =$x->id_terapis;
+                }}
+
+            //kondisi jika terapis masih melakukan layanan
+                $bubu = "SELECT cart.id_chart,detail_transaksi.no_transaksi,cart.status,detail_transaksi.tanggal,detail_transaksi.jam_mulai,detail_transaksi.jam_selesai,detail_transaksi.id_terapis FROM cart JOIN detail_transaksi ON cart.id_chart=detail_transaksi.id_cart WHERE cart.status='1' AND detail_transaksi.id_terapis=$id_terapiss";
+                $mumu = $this->db->query($bubu);
+                if ($mumu->num_rows() > 0) {
+                    foreach ($mumu->result() as $s) {
+                       $terapiz   =$s->id_terapis;
+                       $tgl       =$s->tanggal;
+                       $mulai     =$s->jam_mulai;
+                       $selesai   =$s->jam_selesai;
+                   }}
+
+            //kondisi jika terapis penuh
+                   if ($now >= strtotime($mulai) && $now <= strtotime($selesai) && $day==$tgl && $id_terapiss==$terapiz) {
+            //kasih alert "maaf jadwal terapis penuh. silahkan pilih tanggal atau jam booking lainnya"
+                     redirect('cart/index');
+
+                   } else {
+                    $params = array(
+                        'status_pembayaran' => "0",
+                        'status_pemesanan' => "0",
+                        'id_customer' => $cuscus[0]->id_customer,
+                        'tanggal' => date("Y-m-d, H:m:s"),
+                        'total_harga' => $tot,
+                        'bukti_pembayaran' => "0",
+                        'rekening_pengirim' => "0",
+                    );
+
+                    $transaksi_id = $this->Cart_model->add_transaksi($params);
 
             // $data['notrans'] = $transaksi_id;
             // $data['bayar'] = $tot;
-            
-            foreach($cart as $item){
-                $parampa = array(
-                    'no_transaksi' => $transaksi_id,
-                    'id_cart' => $item,
-                    'tanggal' => $day,
-                    'jam_mulai' => $jam_mulai,
-                    'jam_selesai' => $jam_selesai
-                );
-                $this->Cart_model->add_cart_detail($parampa);
+            // code selisih
+
+                    foreach($cart as $item){
+                        $parampa = array(
+                            'no_transaksi' => $transaksi_id,
+                            'id_cart' => $item,
+                            'tanggal' => $day,
+                            'jam_mulai' => $jam_mulai,
+                            'jam_selesai' => $jam_selesai,
+                            'id_terapis'=> $id_terapiss
+                        );
+                        $this->Cart_model->add_cart_detail($parampa);
 
                 // $parampapa = array(
                 //     'status' => '0',
                 // );
                 // $this->Cart_model->update_cart($item,$parampapa);
-            }
+                    }
             // $data['bayar'] = $this->Cart_model->get_bayar_detail($transaksi_id);
             // $this->load->view('templates/relish/header');
             // $this->load->view('new_view/upload_pembayaran', $data);
             // $this->load->view('templates/relish/footer');
-            $year = date('Y');
-            redirect('cart/checkout/'.$year.'AK-'.($transaksi_id*13));
-        } else {
-            $data['_view'] = 'cart/index';
+                    $year = date('Y');
+                    redirect('cart/checkout/'.$year.'AK-'.($transaksi_id*13));
+                }
+            } else {
+                $data['_view'] = 'cart/index';
 
-        $this->load->view('templates/relish/header');
-        $this->load->view('cart/index',$data);
-        $this->load->view('templates/relish/footer');
+                $this->load->view('templates/relish/header');
+                $this->load->view('cart/index',$data);
+                $this->load->view('templates/relish/footer');
+            }
         }
-    }
 
-    function checkout($param){
+        function checkout($param){
             $asd = explode("-",$param);
             $data['bayar'] = $this->Cart_model->get_bayar_detail(($asd['1']/13));
             $data['status_bayar'] = $this->Cart_model->get_bayar_status(($asd['1']/13));
@@ -261,18 +292,18 @@ class Cart extends CI_Controller
             $this->load->view('templates/relish/header');
             $this->load->view('new_view/upload_pembayaran', $data);
             $this->load->view('templates/relish/footer');
-    }
+        }
 
-    function transaksi($id_transaksi){
+        function transaksi($id_transaksi){
         // check if the admin exists before trying to edit it
-        $data['transaksi']   = $this->Cart_model->get_transaksi($id_transaksi);
+            $data['transaksi']   = $this->Cart_model->get_transaksi($id_transaksi);
 
-        if (isset($data['transaksi']['no_transaksi'])) {
-            if (isset($_POST) && count($_POST) > 0) {
-                $path = './resources/picture/bukti_pembayaran';
+            if (isset($data['transaksi']['no_transaksi'])) {
+                if (isset($_POST) && count($_POST) > 0) {
+                    $path = './resources/picture/bukti_pembayaran';
                 // get foto
-                $config['upload_path'] = './resources/picture/bukti_pembayaran';
-                $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                    $config['upload_path'] = './resources/picture/bukti_pembayaran';
+                    $config['allowed_types'] = 'jpg|png|jpeg|gif';
                 $config['max_size'] = '2048';  //2MB max
                 $config['max_width'] = '4480'; // pixel
                 $config['max_height'] = '4480'; // pixel
@@ -299,10 +330,10 @@ class Cart extends CI_Controller
                         die("gagal update");
                     }
                 }
-        } else{
-            show_error('The admin you are trying to edit does not exist.');
+            } else{
+                show_error('The admin you are trying to edit does not exist.');
+            }
         }
-    }
     }
 
     function verifikasi_pembayaran($no_transaksi)
@@ -322,7 +353,7 @@ class Cart extends CI_Controller
             $this->Cart_model->update_verifikasi_pembayaran($no_transaksi, $params);
             redirect('cart/list_verifikasi_pembayaran');
         } else
-            show_error('The terapi you are trying to edit does not exist.');
+        show_error('The terapi you are trying to edit does not exist.');
     }
 
     function verifikasi_pemesanan($no_transaksi)
@@ -342,7 +373,7 @@ class Cart extends CI_Controller
             $this->Cart_model->update_verifikasi_pemesanan($no_transaksi, $params);
             redirect('cart/list_verifikasi_pemesanan');
         } else
-            show_error('The terapi you are trying to edit does not exist.');
+        show_error('The terapi you are trying to edit does not exist.');
     }
 
 }
