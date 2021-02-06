@@ -247,7 +247,7 @@ class Cart extends CI_Controller
                     );
 
                     $transaksi_id = $this->Cart_model->add_transaksi($params);
-
+                    
             // $data['notrans'] = $transaksi_id;
             // $data['bayar'] = $tot;
             // code selisih
@@ -261,8 +261,11 @@ class Cart extends CI_Controller
                             'jam_selesai' => $jam_selesai,
                             'id_terapis'=> $id_terapiss
                         );
+                        $params = array(
+                            'status_pembayaran' => '1',
+                        );
                         $this->Cart_model->add_cart_detail($parampa);
-
+                        $this->Cart_model->update_verifikasi_pembayaran($transaksi_id, $params);
                 // $parampapa = array(
                 //     'status' => '0',
                 // );
