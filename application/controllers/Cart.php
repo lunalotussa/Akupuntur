@@ -32,6 +32,15 @@ class Cart extends CI_Controller
         $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
         $data['_view'] = 'cart/index';
 
+        $bubu = "SELECT cart.id_chart,detail_transaksi.no_transaksi,cart.status,detail_transaksi.tanggal,detail_transaksi.jam_mulai,detail_transaksi.jam_selesai,detail_transaksi.id_terapis FROM cart JOIN detail_transaksi ON cart.id_chart=detail_transaksi.id_cart WHERE cart.status='1' AND detail_transaksi.id_terapis=$id_terapiss";
+        $mumu = $this->db->query($bubu);
+
+        $jam = array();
+        foreach($mumu->result() as $key){
+            $temp = array($key->jam_mulai,$key->jam_selesai);
+            array_push($jam, $temp);
+        }
+        $data['jam']      = $jam;
         $this->load->view('templates/relish/header');
         $this->load->view('cart/index',$data);
         $this->load->view('templates/relish/footer');
