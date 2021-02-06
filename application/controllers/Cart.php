@@ -33,24 +33,7 @@ class Cart extends CI_Controller
         $cus = $cuscus[0]->id_customer;
         $data['_view'] = 'cart/index';
 
-        
-
-        $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$cus AND cart.status='1'";
-        $query = $this->db->query($sql);
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $x) {
-                $id_terapiss        =$x->id_terapis;
-            }}
-        
-        $bubu = "SELECT cart.id_chart,detail_transaksi.no_transaksi,cart.status,detail_transaksi.tanggal,detail_transaksi.jam_mulai,detail_transaksi.jam_selesai,detail_transaksi.id_terapis FROM cart JOIN detail_transaksi ON cart.id_chart=detail_transaksi.id_cart WHERE cart.status='1' AND detail_transaksi.id_terapis=$id_terapiss";
-        $mumu = $this->db->query($bubu);
-
-        $jam = array();
-        foreach($mumu->result() as $key){
-            $temp = array($key->jam_mulai,$key->jam_selesai);
-            array_push($jam, $temp);
-        }
-        $data['jam']      = $jam;
+    
         $this->load->view('templates/relish/header');
         $this->load->view('cart/index',$data);
         $this->load->view('templates/relish/footer');

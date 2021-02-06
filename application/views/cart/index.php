@@ -4,8 +4,7 @@
             <div class="col-md-12">
                 <h3 class="cart-title font-alt">Cart</h3>
                 <a href="<?= base_url('landing/jasa'); ?>" class="button small right mt-20">Back to shopping</a>
-                <?php $totalHarga = 0; 
-                var_dump($jam);
+                <?php $totalHarga = 0;
                 ?>
                 <!-- shop cart table -->
                 <?= form_open('cart/pay'); ?>
