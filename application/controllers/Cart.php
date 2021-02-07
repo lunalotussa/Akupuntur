@@ -267,8 +267,9 @@ class Cart extends CI_Controller
                         );
                         $this->Cart_model->add_cart_detail($parampa);
                         $this->Cart_model->update_verifikasi_pembayaran($transaksi_id, $params);
+                        
                 // $parampapa = array(
-                //     'status' => '0',
+                //     'status' => '1',
                 // );
                 // $this->Cart_model->update_cart($item,$parampapa);
                     }
@@ -325,7 +326,7 @@ class Cart extends CI_Controller
                         // hapus foto pada direktori
                         //@unlink($path . $this->input->post('filelama'));
                         $purum = array(
-                            'status' => '0',
+                            'status' => '1',
                         );
                         $this->Cart_model->update_transaksi($id_transaksi, $params);
                         $this->Cart_model->update_cart_user($_SESSION['id_user'], $purum);
