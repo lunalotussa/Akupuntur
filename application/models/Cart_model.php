@@ -20,6 +20,11 @@ class Cart_model extends CI_Model
         return $this->db->get_where('cart',array('id_chart'=>$id_cart))->row_array();
     }
 
+    function get_time($id_terapis,$tanggal)
+    {
+        return $this->db->get_where('detail_transaksi',array('id_terapis'=>$id_terapis,'tanggal'=>$tanggal))->row_array();
+    }
+
     function get_transaksi($no_transaksi)
     {
         return $this->db->get_where('transaksi',array('no_transaksi'=>$no_transaksi))->row_array();
@@ -68,6 +73,8 @@ class Cart_model extends CI_Model
         $this->db->insert('detail_transaksi',$params);
         return $this->db->insert_id();
     }
+
+
     
     /*
      * function to update customer

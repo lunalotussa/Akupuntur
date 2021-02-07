@@ -113,9 +113,29 @@
 
 var id_terapis = '<?= $id_terapis?>';
     function handler(e){
-  alert(e.target.value);
-  if(id_terapis = NULL){
-      alert('data kosong');
+  
+  if(id_terapis = ''){
+      //do nothing
+  }else{
+    alert(e.target.value);
   }
+}
+
+function getTime(id_terapis,tanggal){
+    $.ajax({
+        url: <?php echo base_url("cart/getTImeAjax")?>,
+        data: {
+            id_terapis: id_terapis,
+            tanggal: tanggal
+        },
+        dataTypel: 'HTML',
+        error: function(msg){
+            alert(msg.statusText);
+            return msg;
+        },
+        success: function(html){
+            alert(html)
+        }
+    });
 }
 </script>
