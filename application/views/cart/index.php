@@ -7,9 +7,7 @@
                 <?php $totalHarga = 0;
                 ?>
                 <!-- shop cart table -->
-                <?= form_open('cart/pay'); 
-                
-                var_dump($cus);?>
+                <?= form_open('cart/pay');?>
                 <table class="table shopping-cart-table mb-50">
                     <tbody>
                         <tr class="font-alt">
