@@ -384,7 +384,7 @@ class Cart extends CI_Controller
         if($data==NULL){
             
         }else{
-
+            var_dump($data);
         }
     }
 }
