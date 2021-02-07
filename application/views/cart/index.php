@@ -116,9 +116,9 @@
 var id_terapis = '<?= $tera_who?>';
     function handler(e){
   
-  if(id_terapis = ''){
+  if (id_terapis = ''){
       //do nothing
-  }else{
+  }else {
     alert(e.target.value);
   }
 }
