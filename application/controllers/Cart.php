@@ -444,21 +444,22 @@ class Cart extends CI_Controller
                 }
                 array_pop($newjam);
                 $jamfilter = array_values(array_unique($newjam));
-
-                var_dump($jamf);
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                var_dump($jam);
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                var_dump($newjam);
-                echo "<br/>";
-                echo "<br/>";
-                echo "<br/>";
-                var_dump($jamfilter);
             }
+
+            var_dump($jamf);
+            echo "<br/>";
+            echo "<br/>";
+            echo "<br/>";
+            var_dump($jam);
+            echo "<br/>";
+            echo "<br/>";
+            echo "<br/>";
+            var_dump($newjam);
+            echo "<br/>";
+            echo "<br/>";
+            echo "<br/>";
+            var_dump($jamfilter);
+            
         }
     }
 }
