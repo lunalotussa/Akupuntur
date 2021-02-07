@@ -112,7 +112,7 @@ function handler(e){
             },
             success: function(result) {
                 alert(result);
-                select = document.getElementById('jam-penggunaan');
+                select = document.getElementById('jam-penggunaan').innerHTML = result;
                 console.log(result);
                 select.appendChild(result);
             },
