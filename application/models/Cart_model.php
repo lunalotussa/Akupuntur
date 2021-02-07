@@ -22,7 +22,6 @@ class Cart_model extends CI_Model
 
     function get_time($id_terapis,$tanggal)
     {
-
         $this->db->select('*');
         $this->db->from('detail_transaksi');
         $this->db->where('id_terapis', $id_terapis);

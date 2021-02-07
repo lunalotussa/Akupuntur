@@ -432,11 +432,7 @@ class Cart extends CI_Controller
                 }
         }
         var_dump($dato);
-        if($dato==NULL){
-            for($i=0;$i<count($jam);$i++){
-                echo "<option value=\"".$jam[$i]."\">".$jam[$i]."</option>";
-            }
-        }else{
+        if($dato != NULL){
             foreach($data as $key){
                 $temp = array('mulai'=>$key->jam_mulai,'akhir'=>$key->jam_selesai);
                 array_push($jamf,$temp);
@@ -469,7 +465,10 @@ class Cart extends CI_Controller
                 for($s=0;$s<count($jamfilter);$s++){
                     echo "<option value=\"".$jamfilter[$s]."\">".$jamfilter[$s]."</option>";
                 }
-
+        }else{
+            for($i=0;$i<count($jam);$i++){
+                echo "<option value=\"".$jam[$i]."\">".$jam[$i]."</option>";
+            }
         }
     }
 }
