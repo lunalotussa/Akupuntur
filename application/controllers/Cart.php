@@ -421,7 +421,7 @@ class Cart extends CI_Controller
                 array_push($jamf,$temp);
             }
 
-            foreach($jamq as $key){
+            foreach($jamf as $key){
                 $mulai = strtotime($key['mulai']);
                 $akhir = strtotime($key['akhir']);
 
@@ -445,6 +445,10 @@ class Cart extends CI_Controller
                 array_pop($newjam);
                 $jamfilter = array_values(array_unique($newjam));
 
+                var_dump($jamf);
+                echo "<br/>";
+                echo "<br/>";
+                echo "<br/>";
                 var_dump($jam);
                 echo "<br/>";
                 echo "<br/>";
