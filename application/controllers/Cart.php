@@ -466,7 +466,7 @@ class Cart extends CI_Controller
                 }
         }else{
             for($i=0;$i<count($jam);$i++){
-                echo "<option value=\"".$jam[$i]."\">".$jam[$i]."</option>";
+                echo "<option value=\"".date("H:i",$jam[$i])."\">".date("H:i",$jam[$i])."</option>";
             }
         }
     }
