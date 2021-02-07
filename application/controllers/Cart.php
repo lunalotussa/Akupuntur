@@ -431,9 +431,8 @@ class Cart extends CI_Controller
                         }
                 }
         }
-        var_dump($dato);
         if($dato != NULL){
-            foreach($data as $key){
+            foreach($dato as $key){
                 $temp = array('mulai'=>$key->jam_mulai,'akhir'=>$key->jam_selesai);
                 array_push($jamf,$temp);
             }
