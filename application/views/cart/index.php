@@ -121,6 +121,22 @@ function handler(e){
       //do nothing
   }else {
     alert(e.target.value);
+
+    $.ajax({
+            type: "POST",
+            url: "<?php echo base_url('cart/getTimeAjax');?>",
+            dataType: "html",
+            data: {
+                id_terapis: id_terapis,
+                tanggal: e.target.value
+            },
+            success: function(result) {
+                alert('msg');
+            },
+            error: function(result) {
+                alert('msg');
+            }
+        });
   }
 }
 </script>
