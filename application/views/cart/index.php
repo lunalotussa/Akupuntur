@@ -21,7 +21,9 @@
                         <?php
                         $io = 0;
                         $durasi = 0;
-                        foreach ($belanja as $row) { ?>
+                        foreach ($belanja as $row) { 
+                            $id_terapis = $row->id_terapis;
+                            ?>
                             <tr>
                                 <td>
                                     <input type="checkbox" name="selcheck[]" checked value="<?= $row->id_chart; ?>" <?php if ($io = 0) {
@@ -110,5 +112,6 @@
 <script>
     function handler(e){
   alert(e.target.value);
+  alert(<?= $id_terapis?>);
 }
 </script>

@@ -32,7 +32,7 @@ class Cart_model extends CI_Model
     {
         // $this->db->order_by('cart', 'desc');
         // return $this->db->get('customer')->result_array();
-        $this->db->select('cart.id_chart,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga,layanan.gambar as gambar');
+        $this->db->select('cart.id_chart,layanan.jenis,layanan.nama,layanan.durasi,layanan.harga,layanan.gambar as gambar, detail_layanan.id_terapis');
         $this->db->from('user');
         $this->db->join('cart', 'user.id_user=cart.id_customer');
         $this->db->join('detail_layanan', 'cart.id_detail_layanan=detail_layanan.id_detailLayanan');
