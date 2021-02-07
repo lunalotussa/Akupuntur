@@ -30,10 +30,9 @@ class Cart extends CI_Controller
         $data['email']      = $_SESSION['email'];
         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
-        $cus = $cuscus[0]->id_customer;
+        $data['cus'] = $cuscus[0]->id_customer;
         $data['_view'] = 'cart/index';
 
-    
         $this->load->view('templates/relish/header');
         $this->load->view('cart/index',$data);
         $this->load->view('templates/relish/footer');
@@ -383,6 +382,10 @@ class Cart extends CI_Controller
 
     function getTImeAjax($id_terapis,$tanggal){
         $data = $this->Cart_model->get_time($id_terapis,$tanggal);
-        var_dump($data);
+        if($data==NULL){
+            
+        }else{
+
+        }
     }
 }
