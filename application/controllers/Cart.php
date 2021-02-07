@@ -32,6 +32,18 @@ class Cart extends CI_Controller
         $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
         $data['_view'] = 'cart/index';
 
+        $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
+        $id_customerr= $cuscus[0]->id_customer;
+
+        //cari terapis dari id customer session
+        $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='0'";
+        $query = $this->db->query($sql);
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $x) {
+                $id_terapiss        =$x->id_terapis;
+            }}
+
+        $data['tera_who'] = $id_terapiss;
         $this->load->view('templates/relish/header');
         $this->load->view('cart/index',$data);
         $this->load->view('templates/relish/footer');
@@ -415,7 +427,7 @@ class Cart extends CI_Controller
 
         if($data==NULL){
             for($i=0;$i<count($jam);$i++){
-                echo "<option value=".$jam[$i].">".$jam[$i]."</option>";
+                echo "<option value=\"".$jam[$i]."\">".$jam[$i]."</option>";
             }
         }else{
             foreach($data as $key){
@@ -448,7 +460,7 @@ class Cart extends CI_Controller
                 $jamfilter = array_values(array_unique($newjam));
             }
                 for($s=0;$s<count($jamfilter);$s++){
-                    echo "<option value=".$jamfilter[$s].">".$jamfilter[$s]."</option>";
+                    echo "<option value=\"".$jamfilter[$s]."\">".$jamfilter[$s]."</option>";
                 }
 
         }

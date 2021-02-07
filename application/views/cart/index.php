@@ -113,7 +113,7 @@
 </section>
 <script>
 
-var id_terapis = '<?= $id_terapis?>';
+var id_terapis = '<?= $tera_who?>';
     function handler(e){
   
   if(id_terapis = ''){
