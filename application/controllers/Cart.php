@@ -383,10 +383,15 @@ class Cart extends CI_Controller
 
     function getTImeAjax($id_terapis,$tanggal){
         $data = $this->Cart_model->get_time($id_terapis,$tanggal);
+        $jam = array();
         if($data==NULL){
             
         }else{
-            var_dump($data);
+            foreach($data as $key){
+                $temp = array($key->jam_mulai,$jam_selesai);
+                array_push($jam,$temp);
+            }
+            var_dump($jam);
         }
     }
 }
