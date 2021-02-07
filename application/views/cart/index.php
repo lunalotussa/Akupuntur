@@ -114,7 +114,8 @@
 <script>
 
 var id_terapis = '<?= $tera_who?>';
-    function handler(e){
+
+function handler(e){
   
   if (id_terapis = ''){
       //do nothing
@@ -138,6 +139,7 @@ function getTime(id_terapis,tanggal){
         success: function(html){
             alert(html)
         }
+    }
     });
 }
 </script>
