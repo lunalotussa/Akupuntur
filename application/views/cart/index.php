@@ -110,8 +110,12 @@
     </div>
 </section>
 <script>
+
+var id_terapis = '<?= $id_terapis?>';
     function handler(e){
   alert(e.target.value);
-  alert(<?= $id_terapis?>);
+  if(id_terapis = NULL){
+      alert('data kosong');
+  }
 }
 </script>
