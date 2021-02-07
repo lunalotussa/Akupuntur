@@ -401,7 +401,7 @@ class Cart extends CI_Controller
             $ter = $this->input->post('id_terapis');
             $tang = $this->input->post('tanggal');
         }
-        $data = $this->Cart_model->get_time($ter,$tang);
+        $dato = $this->Cart_model->get_time($ter,$tang);
         $jamf = array();
 
         $jam = array();
@@ -431,8 +431,8 @@ class Cart extends CI_Controller
                         }
                 }
         }
-
-        if($data==NULL){
+        var_dump($dato);
+        if($dato==NULL){
             for($i=0;$i<count($jam);$i++){
                 echo "<option value=\"".$jam[$i]."\">".$jam[$i]."</option>";
             }
