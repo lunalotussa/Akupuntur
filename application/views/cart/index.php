@@ -69,25 +69,6 @@
                                             <label for="jam-penggunaan">Jam penggunaan </label>
                                             <!-- <input id="jam-penggunaan" name="jam_mulai" class="mb-0 mb-xs-10 input-sm button-border" style="width: 170px;" type="time" min="08:00:00" max="17:00" required> -->
                                             <select name="jam_mulai" id="jam-penggunaan" class="mb-0 mb-xs-10 input-sm button-border">
-                                                <option value="08:00">08:00</option>
-                                                <option value="08:30">08:30</option>
-                                                <option value="09:00">09:00</option>
-                                                <option value="09:30">09:30</option>
-                                                <option value="10:00">10:00</option>
-                                                <option value="10:30">10:30</option>
-                                                <option value="11:00">11:00</option>
-                                                <option value="11:30">11:30</option>
-                                                <option value="12:00">12:00</option>
-                                                <option value="12:30">12:30</option>
-                                                <option value="13:00">13:00</option>
-                                                <option value="13:30">13:30</option>
-                                                <option value="14:00">14:00</option>
-                                                <option value="14:30">14:30</option>
-                                                <option value="15:00">15:00</option>
-                                                <option value="15:30">15:30</option>
-                                                <option value="16:00">16:00</option>
-                                                <option value="16:30">16:30</option>
-                                                <option value="17:00">17:00</option>
                                             </select>
                                         </div>
                                     </div>
@@ -131,7 +112,9 @@ function handler(e){
             },
             success: function(result) {
                 alert(result);
+                select = document.getElementById('jam-penggunaan');
                 console.log(result);
+                select.appendChild(result);
             },
             error: function(result) {
                 alert('msg');
