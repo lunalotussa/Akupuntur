@@ -131,7 +131,8 @@ function handler(e){
                 tanggal: e.target.value
             },
             success: function(result) {
-                alert('msg');
+                alert(result);
+                console.log(result);
             },
             error: function(result) {
                 alert('msg');
