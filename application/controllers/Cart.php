@@ -212,7 +212,7 @@ class Cart extends CI_Controller
             $id_customerr= $cuscus[0]->id_customer;
 
             //cari terapis dari id customer session
-            $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='1'";
+            $sql = "SELECT cart.id_chart,cart.id_detail_layanan,detail_layanan.id_terapis FROM cart JOIN detail_layanan ON cart.id_detail_layanan=detail_layanan.id_detailLayanan WHERE cart.id_customer=$id_customerr AND cart.status='0'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) {
                 foreach ($query->result() as $x) {
@@ -220,7 +220,7 @@ class Cart extends CI_Controller
                 }}
 
             //kondisi jika terapis masih melakukan layanan
-                $bubu = "SELECT cart.id_chart,detail_transaksi.no_transaksi,cart.status,detail_transaksi.tanggal,detail_transaksi.jam_mulai,detail_transaksi.jam_selesai,detail_transaksi.id_terapis FROM cart JOIN detail_transaksi ON cart.id_chart=detail_transaksi.id_cart WHERE cart.status='1' AND detail_transaksi.id_terapis=$id_terapiss";
+                $bubu = "SELECT cart.id_chart,detail_transaksi.no_transaksi,cart.status,detail_transaksi.tanggal,detail_transaksi.jam_mulai,detail_transaksi.jam_selesai,detail_transaksi.id_terapis FROM cart JOIN detail_transaksi ON cart.id_chart=detail_transaksi.id_cart WHERE cart.status='0' AND detail_transaksi.id_terapis=$id_terapiss";
                 $mumu = $this->db->query($bubu);
                 if ($mumu->num_rows() > 0) {
                     foreach ($mumu->result() as $s) {
