@@ -414,7 +414,7 @@ class Cart extends CI_Controller
         }
 
         if($data==NULL){
-
+            var_dump($jam);
         }else{
             foreach($data as $key){
                 $temp = array('mulai'=>$key->jam_mulai,'akhir'=>$key->jam_selesai);
@@ -459,7 +459,7 @@ class Cart extends CI_Controller
             echo "<br/>";
             echo "<br/>";
             var_dump($jamfilter);
-            
+
         }
     }
 }
