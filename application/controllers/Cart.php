@@ -393,7 +393,7 @@ class Cart extends CI_Controller
         show_error('The terapi you are trying to edit does not exist.');
     }
 
-    function getTimeAjax(){
+    function getTimeAjax($id_terapis = NULL,$tanggal = NULL){
         $ter = $this->input->post('id_terapis');
         $tang = $this->input->post('tanggal');
         $data = $this->Cart_model->get_time($ter,$tang);
