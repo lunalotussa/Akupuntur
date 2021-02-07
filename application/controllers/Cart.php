@@ -385,53 +385,67 @@ class Cart extends CI_Controller
         $data = $this->Cart_model->get_time($id_terapis,$tanggal);
         $jamf = array();
 
-        var_dump($data);
-
-        foreach($data as $key){
-            echo $key->jam_mulai."</br>";
-            echo $key->jam_selesai."</br>";
-        }
         $jam = array();
-        // for ($i = 8;$i <= 17;$i++)
-        // {
-        //     if ($i <= 9)
-        //     {
-        //         $vara = strtotime("0" . $i . ":00");
-        //         $varb = strtotime("0" . $i . ":30");
+        for ($i = 8;$i <= 17;$i++)
+        {
+            if ($i <= 9)
+            {
+                $vara = strtotime("0" . $i . ":00");
+                $varb = strtotime("0" . $i . ":30");
 
-        //         array_push($jam,$vara,$varb);        
-        //         }
-        //     else
-        //     {
+                array_push($jam,$vara,$varb);        
+                }
+            else
+            {
 
-        //         $vara = strtotime($i . ":00");
-        //         $varb = strtotime($i . ":30");
+                $vara = strtotime($i . ":00");
+                $varb = strtotime($i . ":30");
 
-        //         array_push($jam,$vara,$varb);
-        //                 if ($i == 17)
-        //                 {
-        //                     //skip  
-        //                 }
-        //                 else
-        //                 {
-        //                     array_push($jam,$vara,$varb);
-        //                 }
-        //         }
-        // }
+                array_push($jam,$vara,$varb);
+                        if ($i == 17)
+                        {
+                            //skip  
+                        }
+                        else
+                        {
+                            array_push($jam,$vara,$varb);
+                        }
+                }
+        }
 
-        // if($data==NULL){
-        // }else{
-        //     foreach($data as $key){
-        //         $temp = array('mulai'=>$key->jam_mulai,'akhir'=>$key->jam_selesai);
-        //         array_push($jamf,$temp);
-        //     }
+        if($data==NULL){
+        }else{
+            foreach($data as $key){
+                $temp = array('mulai'=>$key->jam_mulai,'akhir'=>$key->jam_selesai);
+                array_push($jamf,$temp);
+            }
 
-        //     foreach($jamq as $key){
-        //         $mulai = strtotime($key['mulai']);
-        //         $akhir = strtotime($key['akhir']);
+            foreach($jamq as $key){
+                $mulai = strtotime($key['mulai']);
+                $akhir = strtotime($key['akhir']);
 
+                for($i=0;$i<count($jam);$i++){
+        
+                    if($mulai<= $jam[$i] && ($jam[$i]<$akhir || $jam[$i]==$akhir)){
+                        if (($key = array_search($jam[$i], $jam)) !== false) {
+                            $jam[$key]=null;
+                        }
+                    }
+                }
+                $newjam = array();
+                for($a=0;$a<count($jam);$a++){
+                    if($jam[$a]==null){
+                        //skip
+                    }else{
+                    $todate = date("H:i", $jam[$a]);
+                    array_push($newjam,$todate);   
+                    }
+                }
+                array_pop($newjam);
+                $jamfilter = array_values(array_unique($newjam));
 
-        //     }
-        // }
+                var_dump($jamfilter);
+            }
+        }
     }
 }
