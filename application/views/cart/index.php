@@ -127,7 +127,7 @@ function handler(e){
             url: "<?php echo base_url('cart/getTimeAjax');?>",
             dataType: "html",
             data: {
-                id_terapis: id_terapis,
+                id_terapis: '<?= $tera_who?>';,
                 tanggal: e.target.value
             },
             success: function(result) {
