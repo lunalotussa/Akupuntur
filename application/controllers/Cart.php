@@ -30,7 +30,6 @@ class Cart extends CI_Controller
         $data['email']      = $_SESSION['email'];
         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $data['belanja']    = $this->Cart_model->get_all_cart($cuscus[0]->id_customer);
-        $data['cus'] = $cuscus[0]->id_customer;
         $data['_view'] = 'cart/index';
 
         $this->load->view('templates/relish/header');
@@ -267,9 +266,8 @@ class Cart extends CI_Controller
                         );
                         $this->Cart_model->add_cart_detail($parampa);
                         $this->Cart_model->update_verifikasi_pembayaran($transaksi_id, $params);
-                        
                 // $parampapa = array(
-                //     'status' => '1',
+                //     'status' => '0',
                 // );
                 // $this->Cart_model->update_cart($item,$parampapa);
                     }
@@ -326,13 +324,10 @@ class Cart extends CI_Controller
                         // hapus foto pada direktori
                         //@unlink($path . $this->input->post('filelama'));
                         $purum = array(
-                            'status' => '1',
+                            'status' => '0',
                         );
-
-                        $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
-
                         $this->Cart_model->update_transaksi($id_transaksi, $params);
-                        $this->Cart_model->update_cart_user($cuscus[0]->id_customer, $purum);
+                        $this->Cart_model->update_cart_user($_SESSION['id_user'], $purum);
                         redirect('landing/jasa');
                     } else {
                         die("gagal update");
