@@ -128,10 +128,8 @@ function handler(e){
                 tanggal: e.target.value
             },
             success: function(result) {
-                alert(result);
                 select = document.getElementById('jam-penggunaan').innerHTML = result;
                 console.log(result);
-                select.appendChild(result);
             },
             error: function(result) {
                 alert('msg');
