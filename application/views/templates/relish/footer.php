@@ -74,6 +74,7 @@
 <script src="<?= base_url('assets/relish/js/imagesloaded.pkgd.min.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/masonry.pkgd.min.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/retina.min.js'); ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/jquery.ui.min.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/jquery.tweet.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/revslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
