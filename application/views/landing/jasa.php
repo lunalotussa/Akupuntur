@@ -162,4 +162,4 @@
 </section>
 
 <hr class="mt-0 mb-0 alt-2" />
-<?php echo $this->session->flashdata("item");?>
+<?php echo $this->session->flashdata('status');?>
