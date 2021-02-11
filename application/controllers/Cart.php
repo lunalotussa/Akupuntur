@@ -180,6 +180,7 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
+                 session_start();
                 $_SESSION['heyhey'] = "2";
                 redirect('landing/jasa');
             }
