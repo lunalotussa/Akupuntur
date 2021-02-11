@@ -94,6 +94,7 @@
 <script type="text/javascript" src="<?= base_url('assets/relish/js/scripts.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/bootstrap.min.js'); ?>"></script>
 
+
 <!-- / SCRIPTS -->
 <script>
 $('#modalan').modal();

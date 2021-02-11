@@ -20,6 +20,7 @@
     <link href="<?= base_url('assets/relish/css/ihover.css'); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= base_url('assets/relish/revslider/css/settings.css'); ?>" rel="stylesheet" type="text/css" media="screen" />
     <link href="<?= base_url('assets/relish/css/styles.css'); ?>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <title>Akupuntur</title>
 </head>
