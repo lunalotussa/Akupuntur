@@ -96,7 +96,6 @@
 <script>
 $( document ).ready(function() {
     console.log( "ready!" );
-    $('#exampleModalLong').modal('show');
     window.$("#exampleModalLong").modal("show"); 
 });
 </script>
