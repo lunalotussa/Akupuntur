@@ -7,6 +7,7 @@
     <title>Akupuntur</title>
 
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </head>
 
