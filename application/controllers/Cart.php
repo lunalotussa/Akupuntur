@@ -16,6 +16,7 @@ class Cart extends CI_Controller
             redirect(base_url());
         }
         $this->load->model('Cart_model');
+        $this->load->library('session');
         $this->load->library('upload');
         $this->load->model('Transaksi_model');
         date_default_timezone_set('Asia/Jakarta');
@@ -181,8 +182,9 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
+                $_SESSION['statusTerapis'] = "2";
+                $this->session->mark_as_flash('statusTerapis');
                 redirect('landing/jasa');
-                    //kurang kasih alert
             }
         }else{
             $customer_id = $this->Cart_model->add_cart($params);
