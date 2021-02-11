@@ -98,7 +98,6 @@ $( document ).ready(function() {
     console.log( "ready!" );
     
 });
-jQuery.noConflict();
 $('#exampleModalLong').modal('show');
 </script>
 </html>
