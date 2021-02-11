@@ -56,14 +56,13 @@
 </div>
 <?php
     if($this->session->flashdata('statusTerapis')!= NULL){
-        //skip it
-    }else{
-?>
-<div class="modal" id="modalan">
+        ?>
+        <div class="modal" id="modalan">
   <p>Thanks for clicking. That felt good.</p>
   <a href="#" rel="modal:close">Close</a>
 </div>
 <?php
+    }else{
     }
 ?>
 <!-- / PAGE -->
