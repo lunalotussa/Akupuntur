@@ -181,7 +181,7 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
-                $_SESSION['heyhey'] = "2";
+                $this->session->set_userdata('heyhey',"2");
                 redirect('landing/jasa');
             }
         }else{
