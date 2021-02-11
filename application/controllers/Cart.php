@@ -182,6 +182,7 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
+                $this->session->set_flashdata('item','2'); 
                 redirect('landing/jasa');
             }
         }else{
