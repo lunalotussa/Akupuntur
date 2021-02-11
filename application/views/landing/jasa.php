@@ -162,14 +162,4 @@
 </section>
 
 <hr class="mt-0 mb-0 alt-2" />
-<?php
-    if($this->session->flashdata('statusTerapis')== "2"){
-        ?>
-        <div class="modal" id="modalan">
-  <p>Thanks for clicking. That felt good.</p>
-  <a href="#" rel="modal:close">Close</a>
-</div>
-<?php
-    }else{
-    }
-?>
+<?php echo $this->session->flashdata("statusTerapis");?>
