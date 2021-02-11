@@ -155,9 +155,6 @@ class Cart extends CI_Controller
 
     function add($iddetaillayanan)
     {
-        // if (isset($_POST) && count($_POST) > 0) {
-            $this->load->library('session');
-            $this->load->helper('url');
         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $id_customerr= $cuscus[0]->id_customer;
         $params = array(
@@ -183,7 +180,6 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
-                $this->session->set_flashdata('in',2);
                 redirect('landing/jasa');
             }
         }else{

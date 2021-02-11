@@ -88,7 +88,7 @@
 
         <div class="group mt-40">
           <strong class="text-danger">
-            Pastikan Anda memilih terapis yang sama jika memesan lebih dari 1 layanan <?php echo $this->session->userdata('in')?>
+            Pastikan Anda memilih terapis yang sama jika memesan lebih dari 1 layanan
           </strong>
         </div>
 
@@ -161,8 +161,3 @@
     </div>
 </section>
 <hr class="mt-0 mb-0 alt-2" />
-
-<div class="modal" id="modalan">
-    <p>Thanks for clicking. That felt good.</p>
-    <a href="#" rel="modal:close">Close</a>
-</div>
