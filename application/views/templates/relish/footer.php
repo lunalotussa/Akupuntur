@@ -43,7 +43,24 @@
 
     <!-- / footer bottom -->
 </footer>
-
+<!-- Sample Modal -->
+<div class="modal" data-modal-name="sample-modal">
+    <div class="modal__dialog">
+        <button class="modal__close" data-modal-dismiss>×</button>
+        <header class="modal__header">
+            <h3 class="modal__title">How does it work?</h3>
+        </header>
+        <div class="modal__content">
+            <p>Create a modal with a data attribute to name your modal e.g data-modal-name="modal-name". Then to trigger it via click from an element, simply add a this attribute data-modal-trigger="modal-name"</p>
+            <p>Dismissing modals, just add an attribute data-modal-dimiss to any element you want to use to dismiss the modal</p>
+            <p>To trigger a modal dynamically, run the ff: showModal('modal-name')</p>
+            <p>To hide the modal, just need to run: hideModal();</p>
+        </div>
+        <footer class="modal__footer">
+            <button  data-modal-dismiss class="demo__btn">Dismiss</button>
+        </footer>
+    </div>
+</div>
 <!-- / footer -->
 
 <!-- scroll-top -->
@@ -55,7 +72,10 @@
 
 <!-- / scroll-top -->
 </div>
-
+<div id="ex1" class="modalan">
+  <p>Thanks for clicking. That felt good.</p>
+  <a href="#" rel="modal:close">Close</a>
+</div>
 <!-- / PAGE -->
 
 <!-- SCRIPTS -->
@@ -91,13 +111,12 @@
 <script type="text/javascript" src="<?= base_url('assets/relish/js/gmap3.min.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/scripts.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/bootstrap.min.js'); ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
 <!-- / SCRIPTS -->
-</body>
 <script>
-$( document ).ready(function() {
-    console.log( "ready!" );
-    
-});
-$('#exampleModalLong').modal('show');
+$('#modalan').modal();
 </script>
+</body>
 </html>
