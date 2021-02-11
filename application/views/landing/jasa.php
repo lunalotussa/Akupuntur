@@ -88,7 +88,7 @@
 
         <div class="group mt-40">
           <strong class="text-danger">
-            Pastikan Anda memilih terapis yang sama jika memesan lebih dari 1 layanan <?php var_dump($_SESSION['statusTerapis'] )?>
+            Pastikan Anda memilih terapis yang sama jika memesan lebih dari 1 layanan <?php var_dump($_SESSION['heyhey'] )?>
           </strong>
         </div>
 
