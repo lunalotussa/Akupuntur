@@ -183,7 +183,7 @@ class Cart extends CI_Controller
                  redirect('cart/index');
              }else{
                 $_SESSION['statusTerapis'] = "2";
-                $this->session->mark_as_flash('statusTerapis');
+                $this->session->set_flashdata('statusTerapis');
                 redirect('landing/jasa');
             }
         }else{
