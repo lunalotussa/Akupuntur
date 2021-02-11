@@ -110,7 +110,7 @@
     </div>
 </section>
 <script>
-$('#exampleModalLong').modal('show');
+$('#exampleModalLong').modal();
 var id_terapis = '<?= $tera_who?>';
 
 function handler(e){
