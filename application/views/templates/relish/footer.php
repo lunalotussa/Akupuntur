@@ -81,6 +81,7 @@
 <!-- SCRIPTS -->
 
 <script src="<?= base_url('assets/relish/js/jquery.min.js'); ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script src="<?= base_url('assets/relish/js/jquery.easing.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/jquery.sticky.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/jquery.form.min.js'); ?>"></script>
@@ -94,7 +95,6 @@
 <script src="<?= base_url('assets/relish/js/imagesloaded.pkgd.min.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/masonry.pkgd.min.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/retina.min.js'); ?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/jquery.ui.min.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/jquery.tweet.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/revslider/js/jquery.themepunch.tools.min.js'); ?>"></script>
@@ -111,8 +111,6 @@
 <script type="text/javascript" src="<?= base_url('assets/relish/js/gmap3.min.js'); ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/relish/js/scripts.js'); ?>"></script>
 <script src="<?= base_url('assets/relish/js/bootstrap.min.js'); ?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
 <!-- / SCRIPTS -->
 <script>
