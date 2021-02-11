@@ -16,7 +16,6 @@ class Cart extends CI_Controller
             redirect(base_url());
         }
         $this->load->model('Cart_model');
-        $this->load->library('session');
         $this->load->library('upload');
         $this->load->model('Transaksi_model');
         date_default_timezone_set('Asia/Jakarta');
@@ -181,7 +180,7 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
-                $this->session->set_userdata('heyhey',"2");
+                $_SESSION['heyhey'] = "2";
                 redirect('landing/jasa');
             }
         }else{
