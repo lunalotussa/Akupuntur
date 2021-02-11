@@ -93,5 +93,10 @@
 
 <!-- / SCRIPTS -->
 </body>
-
+<script>
+$( document ).ready(function() {
+    console.log( "ready!" );
+    $('#exampleModalLong').modal();
+});
+</script>
 </html>
