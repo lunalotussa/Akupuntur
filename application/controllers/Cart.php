@@ -156,7 +156,7 @@ class Cart extends CI_Controller
     function add($iddetaillayanan)
     {
         // if (isset($_POST) && count($_POST) > 0) {
-
+            $this->load->library('session');
         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
         $id_customerr= $cuscus[0]->id_customer;
         $params = array(
