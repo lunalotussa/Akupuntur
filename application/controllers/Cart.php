@@ -183,7 +183,7 @@ class Cart extends CI_Controller
                  $customer_id = $this->Cart_model->add_cart($params);
                  redirect('cart/index');
              }else{
-                $_SESSION['statusTerapis'] = "2";
+                $statusTerapis = "2";
                 redirect('landing/jasa');
             }
         }else{
