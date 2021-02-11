@@ -170,7 +170,6 @@
     <a href="#" rel="modal:close">Close</a>
 </div>
 <?php
-unset($_SESSION['statusTeriapis']);
 }else{
   //do nothing
 }
