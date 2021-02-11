@@ -72,7 +72,7 @@
 
 <!-- / scroll-top -->
 </div>
-<div id="ex1" class="modalan">
+<div id="ex1" class="modal" id="modalan">
   <p>Thanks for clicking. That felt good.</p>
   <a href="#" rel="modal:close">Close</a>
 </div>
