@@ -102,8 +102,8 @@ function edit($id_layanan)
                 $config['upload_path'] = './resources/picture/layanan';
                 $config['allowed_types'] = 'jpg|png|jpeg|gif';
                 $config['max_size'] = '2048';  //2MB max
-                $config['max_width'] = '4480'; // pixel
-                $config['max_height'] = '4480'; // pixel
+                $config['max_width'] = '8000'; // pixel
+                $config['max_height'] = '5000'; // pixel
                 $config['file_name'] = $_FILES['gambar']['name'];
 
                 $this->upload->initialize($config);
