@@ -49,7 +49,7 @@ class Layanan extends CI_Controller
                 $config['allowed_types'] = 'jpg|png|jpeg|gif';
                 $config['max_size'] = '4096';  //2MB max
                 $config['max_width'] = '4480'; // pixel
-                $config['max_height'] = '4480'; // pixel
+                $config['max_height'] = '8000'; // pixel
                 $config['file_name'] = $_FILES['gambar']['name'];
 
                 $this->upload->initialize($config);
