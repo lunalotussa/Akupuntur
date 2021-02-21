@@ -47,9 +47,9 @@ class Layanan extends CI_Controller
                 // get foto
                 $config['upload_path'] = './resources/picture/layanan';
                 $config['allowed_types'] = 'jpg|png|jpeg|gif';
-                $config['max_size'] = '4096';  //2MB max
-                $config['max_width'] = '4480'; // pixel
-                $config['max_height'] = '8000'; // pixel
+                $config['max_size'] = '40960';  //2MB max
+                $config['max_width'] = '60000'; // pixel
+                $config['max_height'] = '80000'; // pixel
                 $config['file_name'] = $_FILES['gambar']['name'];
 
                 $this->upload->initialize($config);
