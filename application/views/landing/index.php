@@ -423,7 +423,10 @@
         </h3>
         <div class="section-text mt-10">
           <p>
-            Terapi Holistik Sayang Anak adalah
+            Kami adalah tenaga kesehatan Indonesia yg bergerak dibidang kesehatan masyarakat melalui akupuntur,  akupresure,  refleksi,  pijat bayi atau anak-anak. Kami bergerak dalam pelayanan promotif (peningkatan), preventif (pencegahan), kuratif  (penyembuhan) dan rehabilitatif  (pemulihan), di ranah pengobatan kami. Lebih baik mencegah prnyakit daripada mengobati, kami membantu melakukan diagnosa secara online dengan ketentuan yg berlaku (foto wajah,  lidah klien, dan keluhan). Tenang, terapis kami sebagian besar sudah memiliki sertifikat negara Maupun ijin praktek jadi tidak khawatir.
+          </p>
+          <p>
+            Kami hanya membantu anda sedikit,tetap anda yang berkuasa untuk menyehatkan diri sendiri.
           </p>
         </div>
         <div class="banner-bottom row">
