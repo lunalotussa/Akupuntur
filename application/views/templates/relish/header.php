@@ -69,7 +69,7 @@
                                     <a>/</a>
                                 </li>
                                 <li>
-                                    <a href="<?= base_url('landing/jasa'); ?>">Jasa</a>
+                                    <a href="<?= base_url('landing/jasa'); ?>">Layanan</a>
                                 </li>
                                 <li class="sep">
                                     <a>/</a>
