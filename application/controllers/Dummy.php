@@ -25,4 +25,11 @@ class Dummy extends CI_Controller
         $this->load->view('new_view/pembayaran_selesai');
         $this->load->view('templates/relish/footer');
     }
+
+    function menunggu_konfirmasi()
+    {
+        $this->load->view('templates/relish/header');
+        $this->load->view('new_view/menunggu_konfirmasi');
+        $this->load->view('templates/relish/footer');
+    }
 }
