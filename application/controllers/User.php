@@ -32,6 +32,14 @@ class User extends CI_Controller
     {
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
+            $email     = $this->input->post('email');
+            $sql       = "SELECT * FROM user WHERE email='".$email."' AND hak_akses='Customer'";
+            $query     = $this->db->query($sql);
+            if ($query->num_rows() > 0) {
+                echo "sudah ada akun dengan email tersebut";
+                echo $email     = $this->input->post('email');
+                
+            } else {
             $params = array(
                 'password' => md5($this->input->post('password')),
                 'nama' => $this->input->post('nama'),
@@ -41,6 +49,7 @@ class User extends CI_Controller
 
             $user_id = $this->User_model->add_userCust($params);
             redirect('Main');
+            }
         } else {
             $data['_view'] = 'user/add';
             $this->load->view('templates/pure/header');
@@ -53,6 +62,12 @@ class User extends CI_Controller
     {
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
+            $email     = $this->input->post('email');
+            $sql       = "SELECT * FROM user WHERE email='".$email."' AND hak_akses='Terapis'";
+            $query     = $this->db->query($sql);
+            if ($query->num_rows() > 0) {
+                echo "sudah ada akun dengan email tersebut";
+            }else{
             $params = array(
                 'password' => md5($this->input->post('password')),
                 'nama' => $this->input->post('nama'),
@@ -62,6 +77,7 @@ class User extends CI_Controller
 
             $user_id = $this->User_model->add_userTerapis($params);
             redirect('Main');
+            }
         } else {
             $data['_view'] = 'user/add';
             $this->load->view('templates/pure/header');
