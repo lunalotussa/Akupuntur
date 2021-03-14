@@ -52,6 +52,7 @@ class Terapi extends CI_Controller
                 'ktp' => $this->input->post('ktp'),
                 'selfie_ktp' => $this->input->post('selfie_ktp'),
                 'profile' => $this->input->post('profile'),
+                'pdf'=> $this->input->post('pdf'),
                 'status' => $this->input->post('status'),
             );
 
@@ -82,17 +83,18 @@ class Terapi extends CI_Controller
                 $path = './resources/picture/';
                 // get foto
                 $config['upload_path'] = './resources/picture';
-                $config['allowed_types'] = 'jpg|png|jpeg|gif';
-                $config['max_size'] = '2048';  //2MB max
+                $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
+                $config['max_size'] = '10000';  //10MB max untuk gambar & pdf
                 $config['max_width'] = '4480'; // pixel
                 $config['max_height'] = '4480'; // pixel
                 $config['file_name'] = $_FILES['profile']['name'];
                 $config['file_name'] = $_FILES['selfie_ktp']['name'];
                 $config['file_name'] = $_FILES['ktp']['name'];
+                $config['file_name'] = $_FILES['pdf']['name'];
 
                 $this->upload->initialize($config);
 
-                if (!empty($_FILES['profile']['name']) || !empty($_FILES['ktp']['name']) || !empty($_FILES['selfie_ktp']['name'])) {
+                if (!empty($_FILES['profile']['name']) || !empty($_FILES['ktp']['name']) || !empty($_FILES['selfie_ktp']['name']) || !empty($_FILES['pdf']['name'])) {
 
                     if ($this->upload->do_upload('profile')) {
 
@@ -107,6 +109,7 @@ class Terapi extends CI_Controller
                             'ktp' => $this->input->post('ktplama'),
                             'selfie_ktp' => $this->input->post('selfielama'),
                             'profile' => $foto['file_name'],
+                            'pdf'=> $this->input->post('pdflama'),
                             'status' => $this->input->post('status'),
                         );
                         // hapus foto pada direktori
@@ -129,6 +132,7 @@ class Terapi extends CI_Controller
                             'ktp' => $this->input->post('ktplama'),
                             'selfie_ktp' => $foto1['file_name'],
                             'profile' => $this->input->post('filelama'),
+                            'pdf'=> $this->input->post('pdflama'),
                             'status' => $this->input->post('status'),
                         );
                         // hapus foto pada direktori
@@ -152,10 +156,11 @@ class Terapi extends CI_Controller
                             'ktp' => $foto2['file_name'],
                             'selfie_ktp' => $this->input->post('selfielama'),
                             'profile' => $this->input->post('filelama'),
+                            'pdf'=> $this->input->post('pdflama'),
                             'status' => $this->input->post('status'),
                         );
                         // hapus foto pada direktori
-                        @unlink($path . $this->input->post('selfielama'));
+                        @unlink($path . $this->input->post('ktplama'));
 
                         $this->Terapi_model->update_terapi($id_terapis, $params);
                         $data['_view'] = 'dashboard';
@@ -165,7 +170,34 @@ class Terapi extends CI_Controller
                         $this->load->view('templates/pure/footer');
 
                         redirect('main/index');
-                    } else {
+                    }elseif ($this->upload->do_upload('pdf')) {
+                        $foto3  = $this->upload->data();
+                        $params = array(
+                            // 'id_user' => $this->input->post('id_user'),
+                            'alamat' => $this->input->post('alamat'),
+                            'telepon' => $this->input->post('telepon'),
+                            'bank' => $this->input->post('bank'),
+                            'unit_bank' => $this->input->post('unit_bank'),
+                            'no_rekening' => $this->input->post('no_rekening'),
+                            'ktp' => $this->input->post('ktplama'),
+                            'selfie_ktp' => $this->input->post('selfielama'),
+                            'profile' => $this->input->post('filelama'),
+                            'pdf' => $foto3['file_name'],
+                            'status' => $this->input->post('status'),
+                        );
+                        // hapus foto pada direktori
+                        @unlink($path . $this->input->post('pdflama'));
+
+                        $this->Terapi_model->update_terapi($id_terapis, $params);
+                        $data['_view'] = 'dashboard';
+
+                        $this->load->view('templates/pure/header');
+                        $this->load->view('layouts/bulma-dashboard/main', $data);
+                        $this->load->view('templates/pure/footer');
+
+                        redirect('main/index');
+                    } 
+                    else {
                         die("gagal update");
                     }
                 } else {
@@ -179,6 +211,7 @@ class Terapi extends CI_Controller
                         'ktp' => $this->input->post('ktplama'),
                         'selfie_ktp' => $this->input->post('selfielama'),
                         'profile' => $this->input->post('filelama'),
+                        'pdf'  => $this->input->post('pdflama'),
                         'status' => $this->input->post('status'),
                     );
 
@@ -201,7 +234,11 @@ class Terapi extends CI_Controller
             show_error('The terapi you are trying to edit does not exist.');
     }
 
-
+    function download($id_terapis)
+    {
+        $data = $this->db->get_where('terapis',['id_terapis'=>$id_terapis])->row();
+        force_download('/resources/picture/'.$data->pdf,"terapis");
+    }
     /*
      * Deleting terapi
      */
