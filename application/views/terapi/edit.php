@@ -62,6 +62,19 @@
 			</div>
 		</div>
 	</div>
+	<div class="column is-half">
+		<label class="label">Status</label>
+		<input type="hidden" name="status" value="<?php echo ($this->input->post('status') ? $this->input->post('status') : $terapi['status']); ?>" class="input" id="status" />
+		<?php $status = ($this->input->post('status') ? $this->input->post('status') : $terapi['status']);
+		if ($status == 0) {
+		?>
+			<span class="tag is-danger">Belum Diverifikasi Admin</span>
+		<?php
+		} else {
+		?>
+			<span class="tag is-success">Sudah Diverifikasi Admin</span>
+		<?php } ?>
+	</div>
 </div>
 <div class="columns">
 	<div class="column">
@@ -127,19 +140,34 @@
 			<input type="hidden" name="filelama" value="<?php echo ($this->input->post('filelama') ? $this->input->post('filelama') : $terapi['profile']); ?>">
 		</div>
 	</div>
-</div>
-<div class="columns">
-	<div class="column is-one-quarter">
-		<label class="label">Status</label>
-		<?php $status = ($this->input->post('status') ? $this->input->post('status') : $terapi['status']);
-		if ($status == 0) {
-		?>
-			<span class="tag is-danger">Belum Diverifikasi Admin</span>
-		<?php
-		} else {
-		?>
-			<span class="tag is-success">Sudah Diverifikasi Admin</span>
-		<?php } ?>
+	<div class="column">
+		<label for="pdf" class="label">Upload Sertifikat (PDF)</label>
+		<div class="field">
+			<?php
+			if (empty($terapi['pdf'])) {
+			?>
+			<figure class="image is-128x128">
+					<img src="<?= base_url() ?>resources/picture/pdf.png" alt="pdf">
+				</figure>
+			<?php } else {
+			?>
+			<table>
+				<td>
+				<figure class="image is-128x128">
+					<img src="<?= base_url() ?>resources/picture/pdf.png" alt="pdf">
+				</figure>
+				</td>
+				<td>
+					<a href="<?php echo site_url('terapi/download/' . $terapi['id_terapis']); ?>" class="button is-warning is-small">
+					<span class="icon"><i class="fa fa-download"></i></span>
+					</a>
+				</td>
+			</table>
+			<?php }
+			?>
+			<input type="file" name="pdf" value="<?php echo ($this->input->post('pdf') ? $this->input->post('pdf') : $terapi['pdf']); ?>" class="input" id="pdf" />
+			<input type="hidden" name="pdflama" value="<?php echo ($this->input->post('pdflama') ? $this->input->post('pdflama') : $terapi['pdf']); ?>">
+		</div>
 	</div>
 </div>
 <div class="columns">
