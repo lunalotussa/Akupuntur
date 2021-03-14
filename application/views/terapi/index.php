@@ -79,6 +79,19 @@
                                             </span>
                                         </a>
                                     </p>
+                              <!--   </div>
+                                <div class="field is-grouped"> -->
+                                    <p class="control">
+                                        <!-- <?php echo base_url(); ?>index.php/upload/download/<?php echo $row->kd_berkas; ?> -->
+                                        <a href="<?php echo site_url('terapi/download/' . $t['id_terapis']); ?>" class="button is-warning is-small">
+                                            <span class="icon">
+                                                <i class="fa fa-download"></i>
+                                            </span>
+                                            <span>
+                                                Download Sertifikat
+                                            </span>
+                                        </a>
+                                    </p>
                                 </div>
                             </td>
                         </tr>
