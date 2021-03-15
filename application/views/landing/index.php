@@ -423,7 +423,7 @@
         </h3>
         <div class="section-text mt-10">
           <p>
-            Kami adalah tenaga kesehatan Indonesia yg bergerak dibidang kesehatan masyarakat melalui akupuntur,  akupresure,  refleksi,  pijat bayi atau anak-anak. Kami bergerak dalam pelayanan promotif (peningkatan), preventif (pencegahan), kuratif  (penyembuhan) dan rehabilitatif  (pemulihan), di ranah pengobatan kami. Lebih baik mencegah prnyakit daripada mengobati, kami membantu melakukan diagnosa secara online dengan ketentuan yg berlaku (foto wajah,  lidah klien, dan keluhan). Tenang, terapis kami sebagian besar sudah memiliki sertifikat negara Maupun ijin praktek jadi tidak khawatir.
+            Kami adalah tenaga kesehatan Indonesia yang bergerak dibidang kesehatan masyarakat melalui akupuntur, akupresure, refleksi, pijat bayi atau anak-anak. Kami bergerak dalam pelayanan promotif (peningkatan), preventif (pencegahan), kuratif (penyembuhan) dan rehabilitatif (pemulihan), di ranah pengobatan kami. Lebih baik mencegah prnyakit daripada mengobati, kami membantu melakukan diagnosa secara online dengan ketentuan yg berlaku (foto wajah, lidah klien, dan keluhan). Tenang, terapis kami sebagian besar sudah memiliki sertifikat negara Maupun ijin praktek jadi tidak khawatir.
           </p>
           <p>
             Kami hanya membantu anda sedikit,tetap anda yang berkuasa untuk menyehatkan diri sendiri.
@@ -462,7 +462,7 @@
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <p>
-            Kami berlokasi di Malang
+            Kami berlokasi di Surabaya
           </p>
         </div>
       </div>
@@ -500,17 +500,14 @@
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <p>
-            785 Carriage Drive, Jacksonville<br />
-            Beach, FL 32250
+            Jalan Tuban Raya no 100 RT-10 RW-03, Surabaya, Jawa Timur<br />
           </p>
           <p>
-            <a href="tel:203-284-2818">203-284-2818</a> <br />
-            <a href="tel:203-284-2818">203-284-2818</a>
+            <a href="tel:62811-3438-850">08113438850</a> <br />
           </p>
           <p class="mail">
             <a href="mailto:info@your-site.com">info@your-site.com</a>,
             <br />
-            <a href="mailto:sales@your-site.com">sales@your-site.com</a>
           </p>
           <h4 class="contact-title font-alt">Follow Us</h4>
           <div class="contact-soc">
