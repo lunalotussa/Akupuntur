@@ -41,6 +41,13 @@ class Landing extends CI_Controller
         $this->load->view('cart/index');
         $this->load->view('templates/relish/footer');
     }
+
+    public function menunggu_konfirmasi()
+    {
+        $this->load->view('templates/relish/header');
+        $this->load->view('new_view/menunggu_konfirmasi');
+        $this->load->view('templates/relish/footer');
+    }
 }
 
 /* End of file Landing.php */
