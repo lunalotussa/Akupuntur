@@ -462,7 +462,8 @@
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <p>
-            Kami berlokasi di Malang
+          Jalan Tuban Raya No.100 RT 10/ RW 03, <br/>
+            Surabaya
           </p>
         </div>
       </div>
@@ -500,17 +501,14 @@
             <img src="images/lines/img-line-40.png" data-at2x="images/lines/img-line-40@2x.png" alt />
           </div>
           <p>
-            785 Carriage Drive, Jacksonville<br />
-            Beach, FL 32250
+            Jalan Tuban Raya No.100 RT 10/ RW 03, <br/>
+            Surabaya
           </p>
           <p>
-            <a href="tel:203-284-2818">203-284-2818</a> <br />
-            <a href="tel:203-284-2818">203-284-2818</a>
+            <a href="tel:+628113438850">0811-3438-850</a>
           </p>
           <p class="mail">
-            <a href="mailto:info@your-site.com">info@your-site.com</a>,
-            <br />
-            <a href="mailto:sales@your-site.com">sales@your-site.com</a>
+            <a href="mailto:info@terapiholistik.id">info@terapiholistik.id</a>
           </p>
           <h4 class="contact-title font-alt">Follow Us</h4>
           <div class="contact-soc">
