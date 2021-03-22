@@ -340,7 +340,7 @@ class Cart extends CI_Controller
                         $cuscus = $this->Cart_model->get_id_customer($_SESSION['id_user']);
                         $this->Cart_model->update_transaksi($id_transaksi, $params);
                         $this->Cart_model->update_cart_user($cuscus[0]->id_customer, $purum);
-                        redirect('landing/jasa');
+                        redirect('landing/menunggu_konfirmasi');
                     } else {
                         die("gagal update");
                     }
