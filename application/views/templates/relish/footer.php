@@ -33,7 +33,7 @@
             <!-- footer copy -->
 
             <!-- <div class="footer-copy"> -->
-            <span class="font-alt">Terapi Holistik Sayang Anak</span> © 2020.
+            <span class="font-alt">Terapi Holistik Sayang Anak</span> © <?= echo date("Y");?>.
             All rights reserved.
             <!-- </div> -->
 
