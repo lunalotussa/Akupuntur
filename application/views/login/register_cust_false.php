@@ -15,14 +15,18 @@
               </div>
             </div>
             <h1 class="title has-text-weight-bold font-family-philosopher has-text-success">
-              Daftar Terapis
+              Daftar Customer
             </h1>
+            <div class="notification is-danger">
+              <button class="delete"></button>
+              Akun sudah terdaftar.
+            </div>
             <!-- Form -->
-            <?= form_open('user/addTerapis'); ?>
+            <?= form_open('user/addCust'); ?>
             <div class="field">
               <label class="label g-has-text-white-on-medium">Nama Lengkap</label>
               <div class="control">
-                <input type="hidden" name="hak_akses" value="Terapis">
+                <input type="hidden" name="hak_akses" value="Customer">
                 <input class="input is-success" name="nama" type="text" placeholder="Masukkan Nama Lengkap" />
               </div>
             </div>
