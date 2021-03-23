@@ -33,22 +33,22 @@ class User extends CI_Controller
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
             $email     = $this->input->post('email');
-            $sql       = "SELECT * FROM user WHERE email='".$email."' AND hak_akses='Customer'";
+            $sql       = "SELECT * FROM user WHERE email='" . $email . "' AND hak_akses='Customer'";
             $query     = $this->db->query($sql);
             if ($query->num_rows() > 0) {
-                echo "sudah ada akun dengan email tersebut";
-                echo $email     = $this->input->post('email');
-                
+                $this->load->view('templates/pure/header');
+                $this->load->view('login/register_cust_false');
+                $this->load->view('templates/pure/footer');
             } else {
-            $params = array(
-                'password' => md5($this->input->post('password')),
-                'nama' => $this->input->post('nama'),
-                'email' => $this->input->post('email'),
-                'hak_akses' => $this->input->post('hak_akses'),
-            );
+                $params = array(
+                    'password' => md5($this->input->post('password')),
+                    'nama' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'hak_akses' => $this->input->post('hak_akses'),
+                );
 
-            $user_id = $this->User_model->add_userCust($params);
-            redirect('Main');
+                $user_id = $this->User_model->add_userCust($params);
+                redirect('Main');
             }
         } else {
             $data['_view'] = 'user/add';
@@ -63,20 +63,22 @@ class User extends CI_Controller
         if (isset($_POST) && count($_POST) > 0) {
             $hak_akses = $this->input->post('hak_akses');
             $email     = $this->input->post('email');
-            $sql       = "SELECT * FROM user WHERE email='".$email."' AND hak_akses='Terapis'";
+            $sql       = "SELECT * FROM user WHERE email='" . $email . "' AND hak_akses='Terapis'";
             $query     = $this->db->query($sql);
             if ($query->num_rows() > 0) {
-                echo "sudah ada akun dengan email tersebut";
-            }else{
-            $params = array(
-                'password' => md5($this->input->post('password')),
-                'nama' => $this->input->post('nama'),
-                'email' => $this->input->post('email'),
-                'hak_akses' => $this->input->post('hak_akses'),
-            );
+                $this->load->view('templates/pure/header');
+                $this->load->view('login/register_terapis_false');
+                $this->load->view('templates/pure/footer');
+            } else {
+                $params = array(
+                    'password' => md5($this->input->post('password')),
+                    'nama' => $this->input->post('nama'),
+                    'email' => $this->input->post('email'),
+                    'hak_akses' => $this->input->post('hak_akses'),
+                );
 
-            $user_id = $this->User_model->add_userTerapis($params);
-            redirect('Main');
+                $user_id = $this->User_model->add_userTerapis($params);
+                redirect('Main');
             }
         } else {
             $data['_view'] = 'user/add';

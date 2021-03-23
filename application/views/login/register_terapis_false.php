@@ -17,6 +17,10 @@
             <h1 class="title has-text-weight-bold font-family-philosopher has-text-success">
               Daftar Terapis
             </h1>
+            <div class="notification is-danger">
+              <button class="delete"></button>
+              Akun sudah terdaftar.
+            </div>
             <!-- Form -->
             <?= form_open('user/addTerapis'); ?>
             <div class="field">
