@@ -171,7 +171,7 @@
 
 <!-- Pembelian Terbaik section -->
 
-<section class="page-section alt-color-secondary">
+<!-- <section class="page-section alt-color-secondary">
   <div class="container align-center">
     <h3 class="section-title bottom-line font-alt">
       Pembelian Terbaik<span>Featured Products</span>
@@ -181,17 +181,17 @@
         Jasa yang paling banyak digunakan
       </p>
     </div>
-    <div class="row mt-30">
+    <div class="row mt-30"> -->
       <!-- shop carousel -->
 
-      <div class="slider-1 dots-alt">
+      <!-- <div class="slider-1 dots-alt"> -->
         <!-- shop carousel item -->
 
-        <div class="shop-container align-center alt-2">
-          <a href="<?= base_url('assets/img/landing/item-1.png') ?>" class="lightbox-single mfp-image">
+        <!-- <div class="shop-container align-center alt-2">
+          <a href="<?= //base_url('assets/img/landing/item-1.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="<?= base_url('assets/img/landing/item-1.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-1.png') ?>" alt />
+                <img src="<?= //base_url('assets/img/landing/item-1.png') ?>" data-at2x="<?= //base_url('assets/img/landing/item-1.png') ?>" alt />
               </div>
               <div class="label-new label-left font-alt">New</div>
             </div>
@@ -208,17 +208,17 @@
           </div>
           <div class="shop-price font-alt">Rp 75<span>000</span></div>
           <a href="shop-cart.html" class="button small">Pesan</a>
-        </div>
+        </div> -->
 
         <!-- /shop carousel item -->
 
         <!-- shop carousel item -->
 
-        <div class="shop-container align-center alt-2">
-          <a href="<?= base_url('assets/img/landing/item-2.png') ?>" class="lightbox-single mfp-image">
+        <!-- <div class="shop-container align-center alt-2">
+          <a href="<?= //base_url('assets/img/landing/item-2.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="<?= base_url('assets/img/landing/item-2.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-2.png') ?>" alt />
+                <img src="<?= //base_url('assets/img/landing/item-2.png') ?>" data-at2x="<?= //base_url('assets/img/landing/item-2.png') ?>" alt />
               </div>
             </div>
           </a>
@@ -234,17 +234,17 @@
           </div>
           <div class="shop-price font-alt">Rp 75<span>000</span></div>
           <a href="shop-cart.html" class="button small">Pesan</a>
-        </div>
+        </div> -->
 
         <!-- /shop carousel item -->
 
         <!-- shop carousel item -->
 
-        <div class="shop-container align-center alt-2">
-          <a href="<?= base_url('assets/img/landing/item-3.png') ?>" class="lightbox-single mfp-image">
+        <!-- <div class="shop-container align-center alt-2">
+          <a href="<?= //base_url('assets/img/landing/item-3.png') ?>" class="lightbox-single mfp-image">
             <div class="shop-media">
               <div class="shop-img">
-                <img src="<?= base_url('assets/img/landing/item-3.png') ?>" data-at2x="<?= base_url('assets/img/landing/item-3.png') ?>" alt />
+                <img src="<?= //base_url('assets/img/landing/item-3.png') ?>" data-at2x="<?= //base_url('assets/img/landing/item-3.png') ?>" alt />
               </div>
               <div class="label-new label-left alt font-alt">
                 Best<br />Price
@@ -263,15 +263,15 @@
           </div>
           <div class="shop-price font-alt">Rp 75<span>000</span></div>
           <a href="shop-cart.html" class="button small">Pesan</a>
-        </div>
+        </div> -->
 
         <!-- /shop carousel item -->
-      </div>
+      <!-- </div> -->
 
       <!-- /shop carousel -->
-    </div>
+    <!-- </div>
   </div>
-</section>
+</section> -->
 
 <!-- /Pembelian Terbaik section -->
 
